@@ -121,6 +121,7 @@ var scrollCont = {
 				}else if(firstSize <= window.outerHeight){
 					popH = $(target).find('.pop_tit').height() +  $(target).find('.pop_fix_area').height();
 					$(target).find('.j_scroll').eq(i).height(window.outerHeight - (popH + $('.layer_contents').offset().top));
+					layerScroll[scrollArr.indexOf(target)].update()
 				}
 			})
 		}
@@ -484,7 +485,7 @@ $(document).ready(function(){
 			} else if($(this).attr("check-target")){ // 개인정보 수집 이용동의서 타켓
 				var targetname = $(this).attr('check-target')
 				var checkTarget = $("input[check-target="+targetname+"]:checked")
-				console.log(targetname)
+				// console.log(targetname)
 				if(checkTarget.length === 0){
 					$(targetname).prop('checked', false)
 					$(targetname).attr('disabled', 'disabled')
