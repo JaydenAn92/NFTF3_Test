@@ -94,7 +94,7 @@ var scrollCont = {
 				if ($(target).find('.layer_90').length > 0) {
 					var popH = 0;
 					if ($(target).find('.pop_fix_area').length > 0) {
-						 popH = $(target).find('.pop_tit').height() +  $(target).find('.pop_fix_area').height();
+						popH = $(target).find('.pop_tit').height() +  $(target).find('.pop_fix_area').height();
 					} else {
 						popH = $(target).find('.pop_tit').height();
 					}
@@ -112,9 +112,16 @@ var scrollCont = {
 					mousewheel: true,
 				});
 			}
+			// 팝업 리사이즈 안드로이드 이슈
+			var firstSize = window.outerHeight;  //로드 되었을대 높이
 			$(window).resize(function() {
-				$(target).find('.j_scroll').eq(i).height($(target).find('.layer_contents').height() - popH);
-				console.log('a')
+				if(firstSize > window.outerHeight){
+					popH = $(target).find('.pop_tit').height();
+					$(target).find('.j_scroll').eq(i).height(window.outerHeight - (popH + $('.layer_contents').offset().top));
+				}else if(firstSize <= window.outerHeight){
+					popH = $(target).find('.pop_tit').height() +  $(target).find('.pop_fix_area').height();
+					$(target).find('.j_scroll').eq(i).height(window.outerHeight - (popH + $('.layer_contents').offset().top));
+				}
 			})
 		}
 	}
@@ -131,6 +138,7 @@ var layerOpen = {
 			$('html,body').css('overflow','hidden');
 			$('.contents,.layerpopup,.pop_tit').on('touchmove',function(e) {e.preventDefault();});
 			
+			// $(layerId).addClass('on')
 			$(layerId).addClass('on').css({'height':window.outerHeight});
 			if (layerIndex != undefined) {
 				$(layerId).find('.j_select_slide_cont').css({'left' : -$(this).width()*layerIndex});
