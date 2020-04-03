@@ -1,0 +1,200 @@
+<html lang="ko">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+        <meta name="format-detection" content="telephone=no, address=no, email=no">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta http-equiv="Cache-control" content="No-cache">
+        <meta http-equiv="Pragma" content="No-cache">
+        <title>KEB하나은행 - 비대면 계좌개설 신청</title>
+        <link rel="stylesheet" href="../css/nftf_common.css">
+        <script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+        <script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="../js/rolldate.js"></script>
+        <script type="text/javascript" src="../js/swiper.js"></script>
+        <script type="text/javascript" src="../js/nftf_common.js"></script>
+    </head>
+    <body>
+        <div class="wrapper">
+            <header class="steps_area">
+                <button class="back_btn"></button>
+                <h2 class="h_tit">
+                    <ul>
+                        <li class="ing"><span>1 동의</span></li>
+                        <li><span>2</span></li>
+                        <li><span>3</span></li>
+                        <li><span>4</span></li>
+                    </ul>
+                </h2>
+                <button class="h_menu"></button>
+            </header>
+            <div class="contents">
+                <section>
+                    <div class="loading_dot">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <p class="pages_tit"><span class="t_mi">동의사항과 약관</span>을<br>확인해 주세요.</p>
+                    <div class="agreement_list" id="depth01">
+                        <input type="checkbox" name="" id="allcheck" class="j-allcheck">
+                        <label for="allcheck" class="allcnkbtn j-list_open">모두 동의합니다.</label>
+                        <ul class="depth01_area">
+                            <li id="depth02_2">
+                                <input type="checkbox" name="" id="depth01-2" class="depth01">
+                                <label for="depth01-2" class="j-list_open">개인(신용)정보 수집 &middot; 이용 및 제공<br>동의서(상품서비스 안내 등)</label>
+                                <button class="popup_open j_layer_open" type="button" layer-target="#layerpopup02">팝업오픈</button>
+                                <ul class="depth02_area j-open_list">
+                                    <li id="depth03_1">
+                                        <input type="checkbox" name="" id="depth02-2-1" class="depth02_2" check-target="#depth02-2-3">
+                                        <label for="depth02-2-1">개인정보 수집·이용 동의</label>
+                                        <p class="relation_tit">상품서비스 안내수단</p>
+                                        <ul class="depth03_area j_checkType01">
+                                            <li>
+                                                <input type="checkbox" name="" id="depth03-1-1" class="depth03_1">
+                                                <label for="depth03-1-1">SNS</label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" name="" id="depth03-1-2" class="depth03_1">
+                                                <label for="depth03-1-2">전화</label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" name="" id="depth03-1-3" class="depth03_1">
+                                                <label for="depth03-1-3">이메일</label>
+                                            </li>
+                                            <li>
+                                                <input type="checkbox" name="" id="depth03-1-4" class="depth03_1">
+                                                <label for="depth03-1-4">우편</label>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="" id="depth02-2-2" class="depth02_2" check-target="#depth02-2-3">
+                                        <label for="depth02-2-2">개인(신용)정보 제공 동의</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="" id="depth02-2-3" class="depth02_2" layer-target="#layerpopup04">
+                                        <label for="depth02-2-3" class="j_check_notice">손님권리 안내문 확인</label>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li id="depth02_3">
+                                <input type="checkbox" name="" id="depth01-3" class="depth01">
+                                <label for="depth01-3" class="j-list_open">약관 및 상품설명서 확인</label>
+                                <button class="popup_open j_layer_open" type="button" layer-target="#layerpopup03">팝업오픈</button>
+                                <ul class="depth02_area j-open_list">
+                                    <li>
+                                        <input type="checkbox" name="" id="depth02-3-1" class="depth02_3" disabled="disabled">
+                                        <label for="depth02-3-1">예금거래 기본약관</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="" id="depth02-3-2" class="depth02_3" disabled="disabled">
+                                        <label for="depth02-3-2">입출금이 자유로운 예금 약관</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="" id="depth02-3-3" class="depth02_3" disabled="disabled">
+                                        <label for="depth02-3-3">(입출금통장 상품명) 특약</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="" id="depth02-3-4" class="depth02_3" disabled="disabled">
+                                        <label for="depth02-3-4">(입출금통장 상품명) 상품설명서</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="" id="depth02-3-5" class="depth02_3" disabled="disabled">
+                                        <label for="depth02-3-5">거치식예금 약관</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="" id="depth02-3-6" class="depth02_3" disabled="disabled">
+                                        <label for="depth02-3-6">계좌간 자동이체 약관</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="" id="depth02-3-7" class="depth02_3" disabled="disabled">
+                                        <label for="depth02-3-7">전자금융거래 기본약관</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="" id="depth02-3-8" class="depth02_3" disabled="disabled">
+                                        <label for="depth02-3-8">개인전자금융서비스 이용약관</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="" id="depth02-3-9" class="depth02_3" disabled="disabled">
+                                        <label for="depth02-3-9">전자금융거래 기본약관</label>
+                                    </li>
+                                    <li>
+                                        <input type="checkbox" name="" id="depth02-3-10" class="depth02_3" disabled="disabled">
+                                        <label for="depth02-3-10">개인전자금융서비스 이용약관</label>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="btn_wrap btn_fix" style="display: none;">
+                        <a href="#none" class="btn_type01">다음</a>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <div id="layerpopup02" class="layerpopup">
+            <div class="layer_90">
+                <div class="layer_contents">
+                    <div class="pop_tit">
+                        <h5>개인정보 수집·이용 동의</h5>
+                    </div>
+                    <div class="pop_content j_scroll">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="pop_inner">
+                                    <div class="agreement_doc">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pop_fix_area">
+                        <button type="button" class="pop_btn01 j_layer_close">동의합니다</button>
+                    </div>
+                    <button type="button" class="cancel j_layer_close">취소</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="layerpopup03" class="layerpopup">
+            <div class="layer_90">
+                <div class="layer_contents">
+                    <div class="pop_tit">
+                        <h5>약관 및 상품설명서 확인</h5>
+                    </div>
+                    <div class="pop_content j_scroll">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="pop_inner">
+                                    <div class="agreement_doc">
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pop_fix_area">
+                        <button type="button" class="pop_btn01 j_layer_close">동의합니다</button>
+                    </div>
+                    <button type="button" class="cancel j_layer_close">취소</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="layerpopup" id="layerpopup04">
+            <div class="layer_center">
+                <div class="layer_contents">
+                    <div class="pop_content">
+                        <p>손님권리 안내문 확인을 동의하셔야 <br> 진행이 가능합니다.</p>
+                    </div>
+                    <div class="btn_area">
+                        <button type="button" class="confirm j_layer_close">확인</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

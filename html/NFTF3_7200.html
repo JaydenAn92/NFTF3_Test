@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no, address=no, email=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Cache-control" content="No-cache">
+    <meta http-equiv="Pragma" content="No-cache">
+    <title>NFTF3_01본인인증</title>
+    <link rel="stylesheet" href="../css/nftf_common.css">
+    <script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../js/rolldate.js"></script>
+    <script type="text/javascript" src="../js/swiper.js"></script>
+    <script type="text/javascript" src="../js/nftf_common.js"></script>
+</head>
+<script>
+    document.addEventListener('DOMContentLoaded', function(){
+        setTimeout(function(){
+            var loadingDot = document.querySelector('.loading_dot')
+            loadingDot.classList = 'loading_dot on'
+        },500)
+        var layerEvent = document.querySelectorAll('.layerpopup')
+        for(var i = 0; i<layerEvent.length; i++){
+            layerEvent[i].addEventListener('click', function(e){
+                console.log(e.target)
+                if(e.target.className ==='cancel'){
+                    e.currentTarget.style.display = 'none'
+                }
+                if(e.target.parentElement.className ==='layerpopup'){
+                    e.currentTarget.style.display = 'none'
+                }
+            })
+        }
+        layerOpen.init('#menuNav');
+    });
+</script>
+<body>
+    <div class="wrapper">
+        <header>
+            <button class="back_btn"></button>
+            <h2 class="h_tit">본인인증</h2>
+            <button class="h_menu j_layer_open" layer-target="#menuNav"></button>
+        </header>
+        <div class="contents">
+            <section>
+                <div class="loading_dot">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <p class="pages_tit"><span class="t_mi">이름과 주민번호</span>를<br>입력해주세요.</p>
+            </section>
+        </div>
+
+    </div>
+    <!-- 상단 네비 -->
+    <div id="menuNav" class="layerpopup">
+        <div class="layer_select">
+            <div class="layer_contents">
+                <div class="layer_nav">
+                    <h5>비대면 계좌개설</h5>
+                    <ul class="list_type04">
+                        <li><button type="button">신청결과 조회</button></li>
+                        <li><button type="button" class="j_layer_open" layer-target="#serviceGuide">서비스 가이드</button></li>
+                        <li class="bg_none"><button type="button" class="j_layer_open" layer-target="#out">신청종료</button></li>
+                    </ul>
+                    <button type="button" class="cancel j_layer_close">취소</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="out" class="layerpopup">
+        <div class="layer_center">
+            <div class="layer_contents">
+                <div class="pop_content">
+                    <p>서비스를 종료 하시겠습니까?<br>현재까지 입력하신 정보는 모두 삭제되며 다음에 다시 신청하시는 경우 처음부터 다시 입력하셔야 합니다.</p>
+                </div>
+                <div class="btn_area btn_02">
+                    <button type="button" class="cancel j_layer_close">취소</button>
+                    <button type="button" class="confirm">종료</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="serviceGuide" class="layerpopup">
+        <div class="layer_90 tab_layer">
+            <div class="layer_contents">
+                <div class="pop_tit tab_area">
+                    <h5>서비스 가이드</h5>
+                    <ul class="tabs">
+                        <li class="on">사전 확인 사항</li>
+                        <li>이용 안내</li>
+                        <li>상품 가입 안내</li>
+                    </ul>
+                </div>
+                <div class="pop_content tab_cont_area j_scroll">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="tabcont">
+                                <div class="pop_inner">
+                                    <ul class="list_type05 j_toggle_list">
+                                        <li>
+                                            <div class="title j_toggle_open">입출금통장 이용한도</div>
+                                            <div class="cont j_toggle_cont">
+                                                <p>금융감독원 대포통장 근절 종합대책에 따라 이용한도가 제한됩니다.</p>
+                                                <ul class="list_dot">
+                                                    <li>영업점: 출금/이체 합산 100만원/일</li>
+                                                    <li>ATM: 출금/이체 각각 100만원/일</li>
+                                                    <li>전자금융: 이체 100만원/일</li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="title j_toggle_open">이용한도 해제방법</div>
+                                            <div class="cont j_toggle_cont">
+                                                <ul class="list_dot">
+                                                    <li>영업점 방문 후 증빙서류 제출 (방문 전 사전문의)</li>
+                                                    <li>대출실행 (비대면 입출금통장 연계)</li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="title j_toggle_open">비대면실명확인 신청자격 및 거래제한</div>
+                                            <div class="cont j_toggle_cont">
+                                                <ul class="list_dot">
+                                                    <li>만14세 이상 국민인 거주자인 개인 및 개인사업자 중 아래 거래제한에 해당하지 않는 손님</li>
+                                                </ul>
+                                                <p class="txt_type06">※ 거래제한: 법인 및 대리인, 만14세 미만 미성년자, 외국인, 비거주자, 대포통장 명의인, 전화금융사기계좌 명의인, 해외납세 의무자, 단기다수계좌 개설자(입출금통장만 제한) 포함 기타 은행정책으로 인한 거래제한</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="title j_toggle_open">시작 전 준비물</div>
+                                            <div class="cont j_toggle_cont">
+                                                <ul class="list_dot">
+                                                    <li>신분증: 주민등록증, 운전면허증, 여권+신용카드(학생은 여권+성명과 생년월일이 표시된 학생증/청소년증)</li>
+                                                    <li>본인명의 스마트폰: 휴대폰 본인인증 필수</li>
+                                                    <li>본인명의 타행 계좌: 입출금 통장 신청시 필요(없는 경우 영상통화로 신청 가능)</li>
+                                                    <li>e-mail 주소: 동의서 및 설명서 수신용</li>
+                                                </ul>
+                                                <p class="txt_type06">※ 개인사업자 계좌개설 및 기업뱅킹 가입은 사업자등록증 촬영이 필수입니다.</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="title j_toggle_open">서비스 이용 시간</div>
+                                            <div class="cont j_toggle_cont">
+                                                <ol>
+                                                    <li>업무신청: 24시간(365일)</li>
+                                                    <li>
+                                                        콜센터 (1599-2111) 업무처리
+                                                        <ul class="list_dot">
+                                                            <li>문의응대, 상담 등: [은행영업일] 09:00~18:00</li>
+                                                            <li>신청내역 처리(영상통화 포함): [은행영업일] 09:00~17:30</li>
+                                                        </ul>
+                                                    </li>
+                                                </ol>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="title j_toggle_open">기타 유의사항</div>
+                                            <div class="cont j_toggle_cont">
+                                                <ul class="list_dot">
+                                                    <li>특정금융거래정보의 보고 및 이용 등에 관한 법률 준수 및 전기통신금융사기 피해예방을 위해 금융거래목적을 확인합니다.</li>
+                                                    <li>제공 정보에 대한 검증이 불가능한 경우 거래가 지연되거나 거절될 수 있으며, 제공된 정보는 금융실명법 등 관련 법률에 의해 보호됩니다.</li>
+                                                    <li>신청하신 업무가 취소된 경우 개인정보는 안전하게 삭제되며, 완료된 건의 증빙자료는 관련 법령에 따라 계좌해지 후 5년간 보존합니다.</li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="tabcont">
+                                <div class="pop_inner">
+                                    <ul class="list_type05 j_toggle_list">
+                                        <li>
+                                            <div class="title j_toggle_open">비대면 실명확인이란?</div>
+                                            <div class="cont j_toggle_cont">
+                                                <p>실명확인이 필요한 각종 금융거래 시 영업점 방문없이 스마트폰으로 거래하는 방법입니다.</p>
+                                                <p class="txt_type07">KEB하나은행 비대면실명확인 방식</p>
+                                                <ul class="list_dot">
+                                                    <li>휴대폰 본인인증 + 신분증 촬영 + 영상통화 or 기존계좌활용</li>
+                                                </ul>
+                                                <p class="txt_type06">※ 당행 입출금통장 보유자는 예/적금, 전자금융 가입 시 당행 계좌 검증으로 실명확인</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="title j_toggle_open">서비스 이용 가능 채널</div>
+                                            <div class="cont j_toggle_cont">
+                                                <ul class="list_dot">
+                                                    <li>[App] 하나원큐, 하나멤버스, 하나원큐 기업, 핀크(Finnq)</li>
+                                                    <li>[Web] 모바일웹(m.kebhana.com), 모바일브랜치, 하나은행 홈페이지(PC), 각종 제휴사(TOSS, Payco 등)<br>웹으로 이용시 브라우저는 사파리, 인터넷, 크롬 등 자체 브라우저를 이용해주세요.</li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="title j_toggle_open">서비스 이용 가능 스마트폰 기종</div>
+                                            <div class="cont j_toggle_cont">
+                                                <p>기종 제한은 없으나 OS별로 영상통화 신청과 모바일OTP 이용이 제한됩니다.</p>
+                                                <ul class="list_dot">
+                                                    <li>영상통화 신청: 안드로이드 4.0, iOS 8.0 미만에서 신청 불가</li>
+                                                    <li>모바일OTP 이용: 안드로이드 4.3, iOS 8.0 미만에서 이용 불가</li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="title j_toggle_open">신분증 촬영 및 제출</div>
+                                            <div class="cont j_toggle_cont">
+                                                <p>신분증이 오래되었거나 훼손된 경우, 또는 촬영 시 빛 반사 등으로 인하여 식별이 어려운 경우 제대로 인식되지 않을 수 있습니다. 이 경우 신분증 정보를 직접 수정/입력하실 수 있으며, 잘못 입력된 경우 신분증 진위확인 과정에서 신청이 거절될 수 있으니 입력 내용을 정확히 확인하시기 바랍니다.</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="title j_toggle_open">신분증 진위확인</div>
+                                            <div class="cont j_toggle_cont">
+                                                <p>촬영 후 제출한 신분증 이미지의 문제로 진위확인이 자동으로 처리되지 않는 경우 업무처리가 실시간으로 이루어지지 않으며 수작업으로 제출한 신분증의 진위여부를 확인합니다. 최종적으로 제출하신 신분증의 진위확인이 어렵다고 판단되는 경우 재촬영 요청 LMS가 발송됩니다.</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="title j_toggle_open">영상통화 안내</div>
+                                            <div class="cont j_toggle_cont">
+                                                <p>영상통화 접수/예약시 연결 URL이 LMS로 발송되며 접수/예약일 포함 3영업일 이내에 완료하지 않으면 자동 취소됩니다. 영상통화 연결 가능 시간은 09:00~17:30 까지이며 유효기간 내에 LMS에 있는 URL을 손님이 직접 클릭하시면 상담원과 연결됩니다.</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="title j_toggle_open">가상계좌이체 안내</div>
+                                            <div class="cont j_toggle_cont">
+                                                <p>가상계좌이체 신청일 포함 3영업일 이내에 완료하지 않으면 자동 취소됩니다. 선택하신 타기관 본인 계좌의 인터넷/스마트폰/폰뱅킹, 자동화기기를 통해 LMS로 보내드린 가상계좌로 이체하시면 계좌개설 완료 후 해당 금액이 신규계좌로 입금됩니다.</p>
+                                                <p class="txt_type06">※ 창구 등 기타채널(간편이체 앱(토스, 카카오페이 등))를 통한 이체는 불가능합니다.</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="title j_toggle_open">신청 취소</div>
+                                            <div class="cont j_toggle_cont">
+                                                <ul class="list_dot">
+                                                    <li>신청 중인 업무: '상품신청 > 휴대폰 본인인증' 후 '신청중인 목록'에서 삭제하여 취소</li>
+                                                    <li>신청완료 후 미가입된 업무: 콜센터(1599-2111)을 통해서 취소</li>
+                                                    <li>상품 가입이 완료된 경우: 영업점 또는 인터넷/스마트폰뱅킹에서 해지</li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="title j_toggle_open">이어서 신청</div>
+                                            <div class="cont j_toggle_cont">
+                                                <p>신청 중 중단한 경우 신청일로부터 7일간 이어서 신청이 가능하며 '상품신청 > 휴대폰 본인인증' 후 '신청중인 목록'에서 이어서 진행이 가능합니다. 완료하지 않은 신청건은 7일 후 자동으로 신청이 취소됩니다.</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="title j_toggle_open">신청결과 조회</div>
+                                            <div class="cont j_toggle_cont">
+                                                <p>신청이 완료된 경우 '신청결과조회>휴대폰 본인인증' 후 신청결과에 대해 조회가 가능합니다. 신분증 진위확인 상태, 추가인증 상태 등 포함</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="tabcont">
+                                <div class="pop_inner">
+                                    <ul class="list_type05 j_toggle_list">
+                                        <li>
+                                            <div class="title j_toggle_open">신청 가능 업무</div>
+                                            <div class="cont j_toggle_cont">
+                                                <ul class="list_dot">
+                                                    <li>계좌개설: 입출금통장, 예금, 적금, 외화통장</li>
+                                                    <li>전자금융: 개인뱅킹, 기업뱅킹, HAI뱅킹, 모바일OTP발급</li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="title j_toggle_open">입출금통장 가입 제한</div>
+                                            <div class="cont j_toggle_cont">
+                                                <p>비대면 실명확인을 통해서는 1개만 가입 가능합니다. (단, 개인, 개인사업자(사업자주거래 우대통장) 자격당 1개씩)</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="title j_toggle_open">입출금통장 가입 후 현금 출금 방법</div>
+                                            <div class="cont j_toggle_cont">
+                                                <ul class="list_dot">
+                                                    <li> 하나원큐:  '모바일통장' 서비스 이용(창구/ATM출금 가능)</li>
+                                                    <li> 하나멤버스: 하나머니 전환 후 'ATM출금' 서비스 이용</li>
+                                                    <li>핀크(Finnq): 'ATM출금 서비스' 이용</li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="title j_toggle_open">상품별 가입 제한</div>
+                                            <div class="cont j_toggle_cont">
+                                                <p>상품별 1인1계좌 가입 제한이 있는 경우 기존 영업점을 통한 가입 계좌를 포함하여 추가가입이 제한됩니다.</p>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="title j_toggle_open">개설 계좌번호 확인</div>
+                                            <div class="cont j_toggle_cont">
+                                                <ul class="list_dot">
+                                                    <li>개설 완료 후 LMS를 통해 개설된 계좌번호를 안내해드립니다.</li>
+                                                    <li>LMS가 삭제된 경우 신청결과조회>휴대폰 본인인증을 통해 개설된 계좌번호 확인이 가능합니다.</li>
+                                                    <li>전자금융 가입고객은 전자금융 로그인 후 계좌조회 메뉴에서 확인이 가능합니다.</li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="title j_toggle_open">전자금융 가입</div>
+                                            <div class="cont j_toggle_cont">
+                                                <ul class="list_dot">
+                                                    <li>기존 KEB하나은행 전자금융 이체회원 미가입 손님은 신규 가입 가능합니다.</li>
+                                                    <li>기존 입출금통장을 보유하신 손님은 전자금융만 단독 가입 가능합니다.</li>
+                                                    <li>입출금통장 신규시 전자금융 이체회원이 아닌 경우 비대면 거래의 편의를 위해 전자금융이 동시 가입(필수) 됩니다.</li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="title j_toggle_open">모바일OTP 발급 안내</div>
+                                            <div class="cont j_toggle_cont">
+                                                <ul class="list_dot">
+                                                    <li>앱 기반의 KEB하나은행 전용 일회용 비밀번호 생성기로 실물이 없는 무료 보안매체입니다.</li>
+                                                    <li>하나은행 외에 타 금융기관에서는 사용이 불가능하며 1인 1기기에서만 이용이 가능합니다.</li>
+                                                    <li>발급 후 3일 이내에 신청확인을 완료하지 않으면 사용이 불가능합니다.</li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button type="button" class="cancel j_layer_close">취소</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
