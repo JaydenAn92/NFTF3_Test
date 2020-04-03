@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no, address=no, email=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Cache-control" content="No-cache">
+    <meta http-equiv="Pragma" content="No-cache">
+    <title>NFTF3_02-1상품선택</title>
+    <link rel="stylesheet" href="../css/nftf_common.css">
+    <script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../js/rolldate.js"></script>
+    <script type="text/javascript" src="../js/swiper.js"></script>
+    <script type="text/javascript" src="../js/nftf_common.js"></script>
+</head>
+<script>
+    document.addEventListener('DOMContentLoaded', function(){
+        setTimeout(function(){
+            var loadingDot = document.querySelector('.loading_dot')
+            loadingDot.classList = 'loading_dot on'
+        },500)
+        var layerEvent = document.querySelectorAll('.layerpopup')
+        for(var i = 0; i<layerEvent.length; i++){
+            layerEvent[i].addEventListener('click', function(e){
+                console.log(e.target)
+                if(e.target.className ==='cancel'){
+                    e.currentTarget.style.display = 'none'
+                }
+                if(e.target.className ==='dimmed'){
+                    e.currentTarget.style.display = 'none'
+                }
+            })
+        }
+        $('.tabs li').each(function(){
+            $(this).click(function(){
+                $(this).siblings().removeClass('on')
+                $(this).removeClass('on')
+                $(this).addClass('on')
+                $('.tab_cont_area .tabcont').hide()
+                $('.tab_cont_area .tabcont').eq($(this).index()).show()
+                setTimeout(function () {
+		            layerScroll.update();
+		        }, 0);
+            })
+        })
+    });
+</script>
+<body>
+    <div class="wrapper">
+        <header>
+            <button class="back_btn"></button>
+            <h2 class="h_tit">본인인증</h2>
+            <button class="h_menu"></button>
+        </header>
+        <div class="contents">
+            <section>
+                <div class="loading_dot">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <p class="pages_tit"><span class="t_mi">이름과 주민번호</span>를<br>입력해주세요.</p>
+            </section>
+        </div>
+        
+        <div class="layerpopup" id="layerpopup01">
+            <div class="layer_90 tab_layer">
+                <div class="layer_contents">
+                    <div class="pop_tit tab_area">
+                        <h5>사업자 주거래 우대통장</h5>
+                        <p class="content_info">연금이체, 급여이체, 카드결제,<br>공과금 자동이체 시 수수료 우대서비스를<br>제공하는 평생 주거래 통장</p>
+                        <ul class="tabs">
+                            <li class="on">상품개요</li>
+                        </ul>
+                    </div>
+                    <div class="pop_content j_scroll">
+                        <div class="swiper-wrapper">
+                            <div class="pop_inner swiper-slide">
+                                <p class="product_info">증권 방문 없이도 <br>주식(현물)거래 계좌 개설</p>
+                                <div class="tab_cont_area">
+                                    <div class="tabcont img_link type01">
+                                        <div class="cont_part">
+                                            <h4>상품특징</h4>
+                                            <p>증권저축계좌란</p>
+                                            <ul class="list_dot mt10">
+                                                <li>은행이 증권사와 업무협약을 통해 은행창구에서 개설하는 증권계좌로 은행의 요구불계좌와 증권계좌를 연결한 복합금융상품을 말함</li>
+                                                <li>증권사의 증권계좌를 은행에서 개설대행함으로써 은행 요구불계좌의 편리한 지급결제 기능과 증권사의 증권서비스(주식매매 등), CMA의 고금리운용 등을 연계하는 계좌</li>
+                                            </ul>
+                                            <p>신규처리의 흐름</p>
+                                            <ul class="list_dot mt10">
+                                                <li>은행의 요구불통장(모계좌)신규 -> 증권사의 증권계좌 신규 -> 현금IC카드(요구불통장) 및 제휴증권카드 발급</li>
+                                                <li>제휴증권카드 발급수수료: 건당 2,000원</li>
+                                                <li>제휴증권카드 발급가능 증권사: 한국투자증권(전계좌), 하나금융투자(현물이체계좌, 빅팟CMA)에 한하여 발급가능</li>
+                                            </ul>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>가입대상</h4>
+                                            <ul class="list_dot mt10">
+                                                <li>실명의 개인(국민인 거주자에 한함)
+                                                    <p>- 다만, 미성년자 또는 대리인에 의한 개설은 증권사와의 개별계약서에 따름</p>
+                                                </li>
+                                                <li>빅팟통장은 1인1계좌만 가능</li>
+                                                <li>국내선물옵션계좌, 해외선물옵션계좌,F/X마진계좌의 개설은 본인만 가능하며, 대리인에 의한 계좌개설 및 미성년자에 대한 계좌개설은 할 수 없음</li>
+                                            </ul>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>은행계좌 계정과목</h4>
+                                            <ul class="list_dot mt10">
+                                                <li>증권저축계좌와 연계 가능한 은행의 계정과목
+                                                    <p>- 보통예금, 저축예금, MMDA (하나빅팟CMA는 기업자유예금도 포함)</p>
+                                                </li>
+                                                <li>기존계좌에 대한 증권계좌 신규개설
+                                                    <p>- 신규계좌 및 이미 개설된 요구불계좌에 대해서도 증권사의 증권계좌를 개설 할 수 있음</p>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>가입상품의 종류</h4>
+                                            <p>국내현물, 해외현물, 국내선물옵션, 해외F/X, 수익증권, 하나빅팟츰
+                                                단, 미래에셋증권, 신한금융투자는 국내현물계좌에서 수익증권 매매가 가능함</p>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>업무방법과 이용방법</h4>
+                                            <table class="mt10 type_col">
+                                                <colgroup>
+                                                    <col style="width: 20%;">
+                                                    <col style="width: 40%;">
+                                                    <col style="width: 40%;">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th>구 분</th>
+                                                        <th>연계방식 <br>
+                                                            (은행 예수금방식)</th>
+                                                        <th>이체방식 <br>
+                                                            (증권사 예수금방식)</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>업무방법</td>
+                                                        <td class="left">증권사의 증권계좌와 연결된 은행 요구불통장의 자금을 증권계좌로 별도의 이체조작함이 없이 주식 등의 매매</td>
+                                                        <td class="left">증권계좌와 연결된 은행 요구불계좌의 자금을 증권계좌로 이체한 후 주식등의 매매거래가 가능한 방식</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>계좌구성</td>
+                                                        <td class="left">은행 요구불통장 + 증권사의 증권계좌</td>
+                                                        <td class="left">(1) 가상계좌 이체방식 은행 요구불통장 + 가상계좌 + 증권사의 증권계좌 <br>
+                                                            (2) 일반 이체방식 은행 요구불통장 + 증권사의 증권계좌</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>입출금 방법</td>
+                                                        <td class="left">고객자금이 은행 요구불통장에 있으므로 입출금방식이 요구불통장과 동일하며, 연결된 증권계좌로는 입금 불가</td>
+                                                        <td class="left">은행의 요구불통장에 있는 자금을 증권계좌로 이체하거나, 증권계좌에 있는 자금을 은행 요구불통장으로 이체</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>이용방법</td>
+                                                        <td class="left" colspan="2">
+                                                            <ul class="list_dot">
+                                                                <li>증권계좌 신규 당일부터 증권거래가 가능함.</li>
+                                                                <li>계약의 해지는 영업점에서 해지함.</li>
+                                                                <li>주식매매거래 방법 <br>
+                                                                    해당 증권사의 HTS,MTS,홈페이지 이용</li>
+                                                                <li>공무주청약, 유상청약 등의 업무처리는 증권사별 정책 및 사정에 따라 자격이 조정될 수 있으므로 해당 증권사(콜센터)로 문의 후 처리</li>
+                                                            </ul>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>유의사항</h4>
+                                            <ul class="list_dot mt10">
+                                                <li>하나원큐(1Q)에서 비대면으로 증권저축계좌 개설시 거래조건
+                                                    <ul class="num_list_circle">
+                                                        <li><span>1 .</span> 개설가능한 증권사는 하나금융투자이며, 이체방식으로만 개설 가능</li>
+                                                        <li><span>2 .</span> 가입대상은 만 19세 이상 실명의 개인(국민인 거주자)에 한함</li>
+                                                        <li><span>3 .</span> 증권계좌 개설 제한시간은 23:15 ~ 00:15분 (하나금융투자 시스템 점검시간)</li>
+                                                    </ul>
+                                                </li>
+                                                <li>증권사의 증권계좌와 연계된 은행 요구불통장은 양도 및 명의변경 할 수 없음 <br>
+                                                    다만, 예금주 사망, 개명에 의한 명의변경은 할 수 있음</li>
+                                                <li>증권저축계좌로 등록이 안되는 경우
+                                                    <ul class="num_list_circle">
+                                                        <li><span>1 .</span> 요구불계좌에 주의사고등록이 되어있는 경우</li>
+                                                        <li><span>2 .</span> 한도대출약정이 있는 요구불계좌에 연계방식 증권계좌를 연결하는 경우</li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>상품내용 변경에 관한 사항</h4>
+                                            <table class="mt10 type_row">
+                                                <colgroup>
+                                                    <col style="width: 30%;">
+                                                    <col style="width: 70%;">
+                                                </colgroup>
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="row">
+                                                            상품내용 변경에 <br>
+                                                            관한 사항 <br>
+                                                            2018.6.1 변경
+                                                        </th>
+                                                        <td class="left">
+                                                            <p class="t_mi">&lt;상품특징&gt;</p>
+                                                            <dl>
+                                                                <dt>변경 전</dt>
+                                                                <dd>증권저축계좌란 <br>
+                                                                    은행이 증권사와 업무협약을 통해 은행창구에서 개설하는 증권계좌로 은행의 요구불통장과 증권계좌를 연결한 복합금융상품을 말함</dd>
+                                                                <dt>변경 후</dt>
+                                                                <dd>증권저축계좌란
+                                                                    <ul class="list_dot mt10">
+                                                                        <li>은행이 증권사와 업무협약을 통해 은행창구에서 개설하는 증권계좌로 은행의 요구불계좌와 증권계좌를 연결한 복합금융상품을 말한다.</li>
+                                                                        <li>증권사의 증권계좌를 은행에서 개설대행함으로써 은행 요구불계좌의 편리한 지급결제 기능과 증권사의 증권서비스(주식매매 등), CMA의 고금리운용 등을 연계하는 계좌</li>
+                                                                    </ul>
+                                                                </dd>
+                                                            </dl>
+                                                            <p class="t_mi">&lt;가입상품의 종류&gt;</p>
+                                                            <dl>
+                                                                <dt>변경 전</dt>
+                                                                <dd>국내현물, 해외현물, 국내선물옵션, 해외선물옵션, 해외 F/X, 수익증권, 하나빅팟CMA <br>
+                                                                    ※ 단, 미래에셋, 신한금융투자, 대우증권은 국내현물계좌에서 수익 증권 매매가 가능함
+                                                                </dd>
+                                                                <dt>변경 후</dt>
+                                                                <dd>국내현물, 해외현물, 국내선물옵션, 해외선물옵션, 해외 F/X, 수익증권, 하나빅팟CMA <br>
+                                                                    ※ 단, 미래에셋대우, 신한금융투자는 국내현물계좌에서 수익증권 매매가 가능함. </dd>
+                                                            </dl>
+                                                            <p class="t_mi">&lt;은행계좌 계정과목&gt;</p>
+                                                            <dl>
+                                                                <dt>변경 전</dt>
+                                                                <dd>상품구성 <br>
+                                                                    하나은행 요구불예금(보통예금,저축예금)+증권계좌 (단,빅팟 CMA 계좌의 은행 요구불계좌의 은행 요구불계좌는 기업자유예금 가능)
+                                                                </dd>
+                                                                <dt>변경 후</dt>
+                                                                <dd>은행계좌 계정과목
+                                                                    <ul class="num_list_circle">
+                                                                        <li><span>1 .</span> 증권저축계좌와 연계 가능한 은행의 계정과목 보통예금, 저축예금, MMDA (하나빅팟CMA는 기업자유예금도 포함)</li>
+                                                                        <li><span>1 .</span> 기존계좌에 대한 증권계좌 신규개설 신규계좌 및 이미 개설된 요구불계좌에 대해서도 증권사의 증권계좌를 개설 할 수 있음</li>
+                                                                    </ul>
+                                                                </dd>
+                                                            </dl>
+                                                            <p class="t_mi">&lt;업무방법과 이용방법&gt;</p>
+                                                            <dl>
+                                                                <dt>변경 전</dt>
+                                                                <dd>
+                                                                    <ul class="num_list_circle">
+                                                                        <li><span>1 .</span> 주식매매거래 방법
+                                                                            <ul class="list_dot mt10">
+                                                                                <li>연계방식: 증권계좌와 연결된 은행 요구불계좌의 자금을 증권계좌로 별도의 이체조작 없이 주식 등의 매매거래가 가능한 금액</li>
+                                                                                <li>이체방식: 증권계좌와 연결된 은행 요구불계좌의 자금을 증권계좌로 이체한 후 주식 등의 매매거래가 가능한 방식 <br>
+                                                                                *해당증권사와 온라인매체 및 콜선터 이용(해당 증권사 확인) <br>
+                                                                                *온라인 매체: HTS,WTS,ARS,핸드폰 등</li>
+                                                                            </ul>
+                                                                        </li>
+                                                                        <li><span>2 .</span> 입출금방법
+                                                                            <ul class="list_dot mt10">
+                                                                                <li>연계방식 : 은행 요구불계좌와 동일</li>
+                                                                                <li>이체방식(가상계좌 有) <br>
+                                                                                    *은행 요구불계좌 -> 증권계좌: 인터넷(폰)뱅킹,현금카드,해당 증권사 콜센터(HTS),당타행 창구입금 <br>
+                                                                                    *증권계좌 -> 은행 요구불계좌: 증권제휴카드(한국투자,하나대투만 해당)로 당,타행 자동화기기 이용이체(출금)
+                                                                                </li>
+                                                                                <li>증권사 콜센터(HTS) 이용 요구불계좌로 이체 후 출금</li>
+                                                                                <li>이체방식(가상계좌 無) <br>
+                                                                                    은행 요구불계좌 -> 증권계좌: 인터넷(폰)뱅킹, 현금카드, 해당증권사 콜센터(HTS) 이용 <br>
+                                                                                    *증권계좌 -> 은행 요구불 계좌: 해당 증권사 콜센터(HTS) 이용 요구불계좌로 이체 후 출금
+                                                                                </li>
+                                                                            </ul>
+                                                                        </li>
+                                                                    </ul>
+                                                                </dd>
+                                                                <dt>변경 후</dt>
+                                                                <dd>업무방법과 이용방법
+                                                                    <table class="mt10 type_col">
+                                                                        <colgroup>
+                                                                            <col style="width: 30%;">
+                                                                            <col style="width: 70%;">
+                                                                        </colgroup>
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th>구 분</th>
+                                                                                <th>연계방식(은행 예수금방식)</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td>업무방법</td>
+                                                                                <td class="left">증권사의 증권계좌와 연결된 은행 요구불통장의 자금을 증권계좌로 별도의 이체조작함이 없이 주식 등의 매매</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>계좌 구성</td>
+                                                                                <td class="left">은행 요구불통장 +증권사의 증권계좌</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>입출금 방법</td>
+                                                                                <td class="left">고객자금이 은행 요구불통장에 있으므로 입출금방식이 요구불통장과 동일하며, 연결된 증권계좌로는 입금 불가</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>이용 방법</td>
+                                                                                <td class="left">
+                                                                                    <ul class="list_dot">
+                                                                                        <li>증권계좌 신규 당일부터 증권거래가 가능함.</li>
+                                                                                        <li>계약해지는 영업점에서 해지함.</li>
+                                                                                        <li>주식매매거래 방법 <br>
+                                                                                            해당 증권사의 HTS,MTS,홈페이지 이용</li>
+                                                                                        <li>공무주청약, 유상청약 등의 업무처리는 증권사별 정책 및 사정에 따라 자격이 조정될 수 있으므로 해당 증권사(콜센터) 로 문의 후 처리</li>
+                                                                                    </ul>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                    <table class="mt10 type_col">
+                                                                        <colgroup>
+                                                                            <col style="width: 30%;">
+                                                                            <col style="width: 70%;">
+                                                                        </colgroup>
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th>구 분</th>
+                                                                                <th>이체방식(증권사 예수금방식)</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td>업무방법</td>
+                                                                                <td class="left">증권계좌와 연결된 은행 요구불계좌의 자금을 증권계좌로 이체한 후 주식등의 매매거래가 가능한 방식</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>계좌 구성</td>
+                                                                                <td class="left">(1) 가상계좌 이체방식 <br>
+                                                                                    은행 요구불통장 + 가상계좌 + 증권사의 증권계좌 <br>
+                                                                                    (2) 일반 이체방식 <br>
+                                                                                    은행 요구불통장 + 증권사의 증권계좌</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>입출금 방법</td>
+                                                                                <td class="left">은행의 요구불통장에 있는 자금을 증권계좌로 이체하거나, 증권계좌에 있는 자금을 은행 요구불통장으로 이체</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>이용 방법</td>
+                                                                                <td class="left">
+                                                                                    <ul class="list_dot">
+                                                                                        <li>증권계좌 신규 당일부터 증권거래가 가능함.</li>
+                                                                                        <li>계약해지는 영업점에서 해지함.</li>
+                                                                                        <li>주식매매거래 방법 <br>
+                                                                                            해당 증권사의 HTS,MTS,홈페이지 이용</li>
+                                                                                        <li>공무주청약, 유상청약 등의 업무처리는 증권사별 정책 및 사정에 따라 자격이 조정될 수 있으므로 해당 증권사(콜센터) 로 문의 후 처리</li>
+                                                                                    </ul>
+                                                                                </td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                </dd>
+                                                            </dl>
+                                                            <p class="t_mi">&lt;유의사항&gt;</p>
+                                                            <dl>
+                                                                <dt>변경 전</dt>
+                                                                <dd>없음</dd>
+                                                                <dt>변경 후</dt>
+                                                                <dd>은행계좌 계정과목
+                                                                    <ul class="list_dot">
+                                                                        <li>하나원큐(1Q)에서 비대면으로 증권저축계좌 개설시 거래조건
+                                                                            <ul class="num_list_circle">
+                                                                                <li><span>1 .</span> 개설가능한 증권사는 하나금융투자에 한하며, 이체방식으로만 개설 가능함.</li>
+                                                                                <li><span>2 .</span> 가입대상은 만 19세 이상 실명의 개인(국민인 거주자)에 한함.</li>
+                                                                                <li><span>3 .</span> 증권계좌 개설 제한시간은 23:15 ~ 00:15분 (하나금융투자 시스템 점검시간)</li>
+                                                                            </ul>
+                                                                        </li>
+                                                                        <li>증권사의 증권계좌와 연계된 은행 요구불통장은 양도 및 명의변경 할 수 없다. 다만, 예금주 사망, 개명에 의한 명의변경은 할 수 있다.</li>
+                                                                        <li>증권저축계좌로 등록이 안되는 경우
+                                                                            <ul class="num_list_circle">
+                                                                                <li><span>1 .</span> 요구불계좌에 주의사고등록이 되어있는 경우</li>
+                                                                                <li><span>2 .</span> 한도대출약정이 있는 요구불계좌에 연계방식 증권계좌를 연결하는 경우</li>
+                                                                            </ul>
+                                                                        </li>
+                                                                    </ul>
+                                                                </dd>
+                                                            </dl>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">
+                                                            상품내용 변경에 <br>
+                                                            관한 사항 <br>
+                                                            (2016.11.11 변경)
+                                                        </th>
+                                                        <td class="left">
+                                                            <p class="t_mi">&lt;가입대상&gt;</p>
+                                                            <dl>
+                                                                <dt>변경 전</dt>
+                                                                <dd>
+                                                                    <ul class="num_list_circle">
+                                                                        <li><span>1 .</span> 실명의 개인(국민인 거주자에 한함)을 가입대상으로 한다 다만, 미성년 자 또는 대리인에 의한 개설은 개별계약서에 따름</li>
+                                                                        <li><span>2 .</span> 빅팟통장은 1인 1계좌만 가능하다.</li>
+                                                                        <li><span>3 .</span> 대리인에 의한 계좌개설시 미래에셋증권, 대우증권, 유안타증권, 메리 츠종합금융증권의 경우 대리인은 가족으로 한정함</li>
+                                                                        <li><span>4 .</span> 하나금융투자, 리딩투자증권, IBK투자증권, HMC투자증권, KTB투자증권, 동부증권, 삼성증권, LIG투자증권, NH투자증권, 한국투자증권, 에셋플러스자산운용의 경우 법정대리인에 의한 미성년자 개설이 가능하다.</li>
+                                                                        <li><span>5 .</span> LIG투자증권의 경우 본인이 성인인 경우 대리인에 의한 계좌개설은 할 수 없으며, 본인이 미성년자인 경우만 법정대리인에 의한 계좌개설이 가능함</li>
+                                                                        <li><span>6 .</span> 국내선물옵션계좌, 해외선물옵션계좌, F/X마진계좌의 개설은 본인만 가능하며, 대리인에 의한 계좌개설 및 미성년자에 대한 계좌개설은 할 수 없음</li>
+                                                                    </ul>
+                                                                </dd>
+                                                                <dt>변경 후</dt>
+                                                                <dd>
+                                                                    <ul class="num_list_circle">
+                                                                        <li><span>1 .</span> 실명의 개인(국민인 거주자에 한함)을 가입대상으로 한다 다만, 미성년 자 또는 대리인에 의한 개설은 증권사와의 개별계약서에 따름</li>
+                                                                        <li><span>2 .</span> 빅팟통장은 1인 1계좌만 가능하다.</li>
+                                                                        <li><span>3 .</span> 국내선물옵션계좌, 해외선물옵션계좌, F/X마진계좌의 개설은 본인만 가능하며, 대리인에 의한 계좌개설 및 미성년자에 대한 계좌개설은 할 수 없음</li>
+                                                                    </ul>
+                                                                </dd>
+                                                            </dl>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">
+                                                            상품내용 변경에 <br>
+                                                            관한 사항 <br>
+                                                            (2016.06.07 변경)
+                                                        </th>
+                                                        <td class="left">
+                                                            <p class="t_mi">&lt;상품명&gt;</p>
+                                                            <dl>
+                                                                <dt>변경 전</dt>
+                                                                <dd>중권계좌저축(구 하나은행)</dd>
+                                                                <dt>변경 후</dt>
+                                                                <dd>증권저축계좌</dd>
+                                                            </dl>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">
+                                                            상품내용 변경에 <br>
+                                                            관한 사항 <br>
+                                                            (2016.06.07 변경)
+                                                        </th>
+                                                        <td class="left">
+                                                            <p class="t_mi">&lt;상품명&gt;</p>
+                                                            <dl>
+                                                                <dt>변경 전</dt>
+                                                                <dd>중권계좌저축</dd>
+                                                                <dt>변경 후</dt>
+                                                                <dd>증권저축계좌</dd>
+                                                            </dl>
+                                                            <p class="t_mi">&lt;상품명&gt;</p>
+                                                            <dl>
+                                                                <dt>변경 전</dt>
+                                                                <dd>하나대투증권, NH농협증권</dd>
+                                                                <dt>변경 후</dt>
+                                                                <dd>하나금융투자, NH투자증권</dd>
+                                                            </dl>
+                                                            <p class="t_mi">&lt;가입대상&gt;</p>
+                                                            <dl>
+                                                                <dt>변경 전</dt>
+                                                                <dd>
+                                                                    <ul class="num_list_circle">
+                                                                        <li><span>1 .</span> 대리인에 의한 계좌개설시 미래에셋증권, 유안타증권, 동부증권, 메리츠종금증권의 경우 대리인은 가족으로 한정한다.</li>
+                                                                        <li><span>2 .</span> 하나대투증권, 리딩투자증권, IM투자증권, IBK투자증권, HMC투자증권, KTB투자증권, 동부증권, 삼성증권, LIG투자증권, NH농협증권, 한국투자증권, 에셋플러스자산운용의 경우 법정대리인에 의한 미성년자 개설이 가능함</li>
+                                                                        <li><span>3 .</span> 대우증권의 경우 미성년자 및 대리인에 의한 계좌개설은 불허하며 LIG 투자증권의 경우 본인이 성인인 경우 대리인에 의한 계좌개설은 할 수 있음</li>
+                                                                        <li><span>4 .</span> 선물옵션계좌와 F/X 마진계좌, 해외선물계좌의 개설은 본인만 가능하며, 대리인 및 미성년자 개설은 허용되지 아니함</li>
+                                                                    </ul>
+                                                                </dd>
+                                                                <dt>변경 후</dt>
+                                                                <dd>
+                                                                    <ul class="num_list_circle">
+                                                                        <li><span>1 .</span> 대리인에 의한 계좌개설시 미래에셋증권, 유안타증권, 동부증권, 메리츠종금증권의 경우 대리인은 가족으로 한정한다.</li>
+                                                                        <li><span>2 .</span> 하나대투증권, 리딩투자증권, IM투자증권, IBK투자증권, HMC투자증권, KTB투자증권, 동부증권, 삼성증권, LIG투자증권, NH농협증권, 한국투자증권, 에셋플러스자산운용의 경우 법정대리인에 의한 미성년자 개설이 가능함</li>
+                                                                        <li><span>3 .</span> 대우증권의 경우 미성년자 및 대리인에 의한 계좌개설은 불허하며 LIG 투자증권의 경우 본인이 성인인 경우 대리인에 의한 계좌개설은 할 수 있음</li>
+                                                                        <li><span>4 .</span> 선물옵션계좌와 F/X 마진계좌, 해외선물계좌의 개설은 본인만 가능하며, 대리인 및 미성년자 개설은 허용되지 아니함</li>
+                                                                    </ul>
+                                                                </dd>
+                                                            </dl>
+                                                            <p class="t_mi">&lt;계좌구성&gt;</p>
+                                                            <dl>
+                                                                <dt>변경 전</dt>
+                                                                <dd>
+                                                                    <ul class="num_list_circle">
+                                                                        <li><span>1 .</span> 연계방식 <br>
+                                                                            은행 요구불계좌 + 증권계좌 <br>
+                                                                            (해당증권사 : 삼성증권, 하나대투증권, 한화투자증권, 현대증권)
+                                                                        </li>
+                                                                        <li><span>2 .</span> 이체방식 <br>
+                                                                            (1) 가상계좌 이체방식 <br>
+                                                                            은행 요구불계좌 + 가상계좌(94) + 증권계좌
+                                                                            [해당증권사 : 대신증권, 유안타증권, 메리츠종금증권, 한국투자증권, 하나대투증권(하나빅팟 CMA포함), 리딩투자증권, IM투자증권, IBK투 자증권, HMC투자증권, KTB투자증권, 에셋플러스자산운용] <br>
+                                                                            ※하나빅팟CMA는 요구불계좌가 하나빅팟통장일 경우에만 신규가능 <br>
+                                                                            (2) 일반 이체방식 <br>
+                                                                            은행 요구불계좌 + 증권계좌 <br>
+                                                                            [해당증권사 : 신한금융투자, 동부증권, 미래에셋증권, 유진투자증권, 교보증권, 이트레이드증권, 우리투자증권, SK증권, 키움증권, 대우증 권, 한양증권, 한화투자증권, LIG투자증권, NH농협증권, 삼성증권]
+                                                                        </li>
+                                                                    </ul>
+                                                                </dd>
+                                                                <dt>변경 후</dt>
+                                                                <dd>
+                                                                    <ul class="num_list_circle">
+                                                                        <li><span>1 .</span> 연계방식 <br>
+                                                                            은행 요구불계좌 + 증권계좌</li>
+                                                                        <li><span>2 .</span> 이체방식 <br>
+                                                                            (1) 가상계좌 이체방식 <br>
+                                                                            은행 요구불계좌 + 가상계좌(94) + 증권계좌 <br>
+                                                                            ※하나빅팟CMA는 요구불계좌가 하나빅팟통장일 경우에만 신규가능 <br>
+                                                                            (2) 일반 이체방식 <br>
+                                                                            은행 요구불계좌 + 증권계좌
+                                                                        </li>
+                                                                    </ul>
+                                                                </dd>
+                                                            </dl>
+
+                                                            <p class="t_mi">&lt;업무처리방법&gt;</p>
+                                                            <dl>
+                                                                <dt>변경 전</dt>
+                                                                <dd>
+                                                                    <ul class="num_list_circle">
+                                                                        <li><span>2 .</span> 증권계좌 신규개설<br>
+                                                                            (3) 증권계좌 개설/변경/해지 신청서(고객용)는 고객에게 교부한다. <br>
+                                                                            (신청서 뒷면에 증권저축계좌 특약사항 기재되어 있음)
+                                                                        </li>
+                                                                        <li><span>3 .</span> 이체방식 증권계좌 개설의 경우 동일한 은행계좌에 다수의 증권계좌 개설(최대7좌)이 가능하며 다수의 증권사를 연계할 수 있음. <br> 다만 동일증권사 동일상품은 복수로 연결 할 수 없으며, 유안타증권, 교보 증권, 한화투자증권(이체), NH농협증권은 은행계좌와 증권계좌의 1:1로만 개설이 가능함
+                                                                        </li>
+                                                                    </ul>
+                                                                </dd>
+                                                                <dt>변경 후</dt>
+                                                                <dd>
+                                                                    <ul class="num_list_circle">
+                                                                        <li><span>2 .</span> 증권계좌 신규개설<br>
+                                                                            (3) 증권계좌 개설/변경/해지 신청서(고객용)는 고객에게 교부한다. <br>
+                                                                            (신청서 뒷면에 증권저축계좌 특약사항 기재되어 있음)
+                                                                        </li>
+                                                                        <li><span>3 .</span> 이체방식 증권계좌 개설의 경우 동일한 은행계좌에 다수의 증권계좌 개설(최대7좌)이 가능하며 다수의 증권사를 연계할 수 있음. <br> 다만 동일증권사 동일상품은 복수로 연결 할 수 없으며, 유안타증권, 교보 증권, 한화투자증권(이체), NH농협증권은 은행계좌와 증권계좌의 1:1로만 개설이 가능함
+                                                                        </li>
+                                                                    </ul>
+                                                                </dd>
+                                                            </dl>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">
+                                                            상품내용 변경에 <br>
+                                                            관한 사항 <br>
+                                                            (2015.09.01 변경)
+                                                        </th>
+                                                        <td>
+                                                            <p class="t_mi">&lt;상품명&gt;</p>
+                                                            <dl>
+                                                                <dt>변경 전</dt>
+                                                                <dd>증권저축계좌</dd>
+                                                                <dt>변경 후</dt>
+                                                                <dd>증권저축계좌 (구 하나은행)</dd>
+                                                            </dl>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="client_safely">
+                                    <p class="tit">예금자 보호 <span style="font-size: 1.3rem;">※ 예금자보호 : 은행 요구불통장에만 적용됨</span></p>
+                                    <p class="kdic_mark">이 예금은 예금자보호법에 따라 예금보험공사가 보호하되, 보호한도는 본 은행에 있는 귀하의 모든 예금보호 대상 금융상품의 원금과 소정의 이자를 합하여 1인당 "최고 5천만원"이며, 5천만원을 초과하는 나머지금액은 보호하지 않습니다.</p>
+                                    <p class="kdic">준법감시인 심사필 2019-상품-1266호(2019.06.21)<br>
+                                        본 공시내용의 유효기간 : 2019.06.21 ~ 2022.06.20<br>
+                                        기준일 : 2019년 06월 24일</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="cancel">취소</button>
+                </div>
+            </div>
+        </div>
+        <script>
+            $(window).load(function(){
+                layerOpen.init('#layerpopup01');
+            })
+        </script>
+    </div>
+</body>
+</html>
