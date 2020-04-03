@@ -131,7 +131,7 @@ var layerOpen = {
 			$('html,body').css('overflow','hidden');
 			$('.contents,.layerpopup,.pop_tit').on('touchmove',function(e) {e.preventDefault();});
 			
-			$(layerId).addClass('on');
+			$(layerId).addClass('on').css({'height':window.outerHeight});
 			if (layerIndex != undefined) {
 				$(layerId).find('.j_select_slide_cont').css({'left' : -$(this).width()*layerIndex});
 			}
