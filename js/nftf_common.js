@@ -140,7 +140,7 @@ var layerOpen = {
 			$('.contents,.layerpopup,.pop_tit').on('touchmove',function(e) {e.preventDefault();});
 			
 			// $(layerId).addClass('on')
-			$(layerId).addClass('on').css({'height':window.outerHeight});
+			$(layerId).addClass('on').css({'height':window.innerHeight});
 			if (layerIndex != undefined) {
 				$(layerId).find('.j_select_slide_cont').css({'left' : -$(this).width()*layerIndex});
 			}
