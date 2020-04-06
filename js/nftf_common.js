@@ -140,11 +140,14 @@ var layerOpen = {
 			$('.contents,.layerpopup,.pop_tit').on('touchmove',function(e) {e.preventDefault();});
 			
 			// $(layerId).addClass('on')
-			$(layerId).addClass('on').delay(500).css({'height':window.innerHeight});
+			$(layerId).addClass('on')
 			if (layerIndex != undefined) {
 				$(layerId).find('.j_select_slide_cont').css({'left' : -$(this).width()*layerIndex});
 			}
 		},110);
+		setTimeout(function() {
+			$(layerId).css({'height':window.innerHeight});
+		},1000)
 
 		scrollCont.init(layerId);
 	}
