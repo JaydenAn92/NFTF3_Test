@@ -212,14 +212,14 @@ var checkType = {
 			checkType.parentCheck(thisTarget)
 			if(isparents.attr('check-target')){
 				var siblingsinpt = isparents.attr('check-target')
-				$(siblingsinpt).prop('checked',true)
+				$(siblingsinpt).prop('checked',true).prop('disabled',false)
 			}
 		}else if(checkingLength === 0){
 			isparents.first().prop('checked',false)
 			checkType.parentCheck(thisTarget)
 			if(isparents.attr('check-target')){
 				var siblingsinpt = isparents.attr('check-target')
-				$(siblingsinpt).prop('checked',false)
+				$(siblingsinpt).prop('checked',false).prop('disabled',true)
 			}
 		}
 	},
@@ -511,16 +511,6 @@ $(document).ready(function(){
 			}
 		}
 		
-		// var j_check_notice = $('.j_check_notice').attr('for')
-		// var checkTarget = $("input[check-target="+"#"+j_check_notice+"]")
-		// console.log(checkTarget.length)
-		// // $("#"+j_check_notice).prop('checked', false)
-		
-		// if($(checkTarget).prop('checked') === true){
-		// 	// $(checkTarget).prop('disabled',true)
-		// 	// $('.j_check_notice').prop('checked', true)
-		// }
-		
 		// 다음버튼 
 		if($('.j-allcheck').prop('checked') === true){
 			$('.btn_fix').fadeIn(200,'easeInOutCirc');
@@ -533,7 +523,37 @@ $(document).ready(function(){
 	// 동의서 체크 1개이상 체크
 	$(".j-list_open").each(function(){
 		$(this).click(function(){
-			$(this).parent().find('.j-open_list').slideDown();
+			$(this).parent().find('.j-open_list').slideDown(200,'easeInOutSine');
+		})
+	})
+
+	// 출금계좌 토클
+	$('.toggle_btn').each(function(){
+		$(this).click(function(){
+			var _this = $(this);
+			if(!$(this).hasClass('on')) {
+				$(this).addClass('on')
+				$(this).parents('li').find('.account_list').slideDown({
+					progress: function(){
+						if (layerScroll[scrollArr.indexOf('#' + _this.parents('.layerpopup').attr('id'))] != undefined) {
+							layerScroll[scrollArr.indexOf('#' + _this.parents('.layerpopup').attr('id'))].update();
+						}
+					},
+					duration: 200,
+					easing: 'easeInOutSine'
+				})
+			}else if($(this).hasClass('on')) {
+				$(this).removeClass('on')
+				$(this).parents('li').find('.account_list').slideUp({
+					progress: function(){
+						if (layerScroll[scrollArr.indexOf('#' + _this.parents('.layerpopup').attr('id'))] != undefined) {
+							layerScroll[scrollArr.indexOf('#' + _this.parents('.layerpopup').attr('id'))].update();
+						}
+					},
+					duration: 200,
+					easing: 'easeInOutSine'
+				})
+			}
 		})
 	})
 
