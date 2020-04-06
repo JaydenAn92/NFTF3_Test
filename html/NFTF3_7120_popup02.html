@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>NFTF3_01본인인증</title>
+    <link rel="stylesheet" href="../css/nftf_common.css">
+    <script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../js/rolldate.js"></script>
+    <script type="text/javascript" src="../js/swiper.js"></script>
+    <script type="text/javascript" src="../js/nftf_common.js"></script>
+</head>
+<script>
+    document.addEventListener('DOMContentLoaded', function(){
+        setTimeout(function(){
+            var loadingDot = document.querySelector('.loading_dot')
+            loadingDot.classList = 'loading_dot on'
+        },500)
+        var layerEvent = document.querySelectorAll('.layerpopup')
+        for(var i = 0; i<layerEvent.length; i++){
+            layerEvent[i].addEventListener('click', function(e){
+                console.log(e.target)
+                if(e.target.className ==='cancel'){
+                    e.currentTarget.style.display = 'none'
+                }
+                if(e.target.className ==='dimmed'){
+                    e.currentTarget.style.display = 'none'
+                }
+            })
+        }
+        layerOpen.init('#layerpopup01');
+    });
+</script>
+<body>
+    <div class="wrapper">
+        <header>
+            <button class="back_btn"></button>
+            <h2 class="h_tit">본인인증</h2>
+            <button class="h_menu j_layer_open" layer-target="#layerpopup01"></button>
+        </header>
+        <div class="contents">
+            <section>
+                <div class="loading_dot">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <p class="pages_tit"><span class="t_mi">이름과 주민번호</span>를<br>입력해주세요.</p>
+            </section>
+        </div>
+        
+        <div class="layerpopup" id="layerpopup01">
+            <div class="layer_90">
+                <div class="layer_contents">
+                    <div class="pop_tit">
+                        <div class="current_result_info">
+                            <h5>2020년 2월 5일<br>신청한 결과입니다.</h5>
+                            <p>최종처리일 : <span class="color01 t_de">2020.02.05</span></p>
+                        </div>
+                    </div>
+                    <div class="pop_content j_scroll">
+                        <div class="swiper-wrapper">
+                            <div class="pop_inner swiper-slide">
+                                <div class="applied_result">
+                                    <ul>
+                                        <li class="completed">
+                                            <strong>완료</strong>
+                                            <span><a href="#none" class="j_layer_open" layer-target="#layerpopup02">하나멤버스 주거래 통장</a></span>
+                                        </li> 
+                                        <li class="waiting">
+                                            <strong>대기</strong>
+                                            <span>하나멤버스 우대적금 상품명이 두줄인 경우는 요로케</span>
+                                        </li>
+                                        <li class="failed">
+                                            <strong>실패</strong>
+                                            <span>전자금융(개인뱅킹)</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="self_checking_result">
+                                    <h6>본인인증 처리결과</h6>
+                                    <div class="type_list">
+                                        <ul>
+                                            <li>신분증 진위확인
+                                                <span class="completed">완료</span>
+                                            </li>
+                                            <li>
+                                                <a href="#none"><em>인증번호 확인</em>
+                                                    <span class="completed">완료</span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="cancel">취소</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="layerpopup02" class="layerpopup">
+        <div class="layer_center">
+            <div class="layer_contents">
+                <div class="pop_tit type02">
+                    <h5>가상계좌 이체 대기</h5>
+                </div>
+                <div class="pop_content j_scroll">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="txt_cont">
+                                <ul class="finished_result_info">
+                                    <li>
+                                        <strong>임금마감 예정일</strong>
+                                        <span>2017.02.09 24:00</span>
+                                    </li>
+                                    <li>
+                                        <strong>입금 가상계좌</strong>
+                                        <span>KEB하나은행 <br>
+                                            000-000000-00000</span>
+                                    </li>
+                                    <li>
+                                        <strong>입금 금액</strong>
+                                        <span>KEB하나은행 <br>
+                                            50,000 원</span>
+                                    </li>
+                                    <li>
+                                        <strong>출금 계좌</strong>
+                                        <span>국민은행 <br>
+                                            **11111111***</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="result_btn">
+                                <button class="btn_type04">SMS 전송</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn_area">
+                    <button type="button" class="confirm j_layer_close">확인</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+</html>
