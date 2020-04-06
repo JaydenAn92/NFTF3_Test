@@ -98,11 +98,9 @@ var scrollCont = {
 					} else {
 						popH = $(target).find('.pop_tit').height();
 					}
-					// $(target).find('.j_scroll').eq(i).height($(target).find('.layer_contents').height() - popH);
-				}
-				setTimeout(function(){
 					$(target).find('.j_scroll').eq(i).height($(target).find('.layer_contents').height() - popH);
-				},500)
+				}
+				
 				layerScroll[scrollArr.indexOf(target)] = new Swiper($(target).find('.j_scroll.on')[i], {
 					direction: 'vertical',
 					slidesPerView: 'auto',
