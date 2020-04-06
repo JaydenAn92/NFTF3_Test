@@ -145,9 +145,9 @@ var layerOpen = {
 				$(layerId).find('.j_select_slide_cont').css({'left' : -$(this).width()*layerIndex});
 			}
 		},110);
-		setTimeout(function() {
-			$(layerId).css({'height':window.innerHeight});
-		},1000)
+		// setTimeout(function() {
+		// 	$(layerId).css({'height':window.innerHeight});
+		// },1000)
 
 		scrollCont.init(layerId);
 	}
