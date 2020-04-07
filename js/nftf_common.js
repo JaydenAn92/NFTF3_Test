@@ -116,17 +116,28 @@ var scrollCont = {
 			var firstSize = window.outerHeight;  //로드 되었을대 높이
 			$(window).resize(function() {
 				if ($(target).find('.layer_90').length > 0) {
-					if ($(target).find('.pop_fix_area').length > 0 && firstSize <= window.outerHeight) {
-						popH = $(target).find('.pop_tit').height() +  $(target).find('.pop_fix_area').height();
-						$(target).find('.j_scroll').eq(i).height(window.outerHeight - (popH + $('.layer_contents').offset().top));
-						layerScroll[scrollArr.indexOf(target)].update()
-						console.log('b')
-					}else if(firstSize > window.outerHeight){
-						popH = $(target).find('.pop_tit').height();
-						setTimeout(function(){
-							$(target).find('.j_scroll').eq(i).height(window.outerHeight - (popH + $('.layer_contents').offset().top));
-						},1000)
-						console.log('a')
+					if(firstSize > window.outerHeight){ //줄어들때
+						if($(target).find('.pop_fix_area').length > 0) {
+							popH = $(target).find('.pop_tit').height() +  $(target).find('.pop_fix_area').height();
+							$(target).find('.j_scroll').height(window.outerHeight - (popH + $(target).find('.layer_contents').offset().top));
+							layerScroll[scrollArr.indexOf(target)].update()
+							console.log('a')
+						}else if($(target).find('.pop_fix_area').length === 0){
+							popH = $(target).find('.pop_tit').height();
+							$(target).find('.j_scroll').height(window.outerHeight - (popH + $(target).$('.layer_contents').offset().top));
+							console.log('b')
+						}
+					}else if(firstSize <= window.outerHeight) { // 길어질떼
+						if($(target).find('.pop_fix_area').length > 0) {
+							popH = $(target).find('.pop_tit').height() +  $(target).find('.pop_fix_area').height();
+							$(target).find('.j_scroll').height(window.outerHeight - (popH + $(target).find('.layer_contents').offset().top));
+							layerScroll[scrollArr.indexOf(target)].update()
+							console.log('a')
+						}else if($(target).find('.pop_fix_area').length === 0){
+							popH = $(target).find('.pop_tit').height();
+							$(target).find('.j_scroll').height(window.outerHeight - (popH + $(target).$('.layer_contents').offset().top));
+							console.log('b')
+						}
 					}
 				}
 				console.log(window.outerHeight)
