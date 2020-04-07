@@ -39,7 +39,7 @@ var focusMove = {
 			$('.wrapper').on('scroll click touchstart touchmove',function(e) {e.preventDefault();});
 			setTimeout(function() {
 				$('body').css('min-height',$('html').height() +  (_this.parents('.j_focus_group').nextAll('.j_focus_group').eq(0).offset().top - 51));
-				$('html,body').stop().animate({scrollTop : _this.parents('.j_focus_group').nextAll('.j_focus_group').eq(0).offset().top - 51},500);
+				$('html,body').stop().animate({scrollTop : _this.parents('.j_focus_group').nextAll('.j_focus_group').eq(0).offset().top - (51+35)},500); // 35 는 상단 간격
 				setTimeout(function() {
 					$('.wrapper').off('scroll click touchstart touchmove');
 					if (_this.parents('.j_focus_group').nextAll('.j_focus_group').eq(0).find('.j_focus').eq(0).find('.j_focus_open').length > 0) {
@@ -750,7 +750,7 @@ $(document).ready(function(){
 		$('.wrapper').on('scroll click touchstart touchmove',function(e) {e.preventDefault();});
 		$('body').css('min-height',$('html').height() +  ($('#upScroll').offset().top - 51));
 		setTimeout(function() {
-			$('html,body').stop().animate({scrollTop : $('#upScroll').offset().top - 51},400,'easeInOutCubic');
+			$('html,body').stop().animate({scrollTop : $('#upScroll').offset().top - (51+35)},400,'easeInOutCubic'); //35는 상단 간격
 			setTimeout(function() {
 				$('.wrapper').off('scroll click touchstart touchmove');
 				if ($('.j_focus_group').eq(0).find('.j_focus').eq(0).find(' .j_focus_open').length > 0) {
