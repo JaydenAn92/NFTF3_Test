@@ -114,39 +114,42 @@ var scrollCont = {
 			}
 			// 팝업 리사이즈 안드로이드 이슈
 			var firstSize = window.outerHeight;  //로드 되었을대 높이
-			console.log('load: '+firstSize + '/load: '+window.outerHeight)
 			$(window).resize(function() {
-				console.log('resize:'+firstSize + 'resize: '+window.outerHeight)
+				if(this.resizeTo){
+					clearTimeout(this.resizeTo);
+				}
+				this.resizeTo = setTimeout(function(){
+					$(this).trigger('resizeEnd')
+				},300)
+				
+			})
+			$(window).on('resizeEnd',function(){
+				var changeingSize = window.outerHeight; 
+				var really_offTop = document.querySelector(target + ' .layer_contents').offsetTop
+
 				if ($(target).find('.layer_90').length > 0) {
 					if(firstSize > window.outerHeight){ //줄어들때
-						console.log('줄어둠')
 						if($(target).find('.pop_fix_area').length > 0) {
 							popH = $(target).find('.pop_tit').height() +  $(target).find('.pop_fix_area').height();
-							$(target).find('.j_scroll').height(window.outerHeight - (popH + $(target).find('.layer_contents').offset().top));
-							layerScroll[scrollArr.indexOf(target)].update()
-							console.log('a')
+							$(target).find('.j_scroll').height(changeingSize - (popH + really_offTop));
+							layerScroll[scrollArr.indexOf(target)].update();
 						}else if($(target).find('.pop_fix_area').length === 0){
 							popH = $(target).find('.pop_tit').height();
-							$(target).find('.j_scroll').height(window.outerHeight - (popH + $(target).find('.layer_contents').offset().top));
-							layerScroll[scrollArr.indexOf(target)].update()
-							console.log('b')
+							$(target).find('.j_scroll').height(changeingSize - (popH + really_offTop));
+							layerScroll[scrollArr.indexOf(target)].update();
 						}
 					}else if(firstSize <= window.outerHeight) { // 길어질때
-						console.log('길어짐')
 						if($(target).find('.pop_fix_area').length > 0) {
 							popH = $(target).find('.pop_tit').height() +  $(target).find('.pop_fix_area').height();
-							$(target).find('.j_scroll').height(window.outerHeight - (popH + $(target).find('.layer_contents').offset().top));
-							layerScroll[scrollArr.indexOf(target)].update()
-							console.log('c')
+							$(target).find('.j_scroll').height(changeingSize - (popH + really_offTop));
+							layerScroll[scrollArr.indexOf(target)].update();
 						}else if($(target).find('.pop_fix_area').length === 0){
 							popH = $(target).find('.pop_tit').height();
-							$(target).find('.j_scroll').height(window.outerHeight - (popH + $(target).find('.layer_contents').offset().top));
-							layerScroll[scrollArr.indexOf(target)].update()
-							console.log('d')
+							$(target).find('.j_scroll').height(changeingSize - (popH + really_offTop));
+							layerScroll[scrollArr.indexOf(target)].update();
 						}
 					}
 				}
-				
 			})
 		}
 	}
