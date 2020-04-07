@@ -123,7 +123,9 @@ var scrollCont = {
 						console.log('b')
 					}else if(firstSize > window.outerHeight){
 						popH = $(target).find('.pop_tit').height();
-						$(target).find('.j_scroll').eq(i).height(window.outerHeight - (popH + $('.layer_contents').offset().top));
+						setTimeout(function(){
+							$(target).find('.j_scroll').eq(i).height(window.outerHeight - (popH + $('.layer_contents').offset().top));
+						},1000)
 						console.log('a')
 					}
 				}
