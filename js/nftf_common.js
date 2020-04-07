@@ -118,10 +118,12 @@ var scrollCont = {
 				if(firstSize > window.outerHeight){
 					popH = $(target).find('.pop_tit').height();
 					$(target).find('.j_scroll').eq(i).height(window.outerHeight - (popH + $('.layer_contents').offset().top));
+					console.log('a')
 				}else if(firstSize <= window.outerHeight){
 					popH = $(target).find('.pop_tit').height() +  $(target).find('.pop_fix_area').height();
 					$(target).find('.j_scroll').eq(i).height(window.outerHeight - (popH + $('.layer_contents').offset().top));
 					layerScroll[scrollArr.indexOf(target)].update()
+					console.log('b')
 				}
 			})
 		}
