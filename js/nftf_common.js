@@ -117,6 +117,7 @@ var scrollCont = {
 			$(window).resize(function() {
 				if ($(target).find('.layer_90').length > 0) {
 					if(firstSize > window.outerHeight){ //줄어들때
+						console.log('줄어둠')
 						if($(target).find('.pop_fix_area').length > 0) {
 							popH = $(target).find('.pop_tit').height() +  $(target).find('.pop_fix_area').height();
 							$(target).find('.j_scroll').height(window.outerHeight - (popH + $(target).find('.layer_contents').offset().top));
@@ -127,7 +128,8 @@ var scrollCont = {
 							$(target).find('.j_scroll').height(window.outerHeight - (popH + $(target).find('.layer_contents').offset().top));
 							console.log('b')
 						}
-					}else if(firstSize <= window.outerHeight) { // 길어질떼
+					}else if(firstSize <= window.outerHeight) { // 길어질때
+						console.log('길어짐')
 						if($(target).find('.pop_fix_area').length > 0) {
 							popH = $(target).find('.pop_tit').height() +  $(target).find('.pop_fix_area').height();
 							$(target).find('.j_scroll').height(window.outerHeight - (popH + $(target).find('.layer_contents').offset().top));
@@ -140,7 +142,7 @@ var scrollCont = {
 						}
 					}
 				}
-				console.log(window.outerHeight)
+				
 			})
 		}
 	}
