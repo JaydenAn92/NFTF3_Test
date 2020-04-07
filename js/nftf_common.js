@@ -115,16 +115,19 @@ var scrollCont = {
 			// 팝업 리사이즈 안드로이드 이슈
 			var firstSize = window.outerHeight;  //로드 되었을대 높이
 			$(window).resize(function() {
-				if(firstSize > window.outerHeight){
-					popH = $(target).find('.pop_tit').height();
-					$(target).find('.j_scroll').eq(i).height(window.outerHeight - (popH + $('.layer_contents').offset().top));
-					console.log('a')
-				}else if(firstSize <= window.outerHeight){
-					popH = $(target).find('.pop_tit').height() +  $(target).find('.pop_fix_area').height();
-					$(target).find('.j_scroll').eq(i).height(window.outerHeight - (popH + $('.layer_contents').offset().top));
-					layerScroll[scrollArr.indexOf(target)].update()
-					console.log('b')
+				if ($(target).find('.layer_90').length > 0) {
+					if ($(target).find('.pop_fix_area').length > 0 && firstSize <= window.outerHeight) {
+						popH = $(target).find('.pop_tit').height() +  $(target).find('.pop_fix_area').height();
+						$(target).find('.j_scroll').eq(i).height(window.outerHeight - (popH + $('.layer_contents').offset().top));
+						layerScroll[scrollArr.indexOf(target)].update()
+						console.log('b')
+					}else if(firstSize > window.outerHeight){
+						popH = $(target).find('.pop_tit').height();
+						$(target).find('.j_scroll').eq(i).height(window.outerHeight - (popH + $('.layer_contents').offset().top));
+						console.log('a')
+					}
 				}
+				console.log(window.outerHeight)
 			})
 		}
 	}
