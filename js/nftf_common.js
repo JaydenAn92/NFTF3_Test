@@ -124,7 +124,7 @@ var scrollCont = {
 							console.log('a')
 						}else if($(target).find('.pop_fix_area').length === 0){
 							popH = $(target).find('.pop_tit').height();
-							$(target).find('.j_scroll').height(window.outerHeight - (popH + $(target).$('.layer_contents').offset().top));
+							$(target).find('.j_scroll').height(window.outerHeight - (popH + $(target).find('.layer_contents').offset().top));
 							console.log('b')
 						}
 					}else if(firstSize <= window.outerHeight) { // 길어질떼
@@ -132,11 +132,11 @@ var scrollCont = {
 							popH = $(target).find('.pop_tit').height() +  $(target).find('.pop_fix_area').height();
 							$(target).find('.j_scroll').height(window.outerHeight - (popH + $(target).find('.layer_contents').offset().top));
 							layerScroll[scrollArr.indexOf(target)].update()
-							console.log('a')
+							console.log('c')
 						}else if($(target).find('.pop_fix_area').length === 0){
 							popH = $(target).find('.pop_tit').height();
-							$(target).find('.j_scroll').height(window.outerHeight - (popH + $(target).$('.layer_contents').offset().top));
-							console.log('b')
+							$(target).find('.j_scroll').height(window.outerHeight - (popH + $(target).find('.layer_contents').offset().top));
+							console.log('d')
 						}
 					}
 				}
