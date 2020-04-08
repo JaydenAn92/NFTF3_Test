@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!-- saved from url=(0036)http://www.m4a.co.kr/test/index.html -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>워크 리스트 FRONT Mobile - 이용자</title>
+    <script src="./워크 리스트 FRONT Mobile - 이용자_files/jquery-1.11.3.min.js.download" type="text/javascript"></script>
+    <style>
+        *{margin:0;padding:0; border:none; text-decoration:none; font-size:14px;}
+        /* a {font-size:13px; color:red} */
+        h1 {font-size:20px}
+        .work-wrap {margin:10px;}
+        .total-area:before {display:inline-block; content:""; width:3px; height:13px; background:rgb(7, 168, 160); vertical-align: middle;}
+        .total-area {font-size:14px; padding-bottom:10px; border-bottom:2px solid rgb(7, 168, 160); margin-bottom:10px;}
+        .total-area h2 {font-size:14px; display:inline-block; vertical-align: middle;}
+        .total-area p {font-size:14px; margin-right:20px; display:inline-block; vertical-align: middle; width:180px}
+        .total-area p span {font-weight:bold; padding-left:5px }
+
+        caption {font-size:0; color:#fff;}
+        .work-list table {width:100%; border-collapse: collapse; border-spacing:0;}
+        .work-list table thead th:first-child {border-left:1px solid #ccc; }
+        .work-list table thead th {background: rgb(61, 61, 61); color:#fff; padding:10px; border-left:1px solid #fff; font-size:12px}
+        .work-list table tbody tr:hover {background:rgb(238, 238, 238)}
+        .work-list table tbody td {padding:10px; border:1px solid #ccc; font-size:12px}
+        .work-list table select {width:100%; padding:5px;}
+        
+        .modify-list {border:1px solid #ccc; background:#333; margin: 10px 0 20px; padding:10px; color:#fff;}
+        .modify-list h2 {font-size:14px; border-bottom:1px solid #666; padding-bottom:10px}
+        .modify-list .list {margin:10px 0 10px; font-size:12px;  height:30px; overflow:auto}
+        
+        .del td {background-color:#ffe49d; text-decoration:line-through;}
+        .modify-list .date {color:#ffe49d; margin-top:10px}
+        /* .modify-list .modify strong {margin-left:20px; color:#ff7a0f} */
+        /* .modify-list .modify strong {margin-left:20px; color:#f25872} */
+        .color {background-color:#ffe49d}
+    </style>
+    <script>
+        $(function(){
+            var tr_ea = $(".work-list tbody tr"),
+                len = tr_ea.length,
+                textComplete = "",
+                aLink = '<a href="" target="_blank"></a>',
+                complete = 0,
+                complete2 = 0,
+                matching = ""; // 작업자 목록 담기 
+            
+            var totalArea = $('.total-area');
+
+            tr_ea.each(function(i){
+                
+				link = $(this).find("td.link").text();
+				$(this).find("td.link").contents().wrap( aLink ); 
+				$(this).find("td.link").children().attr( "href", link );
+				$(this).find('.link find').css({
+					"color" : "blue"
+				})
+				complete++;
+
+            });
+            
+        })
+    </script>
+    
+</head>
+<body>
+    <div class="work-wrap">
+        <h1>인터렉션 가이드 샘플 URL</h1>
+        <br><br>
+        <div class="work-list">
+            <table>
+                <caption>작업리스트</caption>
+                <colgroup>
+                    <col width="30%">
+                    <col width="70%">
+                </colgroup>
+                <thead>
+                    <tr>
+                        <th>구분</th>
+                        <th>URL</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- 공통 -->
+                    <tr>
+                        <td>동의</td>
+                        <td class="link"><a href="html/NFTF3_3100_1.html" target="_blank">html/NFTF3_3100_1.html</a></td>
+                    </tr>
+                    <tr>
+                        <td>동의-금융거래정보확인</td>
+                        <td class="link"><a href="html/NFTF3_3200.html" target="_blank">html/NFTF3_3200.html</a></td>
+                    </tr>
+                    <tr>
+                        <td>기본정보</td>
+                        <td class="link"><a href="html/NFTF3_4100.html" target="_blank">html/NFTF3_4100.html</a></td>
+                    </tr>
+                    <tr>
+                        <td>입출금신청</td>
+                        <td class="link"><a href="html/NFTF3_5100.html" target="_blank">html/NFTF3_5100.html</a></td>
+                    </tr>
+                    <tr>
+                        <td>전자금융신청</td>
+                        <td class="link"><a href="html/NFTF3_5500.html" target="_blank">html/NFTF3_5500.html</a></td>
+                    </tr>
+                    <tr>
+                        <td>거래영업점선택</td>
+                        <td class="link"><a href="html/NFTF3_5800.html" target="_blank">html/NFTF3_5800.html</a></td>
+                    </tr>
+                    <tr>
+                        <td>추가인증</td>
+                        <td class="link"><a href="html/NFTF3_6210.html" target="_blank">html/NFTF3_6210.html</a></td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+
+
+</body></html>
