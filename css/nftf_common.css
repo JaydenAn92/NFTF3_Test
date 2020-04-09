@@ -503,7 +503,7 @@ header button{position: absolute; top: 0; margin-top: 1.1rem;}
 
 /* popup */
 .pop_fix_area {position: absolute; left: 0; bottom: 0; width: 100%; z-index: 1;}
-.pop_btn01 {width: 100%; height: 5rem; padding: 0 0 calc(constant(safe-area-inset-bottom) + 1.5rem); padding: 0 0 calc(env(safe-area-inset-bottom) + 1.5rem); background: #57afa4; text-align: center; line-height: 5rem; color: #fff; font-size: 1.6rem; font-weight: 500; box-sizing: initial;}
+.pop_btn01 {width: 100%; padding: 1.5rem 0 calc(constant(safe-area-inset-bottom) + 1.5rem); padding: 1.5rem 0 calc(env(safe-area-inset-bottom) + 1.5rem); background: #57afa4; text-align: center; color: #fff; font-size: 1.6rem; font-weight: 500; box-sizing: initial;}
 .pop_btn01:disabled {background: #fafafa; border-top: 1px solid #eee; color: #aaa;}
 
 /* 달력 */
