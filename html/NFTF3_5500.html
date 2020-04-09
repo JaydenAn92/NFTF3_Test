@@ -127,18 +127,10 @@
 									<div id="idInput04" class="input_data j_check_all j_layer_open" layer-target="#layerpopup01"></div>
 								</div>
                             </div>
-                            <ul class="opt_lists ">
+                            <ul class="opt_lists">
                                 <li>
-                                    <p class="tit">미래테크놀로지미래테크놀</p>
-                                    <p class="num">01008032104321</p>
-                                </li>
-                                <li>
-                                    <p class="tit">미래테크놀로지미래테크놀</p>
-                                    <p class="num">01008032104321</p>
-                                </li>
-                                <li>
-                                    <p class="tit">미래테크놀로지미래테크놀</p>
-                                    <p class="num">01008032104321</p>
+                                    <p id="idInput24" class="tit">미래테크놀로지미래테크놀</p>
+                                    <p id="idInput25" class="num">01008032104321</p>
                                 </li>
                             </ul>
                         </div>
@@ -274,7 +266,7 @@
                                     <div id="idInput11" class="input_data j_check_all j_layer_open" layer-target="#layerpopup06"></div>
                                 </div>
                             </div>
-                            <ul class="opt_lists ">
+                            <ul class="opt_lists">
                                 <li>
                                     <p class="tit">저축예금</p>
                                     <p class="num">209 -123456 - 51107</p>
@@ -295,7 +287,7 @@
                         </div>
                         <!-- //출금계좌 추가 -->
                     </div>
-
+                    
                     <div class="input_form_group j_focus_group">
                         <!-- 폰 뱅킹 가입 -->
                         <div class="input_form input_form_sel j_focus">
@@ -443,7 +435,7 @@
                     </div>
 
                     <div class="btn_wrap btn_fix j_btn_fix" style="display: none;">
-                        <a href="./NFTF3_5800.html" class="btn_type01">다음</a>
+                        <a href="#none" class="btn_type01">다음</a>
                     </div>
                 </section>
             </div>
@@ -525,11 +517,13 @@
                         <div class="pop_content j_scroll">
                             <div class="swiper-wrapper">
                                 <div class="pop_inner swiper-slide">
-                                    <ul class="opt_lists ">
+                                    <ul class="opt_lists j_select02">
                                         <li>
-                                            <p class="tit">미래테크놀로지미래테크놀</p>
-                                            <p class="num">01008032104321</p>
-                                            <p class="period">국민은행 - 2016.10.01</p>
+                                            <a href="">
+                                                <p class="tit">미래테크놀로지미래테크놀</p>
+                                                <p class="num">01008032104321</p>
+                                                <p class="period">국민은행 - 2016.10.01</p>
+                                            </a>
                                         </li>
                                         <li>
                                             <p class="tit">미래테크놀로지미래테크놀</p>
@@ -565,7 +559,15 @@
                 </div>
             </div>
             <!-- //보유OTP -->
-
+            <!-- <script>
+                $(document).ready(function(){
+                    $('body').on('click', '.j_select02 a' ,function(e) {
+                        e.preventDefault();
+                        var currentTarget = e.currentTarget
+                        console.log(e.currentTarget)
+                    })
+                })
+            </script> -->
             <!-- 모바일 OTP 안내 -->
             <div  id="layerpopup04" class="layerpopup">
                 <div class="layer_90">
