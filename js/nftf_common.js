@@ -332,6 +332,14 @@ var checkPopup = {
 
 
 $(document).ready(function(){
+	// form 이벤트 막기
+	var submitAction = function(e) {
+		e.preventDefault();
+		e.stopPropagation();
+		/* do something with Error */
+	};
+	$('form').bind('submit', submitAction);
+
 	window.addEventListener("load", function(){
 		setTimeout( function(){ window.scrollTo(0, 1); }, 100 );
 		
@@ -924,19 +932,19 @@ window.onload = function(){
 	}
 
 	// 상단 자동 스크롤
-	// if ($('.wrapper').hasClass('j_up_scroll')) {
-	// 	$('.wrapper').on('scroll click touchstart touchmove',function(e) {e.preventDefault();});
-	// 	$('body').css('min-height',$('html').height() +  ($('#upScroll').offset().top - 51));
-	// 	setTimeout(function() {
-	// 		$('html,body').stop().animate({scrollTop : $('#upScroll').offset().top - (51+35)},600,'easeInOutCubic'); //35는 상단 간격
-	// 		setTimeout(function() {
-	// 			$('.wrapper').off('scroll click touchstart touchmove');
-	// 			if ($('.j_focus_group').eq(0).find('.j_focus').eq(0).find(' .j_focus_open').length > 0) {
-	// 				$('.j_focus_group').eq(0).find('.j_focus').eq(0).find(' .j_focus_open').trigger('click');
-	// 			}else {
-	// 				$('.j_focus_group').eq(0).find('.j_focus').eq(0).find('j_input_value').eq(0).trigger('focus');
-	// 			}
-	// 		},400);
-	// 	},1500 + checkingTime);
-	// }
+	if ($('.wrapper').hasClass('j_up_scroll')) {
+		$('.wrapper').on('scroll click touchstart touchmove',function(e) {e.preventDefault();});
+		$('body').css('min-height',$('html').height() +  ($('#upScroll').offset().top - 51));
+		setTimeout(function() {
+			$('html,body').stop().animate({scrollTop : $('#upScroll').offset().top - (51+35)},600,'easeInOutCubic'); //35는 상단 간격
+			setTimeout(function() {
+				$('.wrapper').off('scroll click touchstart touchmove');
+				if ($('.j_focus_group').eq(0).find('.j_focus').eq(0).find(' .j_focus_open').length > 0) {
+					$('.j_focus_group').eq(0).find('.j_focus').eq(0).find(' .j_focus_open').trigger('click');
+				}else {
+					$('.j_focus_group').eq(0).find('.j_focus').eq(0).find('j_input_value').eq(0).trigger('focus');
+				}
+			},400);
+		},1500 + checkingTime);
+	}
 }
