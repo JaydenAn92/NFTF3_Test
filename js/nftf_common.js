@@ -121,6 +121,8 @@ var scrollCont = {
 				this.resizeTo = setTimeout(function(){
 					$(this).trigger('resizeEnd')
 				},300)
+
+				
 				
 			})
 			$(window).on('resizeEnd',function(){
@@ -350,18 +352,6 @@ $(document).ready(function(){
 				$('.go_center').height($(window).height()-$('.point_position').offset().top)
 			}
 		}
-
-		if($('.wrapper').find('.first_intro').hasClass('first_intro') === true){
-			setTimeout(function(){
-				$('.first_intro').addClass('on')
-			},500);
-		}
-		// if($('.wrapper').find('.loading_dot').hasClass('loading_dot') === true){
-		// 	setTimeout(function(){
-		// 		$('.loading_dot').addClass('on')
-		// 	},500);
-		//  }
-		// 2020-03-26 삭제
 	})
 	// finance_list
 	if($('.wrapper').find('.finance_list').hasClass('finance_list') === true){
@@ -553,7 +543,7 @@ $(document).ready(function(){
 	// 동의서 체크 1개이상 체크
 	$(".j-list_open").each(function(){
 		$(this).click(function(){
-			$(this).parent().find('.j-open_list').slideDown(200,'easeInOutSine');
+			$(this).parent().find('.j-open_list').slideDown(400,'easeInOutSine');
 		})
 	})
 
@@ -745,23 +735,6 @@ $(document).ready(function(){
 		}).parents('.j_toggle').toggleClass('on');
 	});
 
-	//상단 자동 스크롤
-	if ($('.wrapper').hasClass('j_up_scroll')) {
-		$('.wrapper').on('scroll click touchstart touchmove',function(e) {e.preventDefault();});
-		$('body').css('min-height',$('html').height() +  ($('#upScroll').offset().top - 51));
-		setTimeout(function() {
-			$('html,body').stop().animate({scrollTop : $('#upScroll').offset().top - (51+35)},400,'easeInOutCubic'); //35는 상단 간격
-			setTimeout(function() {
-				$('.wrapper').off('scroll click touchstart touchmove');
-				if ($('.j_focus_group').eq(0).find('.j_focus').eq(0).find(' .j_focus_open').length > 0) {
-					$('.j_focus_group').eq(0).find('.j_focus').eq(0).find(' .j_focus_open').trigger('click');
-				}else {
-					$('.j_focus_group').eq(0).find('.j_focus').eq(0).find('j_input_value').eq(0).trigger('focus');
-				}
-			},400);
-		},1000);
-	}
-
 	//포커스 이동
 	$('.j_focus_move').on('click',function(e) {
 		e.preventDefault();
@@ -929,4 +902,37 @@ $(window).load(function() {
 		// }
 		layerClose.init(this,'all');
 	});
+	var loadTime = window.performance.timing.domContentLoadedEventEnd; //Dom loading Time
+	var realtime = loadTime.toString(); // change to type of String
+	var checkingTime = Number(realtime.substring(0,3)) // change to type of Number
+	console.log(checkingTime);
+	console.log(window.performance.timing.domContentLoadedEventEnd);
+	if($('.wrapper').find('.first_intro').hasClass('first_intro') === true){
+		setTimeout(function(){
+			$('.first_intro').addClass('on')
+		},500);
+	}
+	if($('.wrapper').find('.loading_dot').hasClass('loading_dot') === true){
+		setTimeout(function(){
+			$('.loading_dot').addClass('on')
+		},500 + checkingTime);
+	}
+	// 상단 자동 스크롤
+	if ($('.wrapper').hasClass('j_up_scroll')) {
+		$('.wrapper').on('scroll click touchstart touchmove',function(e) {e.preventDefault();});
+		$('body').css('min-height',$('html').height() +  ($('#upScroll').offset().top - 51));
+		setTimeout(function() {
+			$('html,body').stop().animate({scrollTop : $('#upScroll').offset().top - (51+35)},600,'easeInOutCubic'); //35는 상단 간격
+			setTimeout(function() {
+				$('.wrapper').off('scroll click touchstart touchmove');
+				if ($('.j_focus_group').eq(0).find('.j_focus').eq(0).find(' .j_focus_open').length > 0) {
+					$('.j_focus_group').eq(0).find('.j_focus').eq(0).find(' .j_focus_open').trigger('click');
+				}else {
+					$('.j_focus_group').eq(0).find('.j_focus').eq(0).find('j_input_value').eq(0).trigger('focus');
+				}
+				console.log('a')
+			},400);
+			console.log('b')
+		},2000 + checkingTime);
+	}
 });
