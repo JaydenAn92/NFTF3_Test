@@ -902,11 +902,14 @@ $(window).load(function() {
 		// }
 		layerClose.init(this,'all');
 	});
-	var loadTime = window.performance.timing.domContentLoadedEventEnd; //Dom loading Time
+	var loadTime = window.performance.timing.domComplete; //Dom loading Time
 	var realtime = loadTime.toString(); // change to type of String
 	var checkingTime = Number(realtime.substring(0,3)) // change to type of Number
 	console.log(checkingTime);
+	console.log(window.performance.timing.domainLookupEnd);
+	console.log(window.performance.timing.connectEnd);
 	console.log(window.performance.timing.domContentLoadedEventEnd);
+	console.log(window.performance.timing.domComplete);
 	if($('.wrapper').find('.first_intro').hasClass('first_intro') === true){
 		setTimeout(function(){
 			$('.first_intro').addClass('on')
@@ -930,9 +933,7 @@ $(window).load(function() {
 				}else {
 					$('.j_focus_group').eq(0).find('.j_focus').eq(0).find('j_input_value').eq(0).trigger('focus');
 				}
-				console.log('a')
 			},400);
-			console.log('b')
-		},2000 + checkingTime);
+		},1500 + checkingTime);
 	}
 });
