@@ -121,9 +121,6 @@ var scrollCont = {
 				this.resizeTo = setTimeout(function(){
 					$(this).trigger('resizeEnd')
 				},300)
-
-				
-				
 			})
 			$(window).on('resizeEnd',function(){
 				var changeingSize = window.outerHeight; 
@@ -177,7 +174,6 @@ var layerOpen = {
 		setTimeout(function() {
 			$(layerId).css({'height':window.innerHeight});
 		},1000)
-
 		scrollCont.init(layerId);
 	}
 }
@@ -340,27 +336,6 @@ $(document).ready(function(){
 	};
 	$('form').bind('submit', submitAction);
 
-	window.addEventListener("load", function(){
-		setTimeout( function(){ window.scrollTo(0, 1); }, 100 );
-		
-		// guide_section 버튼 위치
-		var browserHeight = $(window).height();  
-		var contentHeight = $('.guide_section').outerHeight();  
-		if(browserHeight < contentHeight){
-			$('.guide_section').css({'position':'relative'})
-			$('.btn_fix').css({'position':'absolute'}) 
-		}
-
-		
-		if($('.wrapper').find('.go_center').hasClass('go_center') === true){
-			if($('.wrapper').find('.point_position').hasClass('tpye01') === true){
-				$('.go_center').height($('.point_position').offset().top)
-			}
-			if($('.wrapper').find('.point_position').hasClass('tpye02') === true){
-				$('.go_center').height($(window).height()-$('.point_position').offset().top)
-			}
-		}
-	})
 	// finance_list
 	if($('.wrapper').find('.finance_list').hasClass('finance_list') === true){
 		$('.finance_list li a').each(function(){
@@ -513,7 +488,6 @@ $(document).ready(function(){
 			} else if($(this).attr("check-target")){ // 개인정보 수집 이용동의서 타켓
 				var targetname = $(this).attr('check-target')
 				var checkTarget = $("input[check-target="+targetname+"]:checked")
-				// console.log(targetname)
 				if(checkTarget.length === 0){
 					$(targetname).prop('checked', false)
 					$(targetname).attr('disabled', 'disabled')
@@ -532,27 +506,74 @@ $(document).ready(function(){
 			} else {
 				$(this).nextAll().children().find("input[type='checkbox']").prop('checked',false)
 				checkType.checking($(this))
-				if($(this).attr("layer-target")){
-					var layerId = $(this).attr('layer-target')
-					layerOpen.init(layerId);
+			}
+		}
+	})
+	// 02 depth label
+	$('.depth02_area > li > label').click(function(){
+		var targetFor =  $(this).attr('for');
+		var targetLayer = $('#'+targetFor).attr('layer-target');
+		if($(this).prev().is(':checked') && $(targetLayer).length){
+			layerOpen.init(targetLayer);
+		}
+	})
+	// 01 depth label
+	$('.depth01_area > li > label').click(function(){
+		var targetFor =  $(this).attr('for');
+		var targetLayer = $('#'+targetFor).attr('layer-target');
+		if(!$(this).prev().is(':checked') && $(targetLayer).length){
+			$(targetLayer).find('[data-agree]').attr('data-agree',false)
+			layerOpen.init(targetLayer);
+		}
+		else if($(this).prev().is(':checked') && $(targetLayer).length){
+			$(this).prev().prop('checked',false)
+			$(this).parents('.j_check_all').removeClass('check_on')
+			$(this).nextAll('.j-open_list').find("input[type='checkbox']").prop('checked',false)
+			checkType.checking($(this).prev())
+			bottomBtn.init();
+		}
+	})
+	// allcheck btn
+	$('.toPopup').click(function(){
+		if(!$('.toPopup').prev().prop('checked')){
+			var agreelength = $(this).next().children().children("input[type='checkbox']");
+			for(var i = 0; i<agreelength.length; i++){
+				if(!agreelength[i].checked){
+					var targetId = agreelength[i].getAttribute('layer-target')
+					$('[data-agree]').attr('data-agree',true)
+					layerOpen.init(targetId)
+					return false
+				}
+			}
+		}else if($('.toPopup').prev().prop('checked')){
+			$(this).nextAll().children().find("input[type='checkbox']").prop('checked',false)
+			$('.toPopup').prev().prop('checked',false)
+			checkType.checking($(this))
+		}
+	})
+	// 동의서 레이어팝업 
+	$('.layerpopup [data-agree]').click(function(){
+		var check_Id = $(this).parents('.layerpopup').attr('id')
+		$("[layer-target=#"+check_Id+"]").prop('checked',true)
+		$("[layer-target=#"+check_Id+"]").nextAll('.j-open_list').slideDown(400,'easeInOutSine');
+		var targetlist = $("[layer-target=#"+check_Id+"]").nextAll('.j-open_list')
+		$(targetlist).find("input[type='checkbox']").prop('checked',true)
+		checkType.checking($("[layer-target=#"+check_Id+"]"))
+		var popuplength = $('.depth01_area > li > input[layer-target]');
+		// check_on 추가
+		if($("[layer-target=#"+check_Id+"]").parents('.j_check_all').hasClass('j_check_all')){
+			$("[layer-target=#"+check_Id+"]").parents('.j_check_all').addClass('check_on')
+		}
+		bottomBtn.init();
+		if($(this).attr('data-agree') === 'true'){
+			for(var i = 0; i < popuplength.length; i++){
+				if(!popuplength[i].checked){
+					var targetId = popuplength[i].getAttribute('layer-target')
+					layerOpen.init(targetId)
+					return false
 				}
 			}
 		}
-		
-		// 다음버튼 
-		if($('.j-allcheck').prop('checked') === true){
-			$('.btn_fix').fadeIn(200,'easeInOutCirc');
-		}else if($('.j-allcheck').prop('checked') === false){
-			$('.btn_fix').fadeOut(200,'easeInOutCirc');
-		}
-	})
-	
-
-	// 동의서 체크 1개이상 체크
-	$(".j-list_open").each(function(){
-		$(this).click(function(){
-			$(this).parent().find('.j-open_list').slideDown(400,'easeInOutSine');
-		})
 	})
 
 	// 출금계좌 토클
@@ -910,6 +931,27 @@ window.onload = function(){
 		// }
 		layerClose.init(this,'all');
 	});
+
+	setTimeout( function(){ window.scrollTo(0, 1); }, 100 );
+		
+	// guide_section 버튼 위치
+	var browserHeight = $(window).height();  
+	var contentHeight = $('.guide_section').outerHeight();  
+	if(browserHeight < contentHeight){
+		$('.guide_section').css({'position':'relative'})
+		$('.btn_fix').css({'position':'absolute'}) 
+	}
+
+	
+	if($('.wrapper').find('.go_center').hasClass('go_center') === true){
+		if($('.wrapper').find('.point_position').hasClass('tpye01') === true){
+			$('.go_center').height($('.point_position').offset().top)
+		}
+		if($('.wrapper').find('.point_position').hasClass('tpye02') === true){
+			$('.go_center').height($(window).height()-$('.point_position').offset().top)
+		}
+	}
+
 	// console.log(window.performance.timing.domComplete);
 	var loadTime = window.performance.timing.domComplete; //Dom loading Time
 	var realtime = loadTime.toString(); // change to type of String
