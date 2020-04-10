@@ -548,7 +548,9 @@ $(document).ready(function(){
 		}else if($('.toPopup').prev().prop('checked')){
 			$(this).nextAll().children().find("input[type='checkbox']").prop('checked',false)
 			$('.toPopup').prev().prop('checked',false)
+			$(this).nextAll().find('.j_check_all').removeClass('check_on')
 			checkType.checking($(this))
+			bottomBtn.init();
 		}
 	})
 	// 동의서 레이어팝업 

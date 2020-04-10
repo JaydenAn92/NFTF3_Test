@@ -995,7 +995,9 @@ table + .table_tit{margin-top: 2rem;}
 .agreement_list .depth01_area label{line-height: 2rem;}
 .agreement_list .depth01_area li{margin-bottom: 1rem;border: 0.1rem solid #eee; border-radius: 0.8rem;}
 .agreement_list .depth01_area>li{position: relative;}
-.agreement_list .depth01_area>li .popup_open{position: absolute; right: 1rem; top: 1.4rem; width: 3rem; height: 3rem; font-size: 0; background: url(../images/right@2x.png) no-repeat center; background-size: 2rem;}
+/* .agreement_list .depth01_area>li .popup_open{position: absolute; right: 1rem; top: 1.4rem; width: 3rem; height: 3rem; font-size: 0; background: url(../images/right@2x.png) no-repeat center; background-size: 2rem;} */
+.agreement_list .depth01_area>li>label{position: relative;}
+.agreement_list .depth01_area>li>label.somemore::after{content: ''; display: inline-block; position: absolute; right: 1rem; top: 1.4rem; width: 3rem; height: 3rem; font-size: 0; background: url(../images/right@2x.png) no-repeat center; background-size: 2rem;}
 .agreement_list .depth02_area{display: none;}
 .agreement_list .depth02_area li{margin: 0; border: none; padding: 0 2.5rem}
 .agreement_list .depth02_area>li:last-child{padding-bottom: 2rem;}
