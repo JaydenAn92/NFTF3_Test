@@ -919,6 +919,7 @@ table + .table_tit{margin-top: 2rem;}
 .agreement_doc .num_list>li::before{content: counter(noticelist); counter-increment:noticelist; margin-right: 0.4rem;}
 
 .agreement_doc .num_list_circle>li{padding-left: 1.4rem; text-indent: -1.4rem;}
+.agreement_doc .num_list_circle>li *{text-indent: 0;}
 
 .agreement_doc .apply_ckeck{margin-top: 1rem; font-size: 1.2rem; color: #999; line-height: 1.4;}
 /* .agreement_doc .list_dot{padding-left: 1rem;} */
