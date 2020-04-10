@@ -577,6 +577,12 @@ $(document).ready(function(){
 			}
 		}
 	})
+	// 평생계좌 번호 신청
+	$('[data-fromaccount]').click(function(){
+		var accountNum = $(this).parents('.layerpopup').find('.input_form02.on .input_data').val()
+		var inputId = $(this).attr('data-fromaccount')
+		$('#'+inputId).removeClass('input_placeholder').text(accountNum)
+	})
 
 	// 출금계좌 토클
 	$('.toggle_btn').each(function(){
@@ -921,10 +927,11 @@ window.onload = function(){
 	});
 
 	//레이어 닫기
-	$('.j_layer_close').on('click',function(e) {
+	$('.j_layer_close').on('click',function() {
 		// if ($('.layerpopup').is(':animated')) {
 		// 	return false;
 		// }
+		
 		layerClose.init(this);
 	});
 	$('.j_layer_all_close').on('click',function() {
@@ -934,7 +941,7 @@ window.onload = function(){
 		layerClose.init(this,'all');
 	});
 
-	setTimeout( function(){ window.scrollTo(0, 1); }, 100 );
+	// setTimeout( function(){ window.scrollTo(0, 1); }, 100 );
 		
 	// guide_section 버튼 위치
 	var browserHeight = $(window).height();  

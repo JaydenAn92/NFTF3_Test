@@ -252,7 +252,7 @@ header button{position: absolute; top: 0; margin-top: 1.1rem;}
 .input_form .input_wrap .input_id02 {width: 66%; padding: 0 0.5rem;}
 .input_form .input_wrap .input_tel {padding-right: 13rem;}
 .input_form .input_wrap .input_num01 {padding-right: 8rem;}
-.input_form .input_option {display: none; margin-top: 2.6rem;}
+.input_form .input_option {display: none; margin-top: 1rem;}
 .input_form.on .input_option {display: block;}
 .input_form .input_option .option_list {display: -webkit-box; display: flex; -webkit-box-pack: justify; justify-content: space-between;}
 .input_form .input_option .option_list li {width: 22%;}
@@ -504,6 +504,8 @@ header button{position: absolute; top: 0; margin-top: 1.1rem;}
 /* popup */
 .pop_fix_area {position: absolute; left: 0; bottom: 0; width: 100%; z-index: 1;}
 .pop_btn01 {width: 100%; padding: 1.5rem 0 calc(constant(safe-area-inset-bottom) + 1.5rem); padding: 1.5rem 0 calc(env(safe-area-inset-bottom) + 1.5rem); background: #57afa4; text-align: center; color: #fff; font-size: 1.6rem; font-weight: 500; box-sizing: initial;}
+.pop_btn01.type_space {letter-spacing: 1.5rem;}
+.pop_btn01.type_space span{letter-spacing: 0;}
 .pop_btn01:disabled {background: #fafafa; border-top: 1px solid #eee; color: #aaa;}
 
 /* 달력 */
@@ -970,7 +972,7 @@ table + .table_tit{margin-top: 2rem;}
 .picture_area img{width: 100%;}
 
 .picture_guide .input_data_modify{position: absolute; right: 1rem; top: 3.9rem; width: 2rem; height: 2rem; background: url(../images/pencil@2x.png); background-size: 2rem; font-size: 0;}
-.picture_guide .input_wrap:after{content: ''; position: absolute; left: 0; bottom: 0; width: 0; height: 1px; background: #57afa4;}
+.picture_guide .input_wrap:after{content: ''; position: absolute; left: 0; bottom: 0; width: 0; height: 2px; background: #57afa4;}
 .picture_guide .input_wrap.focus:after {width: 100%; -webkit-transition: width 0.5s;}
 .picture_comment {padding:2rem 0;}
 .picture_comment .picture_txt{font-size: 1.4rem; color: #777; line-height: 3rem;}
