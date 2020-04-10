@@ -18,46 +18,6 @@
     <script type="text/javascript" src="../js/swiper.js"></script>
     <script type="text/javascript" src="../js/nftf_common.js"></script>
 </head>
-<script>
-    document.addEventListener('DOMContentLoaded', function(){
-        setTimeout(function(){
-            var loadingDot = document.querySelector('.loading_dot')
-            loadingDot.classList = 'loading_dot on'
-        },500)
-        var layerEvent = document.querySelectorAll('.layerpopup')
-        for(var i = 0; i<layerEvent.length; i++){
-            layerEvent[i].addEventListener('click', function(e){
-                console.log(e.target)
-                if(e.target.className ==='cancel'){
-                    e.currentTarget.style.display = 'none'
-                }
-                if(e.target.parentElement.className ==='layerpopup'){
-                    e.currentTarget.style.display = 'none'
-                }
-            })
-        }
-        var sliderSelects = document.querySelectorAll('.slider_select');
-        for(var j = 0; j<sliderSelects.length; j++){
-            sliderSelects[j].addEventListener('click', function(e){
-                if(e.target.nodeName ==='A'){
-                    e.currentTarget.style.left = -100+'%'
-                    e.currentTarget.nextElementSibling.style.left = 0+'%'
-                    if(e.currentTarget.nextElementSibling.className !== 'slider_select'){
-                        e.currentTarget.parentElement.parentElement.parentElement.style.display = 'none';
-                    }
-                    console.log(e.currentTarget.nextElementSibling)
-                }
-            })
-        }
-    });
-    window.onload = function(){
-        var sliderSelects = document.querySelectorAll('.slider_select');
-        var sliderSelectArea = document.querySelector('.slider_select').offsetHeight;
-        console.log(sliderSelectArea)
-        var selectAreaHeight = document.querySelector('.layer_select .layer_contents')
-        selectAreaHeight.style.height = sliderSelectArea+'px'        
-    }
-</script>
 <body>
     <div class="wrapper">
         <header>
@@ -136,5 +96,6 @@
             </div>
         </div>
     </div>
+    
 </body>
 </html>

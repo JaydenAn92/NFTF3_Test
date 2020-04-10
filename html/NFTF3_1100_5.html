@@ -20,23 +20,8 @@
 </head>
 <script>
     document.addEventListener('DOMContentLoaded', function(){
-        setTimeout(function(){
-            var loadingDot = document.querySelector('.loading_dot')
-            loadingDot.classList = 'loading_dot on'
-        },500)
-        var layerEvent = document.querySelectorAll('.layerpopup')
-        for(var i = 0; i<layerEvent.length; i++){
-            layerEvent[i].addEventListener('click', function(e){
-                console.log(e.target)
-                if(e.target.className ==='cancel'){
-                    e.currentTarget.style.display = 'none'
-                }
-                if(e.target.parentElement.className ==='layerpopup'){
-                    e.currentTarget.style.display = 'none'
-                }
-            })
-        }
         layerOpen.init('#layerpopup01');
+        layerOpen.init('#layerpopup02');
     });
 </script>
 <body>
@@ -64,7 +49,19 @@
                         <p>죄송합니다. <br>본 서비스는 만 14세 이상의 <br>고객만 가능합니다.</p>
                     </div>
                     <div class="btn_area">
-                        <button type="button" class="confirm">확인</button>
+                        <button type="button" class="confirm j_layer_close">확인</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="layerpopup" id="layerpopup02">
+            <div class="layer_center">
+                <div class="layer_contents">
+                    <div class="pop_content">
+                        <p>죄송합니다. <br> 외국인은 본 서비스를 이용하실 수 없습니다.</p>
+                    </div>
+                    <div class="btn_area">
+                        <button type="button" class="confirm j_layer_close">확인</button>
                     </div>
                 </div>
             </div>

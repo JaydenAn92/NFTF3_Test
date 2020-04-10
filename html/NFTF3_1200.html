@@ -34,8 +34,9 @@
                         <!-- 휴대폰인증 이용약관 동의 -->
                         <div class="input_form02 j_focus">
                             <div class="input_check">
-                                <input type="checkbox" id="inputCheck01" class="j_input_check" input-target="#idInput01">
-                                <label for="inputCheck01">
+                                <input type="checkbox" id="inputCheck01" class="j_input_check " disabled='disabled' input-target="#idInput01">
+                                <!--  -->
+                                <label for="inputCheck01" class="j_layer_open" layer-target="#layerpopup03">
                                     휴대폰인증 이용약관 동의
                                 </label>
                                 <button type="button" class="btn_type03 j_layer_open" layer-target="#layerpopup01">휴대폰인증 이용약관 동의 팝업</button>
@@ -57,7 +58,7 @@
                             <div class="input_wrap">
                                 <div class="input_txt">
                                     <input class="input_data input_tel j_input_value j_check_all" type="tel">
-                                    <button type="button" class="btn_type02 j_focus_move j_btn_toggle" toggle-text="재요청">인증번호 요청</button>
+                                    <button type="button" class="btn_type02 j_focus_move j_btn_toggle j_layer_open" toggle-text="재요청" layer-target="#layerpopup04">인증번호 요청</button>
                                 </div>
                             </div>
                         </div>
@@ -712,7 +713,7 @@
                         <div class="pop_fix_area">
                             <button type="button" class="pop_btn01 j_layer_close">확인</button>
                         </div>
-                        <button type="button" class="cancel">취소</button>
+                        <button type="button" class="cancel j_layer_close">취소</button>
                     </div>
                 </div>
             </div>
@@ -744,6 +745,32 @@
                 </div>
             </div>
             <!-- //휴대폰 번호 -->
+
+            <div class="layerpopup" id="layerpopup03">
+                <div class="layer_center">
+                    <div class="layer_contents">
+                        <div class="pop_content">
+                            <p>먼저 휴대폰인증 이용약관에 동의해주세요.</p>
+                        </div>
+                        <div class="btn_area">
+                            <button type="button" class="confirm j_layer_close">확인</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="layerpopup" id="layerpopup04">
+                <div class="layer_center">
+                    <div class="layer_contents">
+                        <div class="pop_content">
+                            <p>인증번호를 발송하였습니다.</p>
+                        </div>
+                        <div class="btn_area">
+                            <button type="button" class="confirm j_layer_close">확인</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </body>
 </html>

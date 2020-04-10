@@ -270,20 +270,21 @@ var applying_listCheck = {
 // 상품 체크리스트
 var checkPopup = {
 	confirm : function(agrees, layer){
-		// this.agrees = agrees
 		$(layer).off('click').on('click' ,function(e){
-			if(e.target.classList.contains('confirm')){
-				$(this).hide()
-				agrees.parentElement.classList.add('on')
-				var agreeQuantity = $('.check_list li.on').length
-				var itemTit = $('.tabs li').eq($(agrees).parents('.tabcont').index()).text();
-				var itemName = $(agrees).children('strong').text()
-				$('.checking_list').append("<li><span>"+itemTit+"</span><strong>"+itemName+"</strong></li>")    
-				if(agreeQuantity > 0){
-					$('.btn_fix').show();
-				}
-				$('.list_sum').text(agreeQuantity)
-		   }
+			if(e.target.parentElement.classList.contains('last_ck')){
+				if(e.target.classList.contains('confirm')){
+					$(this).hide()
+					agrees.parentElement.classList.add('on')
+					var agreeQuantity = $('.check_list li.on').length
+					var itemTit = $('.tabs li').eq($(agrees).parents('.tabcont').index()).text();
+					var itemName = $(agrees).children('strong').text();
+					$('.checking_list').append("<li><span>"+itemTit+"</span><strong>"+itemName+"</strong></li>")    
+					if(agreeQuantity > 0){
+						$('.btn_fix').fadeIn(200,'easeInOutCirc');
+					}
+					$('.list_sum').text(agreeQuantity)
+			   }
+			}
 		})
 	},
 	cancel : function(agrees, layer){
@@ -300,7 +301,7 @@ var checkPopup = {
 					})
 				})
 				if(agreeQuantity <= 0){
-					$('.btn_fix').hide();
+					$('.btn_fix').fadeOut(200,'easeInOutCirc');
 				}
 				$('.list_sum').text(agreeQuantity)
 		   }else if(e.target.className === 'cancel'){
@@ -308,23 +309,23 @@ var checkPopup = {
 		   }
 		})
 	},
-		remove : function(deleteTarget, layer){
-			$(layer).click(function(e){
-				if(e.target.className === 'confirm'){
-					$(this).hide()
-					var targetLeyar = $(e.target).attr('layer-target')
-					$(targetLeyar).show()
-					$(targetLeyar).click(function(e){
-						if(e.target.className === 'confirm'){
-							$(this).hide()
-							$(deleteTarget).remove();
-							applying_listCheck.listCheck($('.applying_list>li'))
-						}
-					})
-				}
-			})
-		}
+	remove : function(deleteTarget, layer){
+		$(layer).click(function(e){
+			if(e.target.className === 'confirm'){
+				$(this).fadeOut(200,'easeInOutCirc');
+				var targetLeyar = $(e.target).attr('layer-target')
+				$(targetLeyar).fadeIn(200,'easeInOutCirc');
+				$(targetLeyar).click(function(e){
+					if(e.target.className === 'confirm'){
+						$(this).fadeOut(200,'easeInOutCirc');
+						$(deleteTarget).remove();
+						applying_listCheck.listCheck($('.applying_list>li'))
+					}
+				})
+			}
+		})
 	}
+}
 
 
 $(document).ready(function(){
@@ -441,15 +442,15 @@ $(document).ready(function(){
 		$(this).on('click', function(e){
 			if(!e.currentTarget.parentElement.classList.contains('on')){
 				if($(this).attr('check-target') === undefined){
-					$('.check_popup').show();
+					$('.check_popup').fadeIn(200,'easeInOutCirc');
 					checkPopup.confirm(e.currentTarget, $('.check_popup'));
-				}else{
+				}else if($(this).attr('check-target')){
 					var targetLeyar = $(this).attr('check-target')
-					$(targetLeyar).show()
+					$(targetLeyar).fadeIn(200,'easeInOutCirc');
 					checkPopup.confirm(e.currentTarget, $(targetLeyar));
 				}
 			}else if(e.currentTarget.parentElement.classList.contains('on')){
-				$('.cancel_popup').show();
+				$('.cancel_popup').fadeIn(200,'easeInOutCirc');
 				checkPopup.cancel(e.currentTarget, $('.cancel_popup'));
 			}
 		})
