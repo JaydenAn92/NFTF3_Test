@@ -327,6 +327,17 @@ var checkPopup = {
 	}
 }
 
+// 보안매체 선택리스트, 출금계좌 추가 리스트
+var selectOfElement = {
+	selected : function(target, parent){
+		var fromTarget = target.classList.contains("j_get_data");
+		if(!fromTarget) {
+			var targetName = parent.getAttribute('element-target');
+			var toElement = document.querySelector(targetName);
+			$(toElement).slideUp(200,'easeInOutCirc');
+		}
+	}
+}
 
 $(document).ready(function(){
 	// form 이벤트 막기
@@ -583,6 +594,85 @@ $(document).ready(function(){
 		var accountNum = $(this).parents('.layerpopup').find('.input_form02.on .input_data').val()
 		var inputId = $(this).attr('data-fromaccount')
 		$('#'+inputId).removeClass('input_placeholder').text(accountNum)
+	})
+
+	// 보안매체 선택
+	$('body').on('click', '.j_typeOfOtp a' ,function(e) {
+		e.preventDefault();
+		var targetParents = e.currentTarget.closest('.j_typeOfOtp')
+		selectOfElement.selected(e.currentTarget, targetParents)
+	})
+
+	// 계좌추가 선택
+	$('body').on('click', '.j_typeOfAccount a' ,function(e) {
+		e.preventDefault();
+		var targetParents = e.currentTarget.closest('.j_typeOfAccount')
+		selectOfElement.selected(e.currentTarget, targetParents)
+	})
+	
+	// OTP 선택
+	$('body').on('click', '.j_selectOfOtp a' ,function(e) {
+		e.preventDefault();
+		//OPT 팝업 Get data 변수
+		var fromTarget = e.currentTarget.hash;
+		var otpTitle = e.currentTarget.querySelector('.tit');
+		var otpNumber = e.currentTarget.querySelector('.num');
+		
+		//OPT set data 변수
+		var toTarget = document.querySelector(fromTarget);
+		var toTitle = toTarget.querySelector('.tit');
+		var toNumber = toTarget.querySelector('.num');
+		
+		//실행코드
+		$(toTarget).slideDown(200,'easeInOutCirc');
+		toTitle.innerHTML = otpTitle.innerHTML
+		toNumber.innerHTML = otpNumber.innerHTML
+	})
+
+	// 출금계좌 추가 
+	$('body').on('change', '.j_selectOfAccountList input[type="checkbox"]' ,function(e) {
+		var targetInput = e.currentTarget; // 현재 타깃
+		var targetParent = e.currentTarget.closest('.j_selectOfAccountList'); //타깃 부모
+		var moveToElement = targetParent.getAttribute('element-target'); // 타깃 속성 
+		var listArea = document.querySelector(moveToElement) //리스트 영역
+		var targetId = targetInput.getAttribute('id')//타깃 아이디
+		var targetName = targetInput.nextElementSibling.querySelector('.account_name') //타깃 data
+		var targetNumber = targetInput.nextElementSibling.querySelector('.account_num') //타깃 data
+		if(targetInput.checked){    
+			var newElementLi = document.createElement('li'); //li 생성
+			var newElementTit = document.createElement('p'); //p 생성
+			var newElementNum = document.createElement('p'); //p 생성
+			
+			newElementTit.className = 'tit'; //p 클래스 추가
+			newElementTit.innerText = targetName.innerText; // data 삽입
+			
+			newElementNum.className = 'num'; //p 클래스 추가
+			newElementNum.innerText = targetNumber.innerText; // data 삽입
+
+			newElementLi.className = targetId; //li 클래스 추가
+			newElementLi.appendChild(newElementTit) //li안에 p.tit 생성
+			newElementLi.appendChild(newElementNum) //li안에 p.num 생성
+			listArea.appendChild(newElementLi) //리스트 영역에 li 생성
+		}else if(!targetInput.checked) {
+			var deleteLi = listArea.querySelector('.'+targetId); //해당 ID와 같은 CLASS 엘리멘트
+			deleteLi.remove(); //삭제 실행
+		}
+	})
+	$('body').on('click', '.j_selectOfAccount button' ,function(e) {
+		var moveToElement = e.currentTarget.getAttribute('element-target'); //실행될 엘리멘트 타겟
+		var targetElement = document.querySelectorAll(moveToElement); //실행될 엘리멘트 타겟
+		// targetElement.style.display = 'block'; //
+		$(targetElement).slideDown(200,'easeInOutCirc');
+	})
+	// 출금계좌 추가 or 삭제
+	$('#accountAllcheck').click(function(e){
+		if(!e.currentTarget.checked === true){
+			$('#selectedAccount').children().remove();
+		}else if(e.currentTarget.checked === true){
+			$('#selectedAccount').children().remove();
+			$('.j_selectOfAccountList input[type="checkbox"]').prop('checked', false);
+			$('.j_selectOfAccountList label').trigger('click');
+		}
 	})
 
 	// 출금계좌 토클
