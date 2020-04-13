@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no, address=no, email=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Cache-control" content="No-cache">
+    <meta http-equiv="Pragma" content="No-cache">
+    <title>NFTF3_02-1상품선택</title>
+    <link rel="stylesheet" href="../css/nftf_common.css">
+    <script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../js/rolldate.js"></script>
+    <script type="text/javascript" src="../js/swiper.js"></script>
+    <script type="text/javascript" src="../js/nftf_common.js"></script>
+</head>
+<script>
+    document.addEventListener('DOMContentLoaded', function(){
+        setTimeout(function(){
+            var loadingDot = document.querySelector('.loading_dot')
+            loadingDot.classList = 'loading_dot on'
+        },500)
+        var layerEvent = document.querySelectorAll('.layerpopup')
+        for(var i = 0; i<layerEvent.length; i++){
+            layerEvent[i].addEventListener('click', function(e){
+                console.log(e.target)
+                if(e.target.className ==='cancel'){
+                    e.currentTarget.style.display = 'none'
+                }
+                if(e.target.className ==='dimmed'){
+                    e.currentTarget.style.display = 'none'
+                }
+            })
+        }
+        $('.tabs li').each(function(){
+            $(this).click(function(){
+                $(this).siblings().removeClass('on')
+                $(this).removeClass('on')
+                $(this).addClass('on')
+                $('.tab_cont_area .tabcont').hide()
+                $('.tab_cont_area .tabcont').eq($(this).index()).show()
+                setTimeout(function () {
+		            layerScroll.update();
+		        }, 0);
+            })
+        })
+    });
+</script>
+<body>
+    <div class="wrapper">
+        <header>
+            <button class="back_btn"></button>
+            <h2 class="h_tit">본인인증</h2>
+            <button class="h_menu"></button>
+        </header>
+        <div class="contents">
+            <section>
+                <div class="loading_dot">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <p class="pages_tit"><span class="t_mi">이름과 주민번호</span>를<br>입력해주세요.</p>
+            </section>
+        </div>
+        
+        <div class="layerpopup" id="layerpopup01">
+            <div class="layer_90 tab_layer">
+                <div class="layer_contents">
+                    <div class="pop_tit tab_area">
+                        <h5>N플러스 정기예금</h5>
+                        <p class="content_info">연금이체, 급여이체, 카드결제,<br>공과금 자동이체 시 수수료 우대서비스를<br>제공하는 평생 주거래 통장</p>
+                        <ul class="tabs">
+                            <li class="on">상품개요</li>
+                            <li>금리안내</li>
+                        </ul>
+                    </div>
+                    <div class="pop_content j_scroll">
+                        <div class="swiper-wrapper">
+                            <div class="pop_inner swiper-slide">
+                                <p class="product_info">3천만원까지 금리 플러스+</p>
+                                <div class="tab_cont_area">
+                                    <div class="tabcont img_link type01">
+                                        <div class="cont_part">
+                                            <h4>상품특징</h4>
+                                            <p>하나 원큐에서만 가입이 가능한 스마트폰 전용 정기예금 상품으로 1만원~3천만원 까지 가입이 가능합니다.</p>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>가입대상</h4>
+                                            <p>실명의 개인</p>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>가입기간</h4>
+                                            <p>6개월 이상 3년 이하(일 단위)</p>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>가입금액</h4>
+                                            <p>1만원 이상 ~ 3천만원 이내</p>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>이자지급방법</h4>
+                                            <p>만기일시지급식</p>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>우대금리</h4>
+                                            <p>최대 연 0.3% 우대 가능 <br>
+                                                이 예금 가입일 이후 3개월이내 아래의 거래 충족 시 각 연 0.1%씩 최대 연 0.3% 우대금리 제공</p>
+                                            <ul class="list_dot mt10">
+                                                <li>하나은행<span class="smTit color02">주1)</span> 첫거래 고객 연 0.1%</li>
+                                                <li>2회 이상 스마트폰뱅킹을 통한 이체거래 보유시 연 0.1%</li>
+                                                <li>주택청약종합저축 신규 가입<span class="smTit color02">주2)</span> 연 0.1%</li>
+                                                <li>아파트 관리비이체 신규 등록<span class="smTit color02">주2)</span> 후 이체실적보유 연 0.1%</li>
+                                                <li>급여입금 신규 등록<span class="smTit color02">주2)</span> 후 이체실적보유 연 0.1%</li>
+                                                <li>하나멤버스 앱으로 1회 이상 추가 로그인 기록 보유 시 연 0.1%</li>
+                                            </ul>
+                                            <p><span class="color02">주1) </span>이 예금가입 전월말 기준 하나은행 은행계정 예금계좌를(입출금이 자유로운 통장 포함) 보유하고 있지 않은 고객</p>
+                                            <p><span class="color02">주2) </span>이 예금가입 전월 기준 하나은행의 주택청약종합저축 미 가입 또는 아파트관리비(급여) 이체 무실적 고객이 예금 가입 후 주택청약종합저축 가입 또는 아파트관리비(급여)이체 유실적 시 인정</p>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>절세혜택</h4>
+                                            <p>비과세저축가능(전 금융기관 통합한도 범위 내)</p>
+                                            <p>※ 2015년 1월 1일 부터 가입하는 비과세종합저축의 경우, 예금 만기일 이전까지의 이자소득만 비과세 처리되고, 만기일 이후의 이자소득은 과세됩니다.</p>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>분할해지</h4>
+                                            <ul class="list_dot mt10">
+                                                <li>가입기간 중 만기해지 포함 총 3회 분할인출 가능(중도해지이율 적용)</li>
+                                                <li>분할해지 후 예금잔액이 최저가입금액이하인 경우 분할해지 불가</li>
+                                            </ul>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>해지안내</h4>
+                                            <p>스마트폰뱅킹(또는 인터넷뱅킹)을 통하여 중도해지 하는 경우 콜센터를 통한 본인확인 절차 (3백만원초과시) 및 ARS인증(또는 해외체류자 인증)을 거친 후 해지가 가능합니다.</p>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>상품내용 변경에 관한 사항</h4>
+                                            <table class="mt10 type_row">
+                                                <colgroup>
+                                                    <col style="width: 40%;">
+                                                    <col style="width: 60%;">
+                                                </colgroup>
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="row">
+                                                            상품내용 변경에 <br>
+                                                            관한 사항 <br>
+                                                            (2018.11.01 변경)
+                                                        </th>
+                                                        <td class="left">
+                                                            <p class="t_mi">&lt;중도해지금리 변경&gt;</p>
+                                                            <dl>
+                                                                <dt>변경 전</dt>
+                                                                <dd>중도해지적용기준금리(주1) x 총경과기간별차등률(주2) <br>
+                                                                    (주1)중도해지적용기준금리 : 이 예금 신규일 가입기간별 기준금리 <br>
+                                                                    (주2)총경과기간별 차등률(=경과일수 / 계약일수) <br>
+                                                                    <table class="mt10 type_row"><table class="type_col">
+                                                                        <colgroup>
+                                                                            <col style="width: 50%;">
+                                                                            <col style="width: 50%;">
+                                                                        </colgroup>
+                                                                        <thead>
+                                                                            <tr>
+                                                                                <th colspan="3">계약기간 6개월 이상</th>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <th>제공받는 자</th>
+                                                                                <th>제공목적</th>
+                                                                            </tr>
+                                                                        </thead>
+                                                                        <tbody>
+                                                                            <tr>
+                                                                                <td>경과일수 / <br>
+                                                                                    약정일수</td>
+                                                                                <td>총경과기간별 <br>
+                                                                                    차등률</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>0.1이내</td>
+                                                                                <td>5%</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>0.1초과 ~ 0.2이내</td>
+                                                                                <td>10%</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>0.2초과 ~ 0.3이내</td>
+                                                                                <td>15%</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>0.3초과 ~ 0.4이내</td>
+                                                                                <td>20%</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>0.4초과 ~ 0.5이내</td>
+                                                                                <td>25%</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>0.5초과 ~ 0.6이내</td>
+                                                                                <td>30%</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>0.6초과 ~ 0.7이내</td>
+                                                                                <td>35%</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>0.7초과 ~ 0.8이내</td>
+                                                                                <td>40%</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>0.8초과 ~ 0.9이내</td>
+                                                                                <td>45%</td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <td>0.9초과 ~ 1.0이내</td>
+                                                                                <td>50%</td>
+                                                                            </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                    <p>※ 경과일수가 365일 초과인 경우 "0.9초과~1.0미만"구간의 차등률을 적용 <br>
+                                                                        ※「중도해지적용기준금리X총경과기간별 차등률」은 소수점 셋째자리 이하에서 올림하여 적용</p>
+                                                                </dd>
+                                                                <dt>변경 후</dt>
+                                                                <dd>
+                                                                    <ul class="list_dot mt10">
+                                                                        <li>1개월미만 : 연0.1%</li>
+                                                                        <li>1개월 이상~3개월미만 : 연0.3%</li>
+                                                                        <li>3개월 이상~6개월미만 : 연0.5%</li>
+                                                                        <li>6개월이상 : 가입(재예치)당시 해당 상품의 기본금리 × 차등률(주1) × 경과율(주2)</li>
+                                                                    </ul>
+                                                                </dd>
+                                                                <dd>
+                                                                    (단, 해당금리가 연0.5% 미만시 연0.5% 적용) <br>
+                                                                    (주1) 차등률 : 기간(6개월 이상)에 따른 아래 차등률 참고 <br>
+                                                                    6개월 이상 ~ 9개월 미만 경과시 : 60% 적용 <br>
+                                                                    9개월 이상 ~ 11개월 미만 경과시 : 70% 적용 <br>
+                                                                    11개월 이상 경과시 : 90% 적용 <br>
+                                                                    (주2) 경과율 : 경과일수/계약일수 (단, 경과일수는 계약일수를 초과할 수 없음) <br>
+                                                                    ※ 중도해지금리는 소수점 셋째자리까지 적용(소숫점 넷째자리에서 절사) <br>
+                                                                    (예시) 중도해지금리가 1.564721% 산출시 1.564% 적용
+                                                                </dd>
+                                                            </dl>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">
+                                                            상품내용 변경에 <br>
+                                                            관한 사항 <br>
+                                                            (2016.11.07 변경)
+                                                        </th>
+                                                        <td class="left">
+                                                            <p class="t_mi">&lt;만기후금리 변경&gt;</p>
+                                                            <dl>
+                                                                <dt>변경 전</dt>
+                                                                <dd>
+                                                                    <ul class="num_list_circle">
+                                                                        <li><span>①</span> 1개월이내 : 지급 당시 해당기간별 일반정기예금 월이자지급식 기본금리</li>
+                                                                        <li><span>②</span> 1개월초과 : 지급 당시 해당기간별 일반정기예금 월이자지급식 기본금리 1/2</li>
+                                                                    </ul>
+                                                                </dd>
+                                                                <dt>변경 후</dt>
+                                                                <dd>
+                                                                    <ul class="num_list_circle">
+                                                                        <li><span>①</span> 1개월이내 : 지급 당시 해당기간별 일반정기예금 월이자지급식 기본금리 1/2</li>
+                                                                        <li><span>②</span> 1개월초과 : 지급 당시 해당기간별 일반정기예금 월이자지급식 기본금리 1/4</li>
+                                                                    </ul>
+                                                                </dd>
+                                                            </dl>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">
+                                                            상품내용 변경에 <br>
+                                                            관한 사항 <br>
+                                                            (2016.08.31 변경)
+                                                        </th>
+                                                        <td class="left">
+                                                            <p class="t_mi">&lt;상품명&gt;</p>
+                                                            <dl>
+                                                                <dt>변경 전</dt>
+                                                                <dd>하나 N-플러스 정기예금</dd>
+                                                                <dt>변경 후</dt>
+                                                                <dd>N-플러스 정기예금</dd>
+                                                            </dl>
+                                                            <p class="t_mi">&lt;우대금리&gt;</p>
+                                                            <dl>
+                                                                <dt>변경 전</dt>
+                                                                <dd>하나멤버스 1회 이상 추가 로그인 기록 보유 연0.1%</dd>
+                                                                <dt>변경 후</dt>
+                                                                <dd>하나멤버스 앱으로 1회 이상 추가 로그인 기록 보유 연0.1%</dd>
+                                                            </dl>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">
+                                                            상품내용 변경에 <br>
+                                                            관한 사항 <br>
+                                                            (2015.12.04 변경)
+                                                        </th>
+                                                        <td class="left">
+                                                            <p class="t_mi">&lt;가입기간&gt;</p>
+                                                            <dl>
+                                                                <dt>변경 전</dt>
+                                                                <dd>6개월 이상 3년까지 월 단위로 가입이 가능하다.</dd>
+                                                                <dt>변경 후</dt>
+                                                                <dd>6개월 이상 3년까지 일 단위로 가입이 가능하다.</dd>
+                                                            </dl>
+                                                            <p class="t_mi">&lt;우대금리&gt;</p>
+                                                            <dl>
+                                                                <dt>변경 전</dt>
+                                                                <dd>가입일 이후 3개월 이내에 아래의 조건 충족 시 최고 연 0.3% 우대금리를 만기해지 시 제공한다.
+                                                                    <ul class="num_list_circle">
+                                                                        <li><span>1. </span> (구)하나은행 첫거래 고객<span class="smTit color02">주1)</span> 연 0.1%</li>
+                                                                        <li><span>2. </span> 2회 이상 하나 원큐 이체거래 보유 연 0.1%</li>
+                                                                        <li><span>3. </span> 주택청약종합저축 신규 가입<span class="smTit color02">주2)</span> 연 0.1%</li>
+                                                                        <li><span>4. </span> 아파트관리비 신규 등록 후 이체실적 보유<span class="smTit color02">주2)</span> 연 0.1%</li>
+                                                                        <li><span>5. </span> 급여이체 신규 등록 후 이체실적 보유<span class="smTit color02">주2)</span> 연 0.1%</li>
+                                                                    </ul>
+                                                                </dd>
+                                                                <dt>변경 후</dt>
+                                                                <dd>가입일 이후 3개월 이내에 아래의 조건 충족 시 최고 연 0.3% 우대금리를 만기해지 시 제공한다.
+                                                                    <ul class="num_list_circle">
+                                                                        <li><span>1. </span> (구)하나은행 첫거래 고객<span class="smTit color02">주1)</span> 연 0.1%</li>
+                                                                        <li><span>2. </span> 2회 이상 하나 원큐 이체거래 보유 연 0.1%</li>
+                                                                        <li><span>3. </span> 주택청약종합저축 신규 가입<span class="smTit color02">주2)</span> 연 0.1%</li>
+                                                                        <li><span>4. </span> 아파트관리비 신규 등록 후 이체실적 보유<span class="smTit color02">주2)</span> 연 0.1%</li>
+                                                                        <li><span>5. </span> 급여이체 신규 등록 후 이체실적 보유<span class="smTit color02">주2)</span> 연 0.1%</li>
+                                                                        <li><span>6. </span> 하나멤버스 1회 이상 추가 로그인 기록 보유 시 연 0.1%</li>
+                                                                    </ul>
+                                                                    <span class="color02">주1)</span> 이 예금가입 전월말 기준 (구)하나은행 은행계정 예금계좌를(입출금이 자유로운 예금 포함) 보유하고 있지 않은 고객 <br>
+                                                                    <span class="color02">주2)</span> 이 예금가입 전월 기준 (구)하나은행의 주택청약종합저축 미가입 또는 아파트관리비(급여)이체 무실적 고객이 이 예금가입 후 주택청약종합저축 가입 또는 아파트관리비(급여)이체 유실적 시 인정
+                                                                </dd>
+                                                            </dl>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">
+                                                            상품내용 변경에 <br>
+                                                            관한 사항 <br>
+                                                            (2015.06.25 변경)
+                                                        </th>
+                                                        <td class="left">
+                                                            <p class="t_mi">&lt;우대금리&gt;</p>
+                                                            <dl>
+                                                                <dt>변경 전</dt>
+                                                                <dd>은행이 이 예금 가입자가 가입일 이후 3개월 이내에 인터넷뱅킹, 하나 원큐(스마트폰뱅킹), 콜센터를 통하여 정기예금 또는 적금(신규 가입액 10만원 이상이며, 신규가입회 포함 3회 이상 불입 조건)을 하나 이상 추가 가입한 경우 최고 연 0.1%의 우대이자율을 만기해지 시 제공합니다.</dd>
+                                                                <dt>변경 후</dt>
+                                                                <dd>은행은 이 예금 가입자가 가입일 이후 3개월 이내에 아래의 조건 충족 시 최고 연 0.3% 우대금리를 만기해지 시 제공합니다.
+                                                                    <ul class="list_dot mt10">
+                                                                        <li>하나은행 첫거래 고객<span class="smTit color02">주1)</span> 연 0.1%</li>
+                                                                        <li>2회 이상 하나 원큐 이체거래 보유 연 0.1%</li>
+                                                                        <li>주택청약종합저축 신규 등록 후 이체실적 보유<span class="smTit color02">주2)</span> 연 0.1%</li>
+                                                                        <li>아파트관리비 신규 등록 후 이체실적 보유<span class="smTit color02">주2)</span> 연0.1%</li>
+                                                                    </ul>
+                                                                    <span class="color02">주1)</span> 이 예금가입 전월말 기준 하나은행 은행계정 예금계좌를(입출금 자유로운 예금 포함) 보유하고 있지 않은 고객 <br>
+                                                                    <span class="color02">주2)</span> 이 예금가입 전월 기준 계좌 및 실적 미보유 고객이 예금가입 후 보유 시 인정
+                                                                </dd>
+                                                            </dl>
+                                                            <p class="t_mi">&lt;우대금리&gt;</p>
+                                                            <dl>
+                                                                <dt>변경 전</dt>
+                                                                <dd>가입일 이후 3개월 이내에 아래의 조건 충족 시 최고 연 0.3% 우대금리를 만기해지 시 제공한다.
+                                                                    <ul class="num_list_circle">
+                                                                        <li><span>1. </span> (구)하나은행 첫거래 고객<span class="smTit color02">주1)</span> 연 0.1%</li>
+                                                                        <li><span>2. </span> 2회 이상 하나 원큐 이체거래 보유 연 0.1%</li>
+                                                                        <li><span>3. </span> 주택청약종합저축 신규 가입<span class="smTit color02">주2)</span> 연 0.1%</li>
+                                                                        <li><span>4. </span> 아파트관리비 신규 등록 후 이체실적 보유<span class="smTit color02">주2)</span> 연 0.1%</li>
+                                                                        <li><span>5. </span> 급여이체 신규 등록 후 이체실적 보유<span class="smTit color02">주2)</span> 연 0.1%</li>
+                                                                    </ul>
+                                                                </dd>
+                                                                <dt>변경 후</dt>
+                                                                <dd>가입일 이후 3개월 이내에 아래의 조건 충족 시 최고 연 0.3% 우대금리를 만기해지 시 제공한다.
+                                                                    <ul class="num_list_circle">
+                                                                        <li><span>1. </span> (구)하나은행 첫거래 고객<span class="smTit color02">주1)</span> 연 0.1%</li>
+                                                                        <li><span>2. </span> 2회 이상 하나 원큐 이체거래 보유 연 0.1%</li>
+                                                                        <li><span>3. </span> 주택청약종합저축 신규 가입<span class="smTit color02">주2)</span> 연 0.1%</li>
+                                                                        <li><span>4. </span> 아파트관리비 신규 등록 후 이체실적 보유<span class="smTit color02">주2)</span> 연 0.1%</li>
+                                                                        <li><span>5. </span> 급여이체 신규 등록 후 이체실적 보유<span class="smTit color02">주2)</span> 연 0.1%</li>
+                                                                        <li><span>6. </span> 하나멤버스 1회 이상 추가 로그인 기록 보유 시 연 0.1%</li>
+                                                                    </ul>
+                                                                    <span class="color02">주1)</span> 이 예금가입 전월말 기준 (구)하나은행 은행계정 예금계좌를(입출금이 자유로운 예금 포함) 보유하고 있지 않은 고객 <br>
+                                                                    <span class="color02">주2)</span> 이 예금가입 전월 기준 (구)하나은행의 주택청약종합저축 미가입 또는 아파트관리비(급여)이체 무실적 고객이 이 예금가입 후 주택청약종합저축 가입 또는 아파트관리비(급여)이체 유실적 시 인정
+                                                                </dd>
+                                                            </dl>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">
+                                                            상품내용 변경에 <br>
+                                                            관한 사항 <br>
+                                                            (2014.05.23 변경)
+                                                        </th>
+                                                        <td class="left">
+                                                            <p class="t_mi">&lt;가입금액&gt;</p>
+                                                            <dl>
+                                                                <dt>변경 전</dt>
+                                                                <dd>이 예금의 가입대상은 실명의 개인으로 1인 1계좌만 가능하며 스마트폰에서만 가입할 수 있습니다.</dd>
+                                                                <dt>변경 후</dt>
+                                                                <dd>이 예금의 가입대상은 실명의 개인으로 스마트폰에서만 가입할 수 있습니다.</dd>
+                                                            </dl>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">
+                                                            상품내용 변경에 <br>
+                                                            관한 사항 <br>
+                                                            (2014.03.18 변경)
+                                                        </th>
+                                                        <td class="left">
+                                                            <p class="t_mi">&lt;가입대상&gt;</p>
+                                                            <dl>
+                                                                <dt>변경 전</dt>
+                                                                <dd>이 예금의 가입대상은 실명의 개인으로 1인 1계좌만 가능하며 스마트폰에서만 가입할 수 있습니다.</dd>
+                                                                <dt>변경 후</dt>
+                                                                <dd>이 예금의 가입대상은 실명의 개인으로 스마트폰에서만 가입할 수 있습니다.</dd>
+                                                            </dl>
+                                                            <p class="t_mi">&lt;가입금액&gt;</p>
+                                                            <dl>
+                                                                <dt>변경 전</dt>
+                                                                <dd>이 예금의 가입금액은 1백만원 이상 1천만원 이내에서 가입이 가능합니다.</dd>
+                                                                <dt>변경 후</dt>
+                                                                <dd>이 예금의 최저가입금액은 1백만원 이상이며 최고가입금액은 3천만원 이하로 1인당 가입한도는 최고 3천만원까지입니다.</dd>
+                                                            </dl>
+                                                            <p class="t_mi">&lt;우대이율&gt;</p>
+                                                            <dl>
+                                                                <dt>신설</dt>
+                                                                <dd>은행은 이 예금 가입자가 가입일 이후 3개월 이내에 인터넷뱅킹, 하나 원큐(스마트폰뱅킹), 콜센터를 통하여 정기예금 또는 적금(신규 가입액 10만원 이상이며, 신규가입회 포함 3회 이상 불입 조건)을 하나 이상 추가 가입한 경우 최고 연 0.1%의 우대이자율을 만기해지시 제공합니다.</dd>
+                                                            </dl>
+                                                            <p class="t_mi">&lt;기타&gt;</p>
+                                                            <dl>
+                                                                <dt>변경 전</dt>
+                                                                <dd>위 특약 사항은 변경 시 변경사유, 변경내용 등을 변경시행일 1개월 전 1개월 동안 은행 홈페이지 및 영업점에 고시 합니다. 단 고객에게 불리한 변경 시에는 예금거래 기본약관 제21조 제2항 각호의 방법으로 고객에게 알리기로 합니다.</dd>
+                                                                <dt>변경 후</dt>
+                                                                <dd>삭제</dd>
+                                                            </dl>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="tabcont">
+                                        <div class="cont_part">
+                                            <table class="mt10 type_col">
+                                                <colgroup>
+                                                    <col style="width: 50%;">
+                                                    <col style="width: 50%;">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th>가입기간</th>
+                                                        <th>금리(연율, 세전)</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>6개월 이상</td>
+                                                        <td>1.10%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>1년 이상</td>
+                                                        <td>1.25%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2년 이상</td>
+                                                        <td>1.30%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3년</td>
+                                                        <td>1.35%</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>우대금리</h4>
+                                            <p>최대 연 0.3% 우대 가능 <br>
+                                                이 예금 가입일 이후 3개월이내 아래의 거래 충족 시 각 연 0.1%씩 최대 연 0.3% 우대금리 제공</p>
+                                            <ul class="list_dot mt10">
+                                                <li>하나은행<span class="smTit color02">주1)</span> 첫거래 고객 연 0.1%</li>
+                                                <li>2회 이상 스마트폰뱅킹을 통한 이체거래 보유시 연 0.1%</li>
+                                                <li>주택청약종합저축 신규 가입<span class="smTit color02">주2)</span> 연 0.1%</li>
+                                                <li>아파트 관리비이체 신규 등록<span class="smTit color02">주2)</span> 후 이체실적보유 연 0.1%</li>
+                                                <li>급여입금 신규 등록<span class="smTit color02">주2)</span> 후 이체실적보유 연 0.1%</li>
+                                                <li>하나멤버스 앱으로 1회 이상 추가 로그인 기록 보유 시 연 0.1%</li>
+                                            </ul>
+                                            <p><span class="color02">주1) </span>이 예금가입 전월말 기준 하나은행 은행계정 예금계좌를(입출금이 자유로운 통장 포함) 보유하고 있지 않은 고객</p>
+                                            <p><span class="color02">주2) </span>이 예금가입 전월 기준 하나은행의 주택청약종합저축 미 가입 또는 아파트관리비(급여) 이체 무실적 고객이 예금 가입 후 주택청약종합저축 가입 또는 아파트관리비(급여)이체 유실적 시 인정</p>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>중도해지금리</h4>
+                                            <table class="mt10 type_col">
+                                                <colgroup>
+                                                    <col style="width: 50%;">
+                                                    <col style="width: 50%;">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th>기간</th>
+                                                        <th>적용금리(연율, 세전)</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>1개월 미만</td>
+                                                        <td>0.1%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>1개월 이상~3개월 미만</td>
+                                                        <td>0.3%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3개월 이상~6개월 미만</td>
+                                                        <td>0.5%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>6개월 이상</td>
+                                                        <td>가입(재예치)당시 해당 상품의 기본금리 × 차등률<span class="smTit color02">주1)</span> Ⅹ 경과율<span class="smTit color02">주2)</span> <br>
+                                                            (단, 해당금리가 0.5% 미만시 0.5% 적용)</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <p><span class="color02">주1) </span>차등률 : 기간(6개월 이상)에 따른 아래 차등률 참고
+                                                <ul class="list_dot mt10">
+                                                    <li>6개월 이상 ~ 9개월 미만 경과시 : 60% 적용</li>
+                                                    <li>9개월 이상 ~ 11개월 미만 경과시 : 70% 적용</li>
+                                                    <li>11개월 이상 경과시 : 90% 적용</li>
+                                                </ul>
+                                            </p>
+                                            <p><span class="color02">주2) </span>경과율 : 경과일수/계약일수 <br>
+                                                (단, 경과일수는 계약일수를 초과할 수 없음)</p>
+                                            <p>※ 중도해지금리는 소수점 셋째자리까지 적용(소수점 넷째자리에서 절사) <br>
+                                                (예시) 중도해지금리가 1.564721%로 산출시 1.564%로 적용</p>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>만기후 금리</h4>
+                                            <table class="mt10 type_col">
+                                                <colgroup>
+                                                    <col style="width: 40%;">
+                                                    <col style="width: 60%;">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th>기간</th>
+                                                        <th>금리(연율, 세전)</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>1개월 이내</td>
+                                                        <td>지급 당시 해당기간별 일반정기예금 월이자지급식 기본금리 1/2</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>1개월 초과</td>
+                                                        <td>지급 당시 해당기간별 일반정기예금 월이자지급식 기본금리 1/4</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="client_safely">
+                                    <p class="tit">예금자 보호</p>
+                                    <p class="kdic_mark">이 예금은 예금자 보호법에 따라, 예금보험공사가 보호하되, 보호한도는 본 은행에 있는 귀하의 모든 예금대상 금융상품의 원금과 소정의 이자를 합하여 1인당 “최고 5천만원”이며, 5천만원을 초과하는 나머지 금액은 보호하지 않습니다.</p>
+                                    <p class="kdic">준법감시인 심사필 제2018-상품-1261호(2018.10.23)<br>
+                                        본 공시내용의 유효기간:2018.10.23~2021.10.22<br>
+                                        기준일:2020년 03월 02일</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button type="button" class="cancel">취소</button>
+                </div>
+            </div>
+        </div>
+        <script>
+            $(window).load(function(){
+                layerOpen.init('#layerpopup01');
+            })
+        </script>
+    </div>
+</body>
+</html>
