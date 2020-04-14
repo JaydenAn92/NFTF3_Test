@@ -80,29 +80,55 @@
 
                         <div class="input_form input_form_type02 j_focus check_money">
                             <div class="input_wrap">
+                                <input type="text" id="idInput03" maxlength="3">
                                 <label for="idInput03" class="input_title j_focus_open t_mi">하나</label>
-                                <div class="input_txt">
+                                <div class="check_number">
+                                    
+                                </div>
+                                <!-- <div class="input_txt">
                                     <input id="idInput03" class="input_data j_input_value j_check_all" type="password" maxlength="3">
                                     <p class="ex"></p>
                                     <button type="button" class="input_data_del j_data_del">삭제</button>
-                                </div>
+                                </div> -->
                             </div>
-                            <!-- <style>
+                            <style>
+                                .check_money .input_wrap{position: relative; background: url(../images/group-4@2x.png) no-repeat; background-size: 17.8rem 5.4rem; background-position: 8.5rem bottom;}
                                 .check_money .input_wrap::before{display: none;}
                                 .check_money .input_wrap::after{display: none;}
-                                .check_money .input_wrap{background: url(../images/group-4@2x.png) no-repeat; background-size: 17.8rem 5.4rem; background-position: 8.5rem bottom;}
-                                .check_money #idInput03{display: none;}
-                                .check_money .input_wrap input[type='password'].input_data{ padding-left: 1rem;}
-                            </style> -->
+                                .check_money #idInput03{position: absolute; left: 20%; width: 80%;}
+                                .check_money .input_wrap .check_number{position: absolute; left: 20%; width: 80%;}
+                                .input_form.input_form_type02.check_money .input_wrap .input_title{width: 100%;}
+                                .input_form.input_form_type02.check_money.on .input_wrap .input_title{width: 100%;}
+                                /* .input_form.input_form_type02.on .input_wrap .input_title, .input_form.input_form_type02 .input_wrap .input_title */
+                                /* .input_form.input_form_type02.on .input_wrap .input_title, .input_form.input_form_type02 .input_wrap .input_title */
+                                /* .check_money .input_wrap input[type='password'].input_data{ padding-left: 1rem;} */
+                            </style>
                         </div>
                     </div>
-                    <!-- <script>
+                    <script>
                         $(document).ready(function(){
-                            $('#idInput03').on('keyup',function(e){
-                                console.log('a')
+                            var count = 0;
+                            $('#idInput03').on('keyup',function(){
+                                var inputValue = $(this).val();
+                                var valueLength = inputValue.length;
+                                console.log("valueLength :" +valueLength)
+                                if(valueLength < 4){
+                                    if(count < valueLength){
+                                        $('.check_number').append(
+                                            "<span>·</span>"
+                                        );
+                                        count = valueLength;
+                                        console.log(count)
+                                    }else if(count>valueLength){
+                                        $('.check_number').children().last().remove();
+                                        count = valueLength;
+                                        console.log(count)
+                                    }
+                                }
+                                
                             })
                         })
-                    </script> -->
+                    </script>
 
                     <div class="btn_wrap btn_fix j_btn_fix" style="display: none;">
                         <a href="#none" class="btn_type01">다음</a>

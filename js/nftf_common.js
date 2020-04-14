@@ -211,7 +211,7 @@ var layerClose = {
 //이메일
 var layerEmail = {
 	init : function(target) {
-		$(target).siblings('.j_email_layer').slideDown(200,'easeInOutSine');
+		$(target).siblings('.j_email_layer').slideDown(200,'easeInOutCirc');
 		scrollCont.init($(target).siblings('.j_email_layer'));
 	}
 }
@@ -964,7 +964,7 @@ $(document).ready(function(){
 	//
 	$(document).on('click',function(e) {
 		if (!$(e.target).parents('.j_email_layer').length > 0 && !$(e.target).hasClass('j_email')) {
-			$('.j_email_layer').slideUp(200,'easeInOutSine');
+			$('.j_email_layer').slideUp(200,'easeInOutCirc');
 		}
 	});
 

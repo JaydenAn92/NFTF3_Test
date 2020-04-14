@@ -3,6 +3,13 @@ NFTF 3.0
 
 ### 20.04.14
 * 상품설멸서 마이트립(MY trip)적금 마일리지 2 까지 완료
+* NFTF3_6210 인풋 기능 추가 할것
+
+#### 남음 수정사항
+* easing guide
+* 완료페이지 디자인
+* NFTF#_6112
+
 
 #### Index list
 Link: [Index][indexlink] 
