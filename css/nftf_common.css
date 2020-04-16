@@ -759,7 +759,7 @@ header button{position: absolute; top: 0; margin-top: 1.1rem;}
 .cont_part {margin-top: 3rem; letter-spacing: -0.05rem; color: #000;}
 .cont_part h4{font-size: 1.8rem; color: #000;}
 .cont_part h5{font-size: 1.6rem; color: #000;}
-.cont_part p{margin-top: 1rem; font-size: 1.4rem; color: #666;}
+.cont_part p{margin-top: 1rem; font-size: 1.4rem; color: #666; line-height: 2rem;}
 .cont_part .num_list_circle {margin-top: 0.5rem;}
 .cont_part .num_list_circle>li{font-size: 1.4rem; color: #666; text-indent: -1.7rem; padding-left: 1.8rem; line-height: 2.2rem;}
 .cont_part .num_list li{padding-left: 1rem; text-indent: -1rem; font-size: 1.4rem; line-height: 1.4;}
