@@ -95,34 +95,38 @@
                                 .check_money .input_wrap{position: relative; background: url(../images/group-4@2x.png) no-repeat; background-size: 17.8rem 5.4rem; background-position: 8.5rem bottom;}
                                 .check_money .input_wrap::before{display: none;}
                                 .check_money .input_wrap::after{display: none;}
-                                .check_money #idInput03{position: absolute; left: 20%; width: 80%;}
+                                .check_money #idInput03{position: absolute; left: 20%; width: 80%; z-index: -1;opacity: 0;}
                                 .check_money .input_wrap .check_number{position: absolute; left: 20%; width: 80%;}
                                 .input_form.input_form_type02.check_money .input_wrap .input_title{width: 100%;}
                                 .input_form.input_form_type02.check_money.on .input_wrap .input_title{width: 100%;}
-                                /* .input_form.input_form_type02.on .input_wrap .input_title, .input_form.input_form_type02 .input_wrap .input_title */
-                                /* .input_form.input_form_type02.on .input_wrap .input_title, .input_form.input_form_type02 .input_wrap .input_title */
-                                /* .check_money .input_wrap input[type='password'].input_data{ padding-left: 1rem;} */
+                                .check_number{padding-left: 3.6rem;}
+                                .check_number span {display: inline-block; border-radius: 50%; width: 1rem; height: 1rem; background: green;}
+                                .check_number span:first-child ~ span {margin-left: 5.6rem;}
                             </style>
                         </div>
                     </div>
                     <script>
                         $(document).ready(function(){
-                            var count = 0;
-                            $('#idInput03').on('keyup',function(){
+                            var currentVal = 0;
+                            $('#idInput03').on('keyup keypress',function(){
                                 var inputValue = $(this).val();
                                 var valueLength = inputValue.length;
                                 console.log("valueLength :" +valueLength)
                                 if(valueLength < 4){
-                                    if(count < valueLength){
-                                        $('.check_number').append(
-                                            "<span>·</span>"
-                                        );
-                                        count = valueLength;
-                                        console.log(count)
-                                    }else if(count>valueLength){
-                                        $('.check_number').children().last().remove();
-                                        count = valueLength;
-                                        console.log(count)
+                                    if(currentVal < valueLength){
+                                        for(var i = 0; i < valueLength-currentVal; i++){
+                                            $('.check_number').append(
+                                                "<span></span>"
+                                            );
+                                        }
+                                        currentVal = valueLength;
+                                        console.log(currentVal);
+                                    }else if(valueLength < currentVal){
+                                        for(var j = 0; j < currentVal - valueLength; j++){
+                                            $('.check_number').children().last().remove();
+                                        }
+                                        currentVal = valueLength;
+                                        console.log(currentVal);
                                     }
                                 }
                                 
