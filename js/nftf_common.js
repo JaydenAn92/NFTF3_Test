@@ -675,6 +675,29 @@ $(document).ready(function(){
 		}
 	})
 
+	// 1원 추가인증
+	var currentVal = 0;
+	$('.check_money .input_data').on('keyup keypress',function(){
+		var inputValue = $(this).val();
+		var valueLength = inputValue.length;
+		console.log("valueLength :" +valueLength)
+		if(valueLength < 4){
+			if(currentVal < valueLength){
+				for(var i = 0; i < valueLength-currentVal; i++){
+					$('.check_number').append(
+						"<span></span>"
+					);
+				}
+				currentVal = valueLength;
+			}else if(valueLength < currentVal){
+				for(var j = 0; j < currentVal - valueLength; j++){
+					$('.check_number').children().last().remove();
+				}
+				currentVal = valueLength;
+			}
+		}
+		
+	})
 	// 출금계좌 토클
 	$('.toggle_btn').each(function(){
 		$(this).click(function(){

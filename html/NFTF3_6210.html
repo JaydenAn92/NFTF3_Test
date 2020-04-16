@@ -82,56 +82,13 @@
                             <div class="input_wrap">
                                 <label for="idInput03" class="input_title j_focus_open t_mi">하나</label>
                                 <input id="idInput03" class="input_data j_input_value j_check_all" type="password" maxlength="3">
-                                <div class="check_number">
-                                    
-                                </div>
-                                <!-- <div class="input_txt">
-                                    <input id="idInput03" class="input_data j_input_value j_check_all" type="password" maxlength="3">
-                                    <p class="ex"></p>
-                                    <button type="button" class="input_data_del j_data_del">삭제</button>
-                                </div> -->
+                                <div class="check_number"></div>
                             </div>
-                            <style>
-                                .check_money .input_wrap{position: relative; background: url(../images/group-4@2x.png) no-repeat; background-size: 17.8rem 5.4rem; background-position: center bottom;}
-                                .check_money .input_wrap::before{display: none;}
-                                .check_money .input_wrap::after{display: none;}
-                                .check_money #idInput03{position: absolute; left: 20%; width: 80%; z-index: -1;}
-                                .check_money #idInput03:focus{opacity: 0;}
-                                .check_money .input_wrap .check_number{position: absolute; left: 50%; width: 14.2rem; transform: translateX(-50%);}
-                                .input_form.input_form_type02.check_money .input_wrap .input_title{width: 100%;}
-                                .input_form.input_form_type02.check_money.on .input_wrap .input_title{width: 100%;}
-                                /* .check_number{padding-left: 3.6rem;} */
-                                .check_number span {display: inline-block; border-radius: 50%; width: 1rem; height: 1rem; background: green;}
-                                .check_number span:first-child ~ span {margin-left: 5.6rem;}
-                            </style>
                         </div>
                     </div>
                     <script>
                         $(document).ready(function(){
-                            var currentVal = 0;
-                            $('#idInput03').on('keyup keypress',function(){
-                                var inputValue = $(this).val();
-                                var valueLength = inputValue.length;
-                                console.log("valueLength :" +valueLength)
-                                if(valueLength < 4){
-                                    if(currentVal < valueLength){
-                                        for(var i = 0; i < valueLength-currentVal; i++){
-                                            $('.check_number').append(
-                                                "<span></span>"
-                                            );
-                                        }
-                                        currentVal = valueLength;
-                                        console.log(currentVal);
-                                    }else if(valueLength < currentVal){
-                                        for(var j = 0; j < currentVal - valueLength; j++){
-                                            $('.check_number').children().last().remove();
-                                        }
-                                        currentVal = valueLength;
-                                        console.log(currentVal);
-                                    }
-                                }
-                                
-                            })
+                            
                         })
                     </script>
 
