@@ -115,15 +115,16 @@ header button{position: absolute; top: 0; margin-top: 1.1rem;}
 
 .layerpopup{display: none; position: fixed; left: 0; top: 0; width: 100%; height: 100%; box-sizing: border-box; z-index: 1; background: rgba(0, 0, 0, 0.5);}
 .layerpopup * {box-sizing: border-box;}
-.layer_notice { background: rgba(0, 0, 0, 0.7); -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px);}
+.layer_notice { background: rgba(0, 0, 0, 0.8); -webkit-backdrop-filter: blur(3px); backdrop-filter: blur(3px);}
 .layer_center{display: flex; justify-content: center; align-items: center; width: 100%; height: 100%;}
-.layer_center .layer_contents{margin: 0 2rem; position: relative; width: 100%; max-height: 46rem; background: #fff; border-radius: 1rem;}/*added: position: relative; */
+.layer_center .layer_contents{margin: 0 2rem; position: relative; width: 100%; max-height: 46rem; background: #fff; border-radius: 1rem;}
+.layer_center .layer_contents.atype{margin: 0 3.5rem;}
 .layer_notice_cont {position: relative; margin: 0 2rem; padding: 4rem 2rem; border-radius: 1.2rem; border: 1px solid #666;}
 .layer_notice_cont .cancel{position: absolute; right: 1.5rem; top: 1.5rem; width: 2.4rem; height: 2.4rem; font-size: 0; background: url(../images/close@2x.png) no-repeat center; background-size: 100%;}
-.layer_notice_cont .list_type01 li {color: #ddd;}
+.layer_notice_cont .list_type01 li {color: #bbbbbb;}
 .layer_notice_cont .list_type01 li::before {background-color: #eee;}
 
-.layer_center .pop_content{padding: 3.8rem 2rem; max-height: calc(46rem - 5rem);}
+.layer_center .pop_content{padding: 3.5rem 2rem; max-height: calc(46rem - 5rem);}
 .layer_center .pop_tit + .pop_content{padding: 3.8rem 2rem; max-height: calc(46rem - 13.5rem);}
 .layer_center .pop_tit.type02 + .pop_content{padding: 0 2rem 3.8rem; max-height: calc(46rem - 13.5rem);}
 .layer_center .pop_content .swiper-wrapper {height: auto;}
@@ -137,12 +138,12 @@ header button{position: absolute; top: 0; margin-top: 1.1rem;}
 .pop_inner {overflow:hidden; padding: 4.5rem 2rem;}
 .content_info{color: #666; font-size: 1.4rem; text-align: center; letter-spacing: 0.05rem; line-height: normal;}
 .content_info + .tabs{margin-top: 3rem;}
-.pop_content p{font-size: 1.4rem; line-height: 2.2rem;}
+.pop_content p{font-size: 1.5rem; line-height: 2.5rem; letter-spacing: -0.05rem;}
 
 .btn_area{text-align: center; border-top: 0.1rem solid #ddd;}
-.btn_area button{padding: 1.5rem 0; width: 100%; font-size: 1.4rem; font-family: 'notokr'; font-weight: 500; text-align: center;}
+.btn_area button{padding: 1.5rem 0; width: 100%; font-size: 1.5rem; font-family: 'notokr'; font-weight: 500; text-align: center;}
 .btn_area .confirm{color: #57afa4;}
-.btn_area .cancel{color: #aaa;}
+.btn_area .cancel{color: #999999;}
 .btn_area.btn_02 button{float: left; width: 50%;}
 .btn_area.btn_02 button + button{border-left: 0.1rem solid #ddd;}
 
@@ -325,7 +326,7 @@ header button{position: absolute; top: 0; margin-top: 1.1rem;}
 .txt_type06 {margin-top: 1.6rem; font-size: 1.3rem; letter-spacing: -0.046rem; color: #999;}
 .txt_type07 {margin-top: 1.5rem; font-size: 1.4rem; font-weight: 500; color: #666; letter-spacing: -0.05rem;}
 
-.list_type01 li {position: relative; margin-top: 0.5rem; padding-left: 0.8rem; font-size: 1.4rem; line-height: 2rem; color: #777; letter-spacing: -0.05rem;}
+.list_type01 li {position: relative; margin-top: 0.5rem; padding-left: 0.8rem; font-size: 1.5rem; line-height: 1.5rem; color: #777; letter-spacing: -0.05rem;}
 .list_type01 li:first-child {margin-top: 0;}
 .list_type01 li:before {content: ''; position: absolute; left: 0; top: 1rem; width: 0.2rem; height: 0.2rem; background: #888;}
 .list_type01 li strong {font-weight: 500; color: #57afa4;}
@@ -801,10 +802,12 @@ table + .table_tit{margin-top: 2rem;}
 
 .first_intro{width: 100%; height: 100%; position: fixed; background: #57afa4; overflow: hidden;}
 .first_intro>*{position: absolute;}
+.first_intro .logo{left: 8.35%; top: 15%; width: 9.1rem; opacity: 0;}
 .first_intro .progressbar{display: block; width: 0.4rem; height: 0%; left: 0.5rem; bottom: 1rem; background: #fff; border-radius: 0.2rem;}
-.first_intro .intro_tit{left: 8.35%; top: 16%; font-size: 6.2rem; color: #fff; line-height: 1.39; letter-spacing: -0.6rem; opacity: 0;}
+.first_intro .intro_tit{left: 8.35%; top: 19.333%; font-size: 6.2rem; color: #fff; line-height: 1.39; letter-spacing: -0.6rem; opacity: 0;}
 .first_intro .img_area{width: 83.146%; height: 46.203%; right: -83.146%; bottom: -46.203%;}
 .img_area img{width: 100%;}
+.first_intro.on .logo{opacity: 1; transition: all 1s; transition-timing-function: cubic-bezier(0.65, 0, 0.35, 1);}
 .first_intro.on .intro_tit{opacity: 1; transition: all 1s; transition-timing-function: cubic-bezier(0.65, 0, 0.35, 1);}
 .first_intro.on .img_area{right: 0; bottom: 0; transition: all 1s; transition-timing-function: cubic-bezier(0.65, 0, 0.35, 1);}
 .first_intro.on .progressbar{height: calc(100% - 2rem); transition: all 1.5s 1s; transition-timing-function: cubic-bezier(0.65, 0, 0.35, 1);}
@@ -846,10 +849,12 @@ table + .table_tit{margin-top: 2rem;}
 
 .guide_info{position: relative; margin-top: 3.5rem;}
 .guide_info h4{font-size: 2.6rem; text-align: center; letter-spacing: -0.15rem; font-weight: 300; line-height: 1.38;}
+.guide_info.type02 h4{font-size: 3.4rem; text-align: center; letter-spacing: -0.15rem; font-weight: 100; line-height: 1.29;}
 .guide_info .type::after{content: '';display: block; padding-top: 19.5rem;}
 .guide_info .type.stop::after{background: url(../images/stop-2@2x.png) no-repeat center; background-size: 10.5rem;}
 .guide_info .type.error::after{background: url(../images/error-2@2x.png) no-repeat center; background-size: 10.5rem;}
 .guide_info .type.success::after{background: url(../images/success-2@2x.png) no-repeat center; background-size: 10.5rem;}
+.guide_info .type.success02::after{background: url(../images/success-02@2x.png) no-repeat center; background-size: 10.5rem;}
 .guide_info .type.loading::after{background: url(../images/empty-2@2x.png) no-repeat center; background-size: 10.5rem;}
 .guide_info .loading_dot{position: absolute; left: 50%; top:60%; transform: translateX(-50%); margin: 0; padding: 0;}
 .guide_info .loading_dot span{float: left; display: block; width: 0.6rem; height: 0.6rem; background-color: #57afa4; border-radius: 50%; -webkit-animation-name: playingdot02; -webkit-animation-duration: 3s; -webkit-animation-timing-function: linear; -webkit-animation-iteration-count: infinite; animation-name: playingdot02; animation-duration: 3s; animation-timing-function: linear; animation-iteration-count: infinite; }
@@ -873,7 +878,7 @@ table + .table_tit{margin-top: 2rem;}
 .guide_comment h4{font-size: 2.4rem; padding-bottom: 1rem;}
 .guide_comment h5{font-size: 1.8rem; line-height: 2.4rem; letter-spacing: -0.05rem;}
 .guide_comment h5+button{margin-top: 1rem;}
-.guide_comment .account_num{margin-top: 1.5rem; font-size: 2.2rem; line-height: 2rem; letter-spacing: 0.15rem; font-weight: 500;}
+.guide_comment .account_num{margin-top: 0.5rem; font-size: 2.0rem; line-height: 2rem; letter-spacing: 0.15rem; font-weight: 500;}
 .guide_comment .contect_comment{margin-top: 1rem; font-size: 1.4rem; line-height: 2rem; letter-spacing: -0.05rem; color: #666;}
 .guide_comment .contect_comment + button{margin-top: 2rem;}
 .contect_tit{position: relative; padding-top: 3rem; color: #57afa4; font-size: 1.8rem; font-weight: 500; line-height: 2.4rem; letter-spacing: -0.05rem;}
@@ -893,9 +898,9 @@ table + .table_tit{margin-top: 2rem;}
 .product_check_list .tab_area .tabs li.on{font-weight: 500; color: #57afa4; border-bottom: 0.2rem solid #57afa4;}
 .product_check_list .tabcont .check_list{padding-top: 2.5rem; letter-spacing: -0.05rem;}
 .product_check_list .tabcont .check_list li{position: relative; padding: 1.5rem 0;}
-.product_check_list .tabcont .check_list a{display: block; padding-left: 3rem; font-size: 1.4rem; line-height: 1.4; background: url(../images/off-small@2x.png)no-repeat; background-size: 1.4rem; background-position: 0.4rem 0.5rem;}
+.product_check_list .tabcont .check_list a{display: block; padding-left: 3rem; font-size: 1.4rem; line-height: 1.4; background: url(../images/off-small@2x.png)no-repeat; background-size: 1.4rem; background-position: 0.4rem 0.5rem; color: #666;}
 .product_check_list .tabcont .check_list li.on a{background: url(../images/on-small@2x.png)no-repeat; background-size: 1.4rem; background-position: 0.4rem 0.5rem;}
-.product_check_list .tabcont .check_list strong{display: block; font-size: 1.6rem; font-weight: 500; margin-bottom: 0.5rem;}
+.product_check_list .tabcont .check_list strong{display: block; font-size: 1.6rem; font-weight: 500; margin-bottom: 0.5rem; color: #000;}
 .product_check_list .tabcont .check_list li .popup_open{position: absolute; right: 0; top:1.2rem; font-size: 0; width: 3rem; height: 3rem; background: url(../images/right@2x.png)no-repeat; background-size: 2rem; background-position: center}
 .checking_list{text-align: left; counter-reset:checkinglist;}
 .checking_list li{padding-left: 3rem; position: relative; letter-spacing: -0.05rem;}
@@ -955,12 +960,7 @@ table + .table_tit{margin-top: 2rem;}
 .num_list li+li{margin-top: 0.4rem;}
 .num_list>li::before{content: counter(noticelist); counter-increment:noticelist; margin-right: 0.4rem;}
 
-.applying_products{margin-top: 3.5rem;}
-.applying_list > li{padding: 3rem 0; position: relative; border-bottom: 0.1rem solid #ddd;}
-.applying_list .list_dot{padding-top: 2rem;}
-.applying_list .list_dot li{font-size: 1.6rem; color: #000;}
-.applying_list .list_del{position: absolute; right: 0.5rem; top: 8rem; width: 2rem; height: 2rem; background: url('../images/delete@2x_02.png'); background-size: 2rem; font-size: 0;}
-.applying_list li > .date{position: absolute; right: 1rem; top: 3.8rem; font-size: 1.3rem; color: #999; letter-spacing: 0.05rem;}
+
 
 .guide_notice ul{display: flex; flex-direction: row; justify-content: center; padding-top: 4rem;}
 .guide_notice li{font-size: 1.6rem; text-align: center; flex: 1;}
@@ -1063,7 +1063,30 @@ table + .table_tit{margin-top: 2rem;}
 .input_form.input_form_type02.check_money.on .input_wrap .input_title{width: 100%;}
 .check_number span {display: inline-block; border-radius: 50%; width: 1rem; height: 1rem; background: #57afa4;}
 .check_number span:first-child ~ span {margin-left: 5.6rem;}
-
+.applying_products{margin-top: 3.5rem;}
+.applying_list > li{padding: 3rem 0; position: relative; border-bottom: 0.1rem solid #ddd;}
+.applying_list .list_dot{padding-top: 1rem;}
+.applying_list .list_dot li{font-size: 1.6rem; color: #666;}
+.applying_list .list_del{position: absolute; right: 0.5rem; top: 8rem; width: 2rem; height: 2rem; background: url('../images/delete@2x_02.png'); background-size: 2rem; font-size: 0;}
+.applying_list li > .date{position: absolute; right: 1rem; top: 3.8rem; font-size: 1.3rem; color: #999; letter-spacing: 0.05rem;}
+.applying_list .result{display: inline-block; padding-left: 3rem; font-size: 1.8rem; font-weight: 500; line-height: 1.33;}
+.applying_list .result.complete{background: url(../images/complete@2x.png) no-repeat left center; background-size: 2.4rem;}
+.applying_list .result.cancel{background: url(../images/cancel@2x.png) no-repeat left center; background-size: 2.4rem;}
+.applying_list .result.fail{background: url(../images/fail@2x.png) no-repeat left center; background-size: 2.4rem;}
+.applying_list .result.ing{background: url(../images/ing@2x.png) no-repeat left center; background-size: 2.4rem;}
+.applying_list .move_to{position: absolute; right: 0.0rem; top: 6.6rem; width: 3rem; height: 3rem; background: url(../images/right@2x.png) no-repeat center; background-size: 2rem; font-size: 0;}
+.applying_list .applied_Number{display: block; font-size: 1.6rem; font-weight: 500; padding-top: 2rem;}
+.guide_comment.type05{border-radius: 0; padding: 0; background: none;}
+.guide_comment .done_info{border-bottom: 0.1rem solid #ddd; padding: 3rem 0; text-align: left;}
+.guide_comment.type05 .done_info:first{padding:0 0 3rem;}
+.guide_comment .done_info .tit_info{font-size: 1.8rem; font-weight: 500; letter-spacing: -0.05rem;}
+.guide_comment .done_info .tit_info + *{margin-top: 1.5rem;}
+.guide_comment .done_info .content_info{font-size: 1.6rem; text-align: left; line-height: 2.2rem; letter-spacing: -0.1rem;}
+.guide_comment .done_info .content_info+.content_info{margin-top: 1rem;}
+.guide_comment .done_info .account_info{position: relative; font-size: 1.6rem; letter-spacing: 0.15rem;}
+.guide_comment .done_info .account_info button{position: absolute; right: 0; top: 50%; transform: translateY(-50%); font-weight: 300;}
+.guide_comment .done_info .account_sub{margin-top: 1rem; font-size: 1.4rem; color: #999; letter-spacing: -0.05rem;}
+.guide_comment .done_info .account_sub span{letter-spacing: 0.15rem;}
 td dt{font-weight: 600;}
 td dt{margin-top: 0.7rem;}
 td dd {margin-top: 0.5rem;}
