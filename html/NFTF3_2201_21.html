@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no, address=no, email=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Cache-control" content="No-cache">
+    <meta http-equiv="Pragma" content="No-cache">
+    <title>NFTF3_02-1상품선택</title>
+    <link rel="stylesheet" href="../css/nftf_common.css">
+    <script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../js/rolldate.js"></script>
+    <script type="text/javascript" src="../js/swiper.js"></script>
+    <script type="text/javascript" src="../js/nftf_common.js"></script>
+</head>
+<script>
+    document.addEventListener('DOMContentLoaded', function(){
+        setTimeout(function(){
+            var loadingDot = document.querySelector('.loading_dot')
+            loadingDot.classList = 'loading_dot on'
+        },500)
+        var layerEvent = document.querySelectorAll('.layerpopup')
+        for(var i = 0; i<layerEvent.length; i++){
+            layerEvent[i].addEventListener('click', function(e){
+                console.log(e.target)
+                if(e.target.className ==='cancel'){
+                    e.currentTarget.style.display = 'none'
+                }
+                if(e.target.className ==='dimmed'){
+                    e.currentTarget.style.display = 'none'
+                }
+            })
+        }
+        $('.tabs li').each(function(){
+            $(this).click(function(){
+                $(this).siblings().removeClass('on')
+                $(this).removeClass('on')
+                $(this).addClass('on')
+                $('.tab_cont_area .tabcont').hide()
+                $('.tab_cont_area .tabcont').eq($(this).index()).show()
+            //     setTimeout(function () {
+		    //         layerScroll.update();
+		    //     }, 0);
+            })
+        })
+    });
+</script>
+<body>
+    <div class="wrapper">
+        <header>
+            <button class="back_btn"></button>
+            <h2 class="h_tit">본인인증</h2>
+            <button class="h_menu"></button>
+        </header>
+        <div class="contents">
+            <section>
+                <div class="loading_dot">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <p class="pages_tit"><span class="t_mi">이름과 주민번호</span>를<br>입력해주세요.</p>
+            </section>
+        </div>
+        
+        <div class="layerpopup" id="layerpopup01">
+            <div class="layer_90 tab_layer">
+                <div class="layer_contents">
+                    <div class="pop_tit tab_area">
+                        <h5>도전365 적금</h5>
+                        <p class="content_info">연금이체, 급여이체, 카드결제,<br>공과금 자동이체 시 수수료 우대서비스를<br>제공하는 평생 주거래 통장</p>
+                        <ul class="tabs">
+                            <!-- <li>상품내용</li> -->
+                            <li class="on">상품내용</li>
+                            <li>금리안내</li>
+                        </ul>
+                    </div>
+                    <div class="pop_content j_scroll">
+                        <div class="swiper-wrapper">
+                            <div class="pop_inner swiper-slide">
+                                <p class="product_info">걸음수 UP! 금리도 UP!</p>
+                                <div class="tab_cont_area">
+                                    <!-- <div class="tabcont img_link type01">
+                                        <img src="../images/icon-img@2x.png" alt="(내 맘) 적금">
+                                        <a href="#none"></a>
+                                    </div> -->
+                                    <div class="tabcont">
+                                        <div class="cont_part">
+                                            <h4>상품특징</h4>
+                                            <p>하나멤버스 연동 자신의 걸음수에 따라 우대금리 혜택을 받는 적금</p>
+                                            <p>[걸음수 측정]</p>
+                                            <ul class="list_dot mt10">
+                                                <li>안드로이드 : 삼성헬스 앱 지원이 가능한 기기에서 사용가능</li>
+                                                <li>아이폰 : IOS 8.0 이상의 기기에서 사용가능 <br>
+                                                    (단, 아이폰 5C 이하 기기는 사용불가)</li>
+                                            </ul>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>가입대상</h4>
+                                            <p>만 14세 이상 실명의 개인 및 개인사업자 (1인 1계좌)</p>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>가입기간</h4>
+                                            <p>1년</p>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>가입금액</h4>
+                                            <p>1천원 이상 20만원 이하 (원단위)</p>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>적립금액</h4>
+                                            <p>월 1천원 이상 20만원 이하</p>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>이자지급방법</h4>
+                                            <p>만기일시지급식</p>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>우대금리</h4>
+                                            <ul class="list_dot mt10">
+                                                <li>최대 연2.45%(세전) 우대가능<br>
+                                                    우대금리는 만기 해지하는 경우에 적용되며, 중도(분할)해지시에는 적용되지 않습니다.
+                                                    <ul class="num_list_circle">
+                                                        <li><span>①</span> 건강서비스 우대 (최대 연2.35%) <br>
+                                                            하나멤버스 앱내 ‘내 걸음수 확인하기’ 버튼을 누른 하나멤버스 회원이 <span class="color02">신규일부터 11개월되는 일자까지</span> 아래 우대항목을 충족하는 경우 해당 우대금리를 제공합니다.
+                                                            <ul class="list_dot mt10">
+                                                                <li>걸음수 데이터 200만보 이상~ 300만보 미만 : 연 1.00%</li>
+                                                                <li>걸음수 데이터 300만보 이상~ 350만보 미만 : 연 2.00%</li>
+                                                                <li>걸음수 데이터 350만보 이상 : 연 2.35%</li>
+                                                            </ul>
+                                                        </li>
+                                                        <li><span>②</span> 고령자 우대 (연0.10%) <br>
+                                                            가입일 기준 만 65세 이상인 경우
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>분할해지</h4>
+                                            <p>최종 해지분 포함 3회까지 분할해지 가능하며, 중도해지금리를 적용함 <br>
+                                                (분할해지 후 잔액은 이 상품의 최소 가입금액 이상어야 함)</p>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>세제혜택</h4>
+                                            <p>비과세종합저축 가능 (전 금융기관 통합한도 범위내) <br>
+                                                ※ 만기후이자는 소득세 부과</p>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>유의사항</h4>
+                                            <ul class="list_dot mt10">
+                                                <li>건강서비스는 걸음수 데이터를 의미하며, 안드로이드(삼성헬스 앱), 아이폰(건강 앱)의 걸음데이터를 사용합니다. <br>
+                                                    안드로이드 : 삼성헬스 앱 지원이 가능한 기기에서 사용가능 <br>
+                                                    아이폰 : IOS 8.0 이상의 기기에서 사용가능 <br>
+                                                    (단, 아이폰 5C 이하 기기는 사용불가)
+                                                </li>
+                                                <li class="color02">적금 가입 후 하나멤버스앱 > 내 걸음수 확인하기 버튼을 클릭하여 걸음수 기록을 하는 경우에 한하여 걸음수 데이터 누적 및 우대금리 혜택을 받으실 수 있습니다.</li>
+                                                <li>건강서비스(걸음수)는 하나멤버스 앱을 통해서만 확인할 수 있습니다.(하나 원큐 및 인터넷뱅킹 확인불가)</li>
+                                                <li class="color02">걸음수 측정 종료일(신규일부터 11개월 되는일자) 이후, 만기일이전까지 반드시 본인의 누적 걸음수를 하나멤버스 앱 로그인 후 확인하셔야 걸음수 데이터에 대한 건강서비스 우대금리가 적용됩니다.</li>
+                                                <li>본인 명의의 휴대폰을 보유한 손님에 한하여 건강서비스 우대에 따른 금리혜택을 제공합니다.</li>
+                                                <li>하나멤버스앱을 통하여 본인의 걸음수 데이터를 상시 확인하시기 바랍니다.</li>
+                                                <li>가입자의 사정에 의해, 휴대폰을 교체하거나 데이터가 초기화가 되는 경우 걸음수 데이터가 복구되지 않으므로, 반드시 데이터 백업(저장) 후 사용하셔야 합니다.</li>
+                                                <li>만기일 전에 중도해지시 약정한 금리보다 낮은 중도해지금리가 적용됩니다.</li>
+                                                <li>우대금리는 만기해지시에 적용되며, 중도해지(또는 분할해지)시에는 적용되지 않습니다.</li>
+                                            </ul>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>상품내용 변경에 관한 사항</h4>
+                                            <table class="mt10 type_row">
+                                                <colgroup>
+                                                    <col style="width: 40%;">
+                                                    <col style="width: 60%;">
+                                                </colgroup>
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="row">
+                                                            상품내용 변경에 <br>
+                                                            관한 사항 <br>
+                                                            (2019.04.24 변경)
+                                                        </th>
+                                                        <td class="left">
+                                                            <p class="t_mi">&lt;상품특징, 유의사항&gt;</p>
+                                                            <dl>
+                                                                <dt>변경 전</dt>
+                                                                <dd>안드로이드 : OS 5.0 이상의 기기에서 사용가능</dd>
+                                                                <dt>변경 후</dt>
+                                                                <dd>안드로이드 : 삼성헬스 앱 지원이 가능한 기기에서 사용가능</dd>
+                                                            </dl>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">
+                                                            상품내용 변경에 <br>
+                                                            관한 사항 <br>
+                                                            (2018.11.01 변경)
+                                                        </th>
+                                                        <td class="left">
+                                                            <p class="t_mi">&lt;중도해지금리 변경&gt;</p>
+                                                            <dl>
+                                                                <dt>변경 전</dt>
+                                                                <dd>
+                                                                    <ul class="list_dot mt10">
+                                                                        <li>1개월 미만: 0.1%</li>
+                                                                        <li>1개월 이상 ~ 3개월 미만: 0.3%</li>
+                                                                        <li>3개월 이상 ~ 6개월 미만 : 0.5%</li>
+                                                                        <li>6개월이상 : 가입(재예치)당시 해당 상품의 기본금리 × 차등률(주1) × 경과율(주2) <br> (단, 해당금리가 연0.5% 미만시 연0.5% 적용)
+                                                                            <br>(주1) 차등률 : 기간(6개월 이상)에 따른 아래 차등률 참고
+                                                                        </li>
+                                                                        <li>6개월 이상 ~ 9개월 미만 경과시 : 60% 적용</li>
+                                                                        <li>9개월 이상 ~ 11개월 미만 경과시 : 70% 적용</li>
+                                                                        <li>11개월 이상 경과시 : 90% 적용 <br>
+                                                                            (주2) 경과율 : 경과일수/계약일수 (단, 경과일수는 계약일수를 초과할 수 없음) <br>
+                                                                            ※ 중도해지금리는 소수점 셋째자리까지 적용(소숫점 넷째자리에서 절사) <br>
+                                                                            (예시) 중도해지금리가 1.564721% 산출시 1.564% 적용
+                                                                        </li>
+                                                                    </ul>
+                                                                </dd>
+                                                                <dt>변경 후</dt>
+                                                                <dd>
+                                                                    <ul class="list_dot mt10">
+                                                                        <li>1개월미만 : 연0.1%</li>
+                                                                        <li>1개월 이상 ~ 3개월미만 : 연0.3%</li>
+                                                                        <li>3개월 이상 ~ 6개월미만 : 연0.5%</li>
+                                                                        <li>6개월이상 : 가입(재예치)당시 해당 상품의 기본금리 × 차등률(주1) × 경과율(주2) (단, 해당금리가 연0.5% 미만시 연0.5% 적용)<br>(주1) 차등률 : 기간(6개월 이상)에 따른 아래 차등률 참고</li>
+                                                                        <li>6개월 이상 ~ 9개월 미만 경과시 : 60% 적용</li>
+                                                                        <li>9개월 이상 ~ 11개월 미만 경과시 : 70% 적용</li>
+                                                                        <li>11개월 이상 경과시 : 90% 적용 <br>
+                                                                            (주2) 경과율 : 경과일수/계약일수 (단, 경과일수는 계약일수를 초과할 수 없음) <br>
+                                                                            ※ 중도해지금리는 소수점 셋째자리까지 적용(소숫점 넷째자리에서 절사) <br>
+                                                                            (예시) 중도해지금리가 1.564721% 산출시 1.564% 적용
+                                                                        </li>
+                                                                    </ul>
+                                                                </dd>
+                                                            </dl>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">
+                                                            상품내용 변경에 <br>
+                                                            관한 사항 <br>
+                                                            (2019.04.24 변경)
+                                                        </th>
+                                                        <td class="left">
+                                                            <p class="t_mi">&lt;상품특징, 유의사항&gt;</p>
+                                                            <dl>
+                                                                <dt>변경 전</dt>
+                                                                <dd>
+                                                                    <ul class="list_dot mt10">
+                                                                        <li>안드로이드 : 갤럭시S3 및 안드로이드 OS 4.4 이상의 기기에서 사용가능</li>
+                                                                        <li>아이폰 : 아이폰 4S 및 IOS 8.0 이상의 기기에서 사용가능</li>
+                                                                    </ul>
+                                                                </dd>
+                                                                <dt>변경 후</dt>
+                                                                <dd>
+                                                                    <ul class="list_dot mt10">
+                                                                        <li>안드로이드 : OS 5.0 이상의 기기에서 사용가능</li>
+                                                                        <li>아이폰 : IOS 8.0 이상의 기기에서 사용가능 (단, 아이폰 5C 이하 기기는 사용불가)</li>
+                                                                    </ul>
+                                                                </dd>
+                                                            </dl>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="tabcont">
+                                        <div class="cont_part">
+                                            <h4>기본금리</h4>
+                                            <table class="mt10 type_col">
+                                                <colgroup>
+                                                    <col style="width: 50%;">
+                                                    <col style="width: 50%;">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th>기간</th>
+                                                        <th>금리(연율, 세전)</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>1년</td>
+                                                        <td>0.80%</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <p class="norm">(2020-03-02 기준, 세전)</p>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>우대금리</h4>
+                                            <p>최대 연2.45% (세전) 우대가능</p>
+                                            <ul class="list_dot mt10">
+                                                <li>우대금리는 만기 해지하는 경우에 적용되며, 중도(분할)해지시에는 적용되지 않습니다.</li>
+                                                <li>건강서비스 우대란, 누적걸음수에 따른 우대금리 혜택을 의미합니다.</li>
+                                            </ul>
+                                            <ul class="num_list_circle">
+                                                <li><span>①</span> 건강서비스 우대 (최대 연2.35%) <br>
+                                               하나멤버스 앱내 ‘내 걸음수 확인하기’ 버튼을 누른 <span class="color02">하나멤버스 회원이 신규일부터 11개월되는 일자까지</span> 아래 우대항목을 충족하는 경우 해당 우대금리를 제공합니다. 
+                                                    <ul class="list_dot mt10">
+                                                        <li>걸음수 데이터 200만보 이상~ 300만보 미만 : 연 1.00%</li>
+                                                        <li>걸음수 데이터 300만보 이상~ 350만보 미만 : 연 2.00%</li>
+                                                        <li>걸음수 데이터 350만보 이상 : 연 2.35%</li>
+                                                    </ul>
+                                                </li>
+                                                <li><span>②</span> 고령자 우대 (연0.10%) <br>
+                                                    가입일 기준 만 65세 이상인 경우
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="cont_part">
+                                            <h4>중도해지금리</h4>
+                                            <table class="mt10 type_col">
+                                                <colgroup>
+                                                    <col style="width: 50%;">
+                                                    <col style="width: 50%;">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th>기간</th>
+                                                        <th>적용금리(연율, 세전)</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>1개월 미만</td>
+                                                        <td>0.1%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>1개월 이상~3개월 미만</td>
+                                                        <td>0.3%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3개월 이상~6개월 미만</td>
+                                                        <td>0.5%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>6개월 이상</td>
+                                                        <td>가입(재예치)당시 해당 상품의 기본금리 × 차등률<span class="smTit color02">주1)</span> Ⅹ 경과율<span class="smTit color02">주2)</span> <br>
+                                                            (단, 해당금리가 0.5% 미만시 0.5% 적용) <br></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <p><span class="color02">주1)</span> 차등률 : 경과기간에 따른 차등률 참고
+                                                <ul class="list_dot mt10">
+                                                    <li>6개월 이상 ~ 9개월 미만 경과시 : 60% 적용</li>
+                                                    <li>9개월 이상 ~ 11개월 미만 경과시 : 70% 적용</li>
+                                                    <li>11개월 이상 경과시 : 90% 적용</li>
+                                                </ul>
+                                            </p>
+                                            <p><span class="color02">주2)</span> 경과율 : 경과일수/계약일수 <br>
+                                                (단, 경과일수는 계약일수를 초과할 수 없음)<br>
+                                                ※ 중도해지금리는 소수점 셋째자리까지 적용(소수점 넷째자리에서 절사)
+                                                (예시) 중도해지금리가 1.564721%로 산출시 1.564%로 적용</p>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>만기후 금리</h4>
+                                            <table class="mt10 type_col">
+                                                <colgroup>
+                                                    <col style="width: 50%;">
+                                                    <col style="width: 50%;">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th>기간</th>
+                                                        <th>금리(연율, 세전)</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>1개월 이내</td>
+                                                        <td>지급당시 해당기간별 정기적금 기본금리 1/2</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>1개월 초과</td>
+                                                        <td>지급당시 해당기간별 정기적금 기본금리의 1/4</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="client_safely">
+                                    <p class="tit">예금자 보호</p>
+                                    <p class="kdic_mark">이 예금은 예금자 보호법에 따라, 예금보험공사가 보호하되, 보호한도는 본 은행에 있는 귀하의 모든 예금대상 금융상품의 원금과 소정의 이자를 합하여 1인당 “최고 5천만원”이며, 5천만원을 초과하는 나머지 금액은 보호하지 않습니다.</p>
+                                    <p class="kdic">준법감시인 심사필 2020-상품-1802호(2020.03.02)<br>
+                                        본 공시내용의 유효기간 : 2020.03.02~2023.03.01<br>
+                                        기준일 : 2020년 03월 02일</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pop_fix_area">
+                        <button type="button" class="pop_btn01 j_layer_close">동의</button>
+                    </div>
+                    <button type="button" class="cancel">취소</button>
+                </div>
+            </div>
+        </div>
+        <script>
+            layerOpen.init('#layerpopup01');
+        </script>
+    </div>
+</body>
+</html>

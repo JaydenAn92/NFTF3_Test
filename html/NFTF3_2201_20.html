@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no, address=no, email=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Cache-control" content="No-cache">
+    <meta http-equiv="Pragma" content="No-cache">
+    <title>NFTF3_02-1상품선택</title>
+    <link rel="stylesheet" href="../css/nftf_common.css">
+    <script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../js/rolldate.js"></script>
+    <script type="text/javascript" src="../js/swiper.js"></script>
+    <script type="text/javascript" src="../js/nftf_common.js"></script>
+</head>
+<script>
+    document.addEventListener('DOMContentLoaded', function(){
+        setTimeout(function(){
+            var loadingDot = document.querySelector('.loading_dot')
+            loadingDot.classList = 'loading_dot on'
+        },500)
+        var layerEvent = document.querySelectorAll('.layerpopup')
+        for(var i = 0; i<layerEvent.length; i++){
+            layerEvent[i].addEventListener('click', function(e){
+                console.log(e.target)
+                if(e.target.className ==='cancel'){
+                    e.currentTarget.style.display = 'none'
+                }
+                if(e.target.className ==='dimmed'){
+                    e.currentTarget.style.display = 'none'
+                }
+            })
+        }
+        $('.tabs li').each(function(){
+            $(this).click(function(){
+                $(this).siblings().removeClass('on')
+                $(this).removeClass('on')
+                $(this).addClass('on')
+                $('.tab_cont_area .tabcont').hide()
+                $('.tab_cont_area .tabcont').eq($(this).index()).show()
+            //     setTimeout(function () {
+		    //         layerScroll.update();
+		    //     }, 0);
+            })
+        })
+    });
+</script>
+<body>
+    <div class="wrapper">
+        <header>
+            <button class="back_btn"></button>
+            <h2 class="h_tit">본인인증</h2>
+            <button class="h_menu"></button>
+        </header>
+        <div class="contents">
+            <section>
+                <div class="loading_dot">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <p class="pages_tit"><span class="t_mi">이름과 주민번호</span>를<br>입력해주세요.</p>
+            </section>
+        </div>
+        
+        <div class="layerpopup" id="layerpopup01">
+            <div class="layer_90 tab_layer">
+                <div class="layer_contents">
+                    <div class="pop_tit tab_area">
+                        <h5>함께하는 사랑 적금</h5>
+                        <p class="content_info">연금이체, 급여이체, 카드결제,<br>공과금 자동이체 시 수수료 우대서비스를<br>제공하는 평생 주거래 통장</p>
+                        <ul class="tabs">
+                            <!-- <li>상품내용</li> -->
+                            <li class="on">상품내용</li>
+                            <li>금리안내</li>
+                        </ul>
+                    </div>
+                    <div class="pop_content j_scroll">
+                        <div class="swiper-wrapper">
+                            <div class="pop_inner swiper-slide">
+                                <p class="product_info">지역 경제 활성화 및 <br>
+                                    소외계층 지원을 위한 적금</p>
+                                <div class="tab_cont_area">
+                                    <!-- <div class="tabcont img_link type01">
+                                        <img src="../images/icon-img@2x.png" alt="(내 맘) 적금">
+                                        <a href="#none"></a>
+                                    </div> -->
+                                    <div class="tabcont">
+                                        <!-- <div class="cont_part">
+                                            <h4>상품특징</h4>
+                                            <p>공과금, 카드대금 이체 등 각종 주거래 건수에 따라 우대금리 제공하는 월복리 적금</p>
+                                        </div> -->
+                                        <div class="cont_part">
+                                            <h4>가입대상</h4>
+                                            <p>실명의 개인(개인사업자 포함) 및 법인(단, 개인뱅킹에서는 개인만 가입 가능함)</p>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>가입기간</h4>
+                                            <p>12개월 이상 ~ 36개월 이하 (월단위로 자유롭게 지정)</p>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>가입금액</h4>
+                                            <p class="color02">1만원이상 (원단위)</p>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>적립금액</h4>
+                                            <p>1회 최저적립금액 1만원 이상 1개월 적립한도는 1백만원 이하, 단 법인은 1천만원 이하</p>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>이자지급방법</h4>
+                                            <p>만기일시지급식</p>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>적립방법</h4>
+                                            <p>자유적립식</p>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>우대금리</h4>
+                                            <ul class="list_dot mt10">
+                                                <li>최대 연0.9% (2019.04.05 기준, 세전)<br>
+                                                    아래 요건 충족 시 최대 연0.9%의 우대금리를 만기 해지 시 추가 제공합니다.
+                                                    <ul class="num_list_circle">
+                                                        <li><span>①</span> 이 예금 가입 후 3개월 이내 ‘급여’, ‘4대연금(국민/공무원/군인/사학)’, ‘가맹점대금(BC/하나)’ 중 한가지 이상 하나은행 입출금계좌로 이체 시 연(0.2)%
+                                                        </li>
+                                                        <li><span>②</span> 이 예금 가입 후 3개월 이내 ‘아파트관리비’ 또는 ‘하나카드사와 당행 제휴 카드사의 신용(체크)카드를 합하여 월10만원 이상’ 하나은행 입출금 계좌에서 결제 시 연(0.2)% (2019.4.5 현재 당행제휴 카드사: 현대카드)
+                                                        </li>
+                                                        <li><span>③</span> 하나은행을 처음 거래 시(가입일 현재 하나은행 예금 잔액이 0원) 또는 하나은행을 10년 이상 거래 시(고객 최초등록일로부터 10년 이상 경과) 연(0.3)%
+                                                        </li>
+                                                        <li><span>④</span> 기초생활수급자, 근로장려금수급자, 소년소녀가장, 한부모가족지원 보호대상자, 다문화가족, 탈북자 증빙서류 또는 (가입일 이후) 봉사활동 확인증·기부금 영수증·기부금 자동이체신청서 중 1개 확인 시 연(0.2)%
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>일부해지</h4>
+                                            <p>불가합니다.</p>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>세제혜택</h4>
+                                            <p>개인의 경우 비과세종합저축 가능 (전 금융기관 통합한도 범위내), 만기 후 이자는 소득세 부과</p>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>유의사항</h4>
+                                            <ul class="list_dot mt10">
+                                                <li>만기일 전에 중도해지 시 약정한 금리보다 낮은 중도해지금리가 적용됩니다.</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    <div class="tabcont">
+                                        <div class="cont_part">
+                                            <h4>기본금리</h4>
+                                            <table class="mt10 type_col">
+                                                <colgroup>
+                                                    <col style="width: 33.333%;">
+                                                    <col style="width: 33.333%;">
+                                                    <col style="width: 33.333%;">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th>계약기간</th>
+                                                        <th>개인</th>
+                                                        <th>법인</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>12개월 이상	</td>
+                                                        <td>연1.50%(연1.40%)</td>
+                                                        <td>연1.10%(연1.00%)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>24개월 이상	</td>
+                                                        <td>연1.60%(연1.50%)</td>
+                                                        <td>연1.20%(연1.10%)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>36개월</td>
+                                                        <td>연1.70%(연1.60%)</td>
+                                                        <td>연1.30%(연1.20%)</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <p class="mt0">※ ( )은 자유적립식</p>
+                                            <p class="norm">(2019-07-29 기준, 세전)</p>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>우대금리</h4>
+                                            <p>최대 0.9% (2019.4.5 기준,세전)<br>
+                                                아래 요건 충족 시 최대 연0.9%의 우대금리를 만기 해지 시 추가 제공합니다.
+                                            </p>
+                                            <ul class="num_list_circle">
+                                                <li><span>①</span> 이 예금 가입 후 3개월 이내 ‘급여’, ‘4대연금(국민/공무원/군인/사학)’, ‘가맹점대금(BC/하나)’ 중 한가지 이상 하나은행 입출금계좌로 이체 시 연(0.2)%</li>
+                                                <li><span>②</span> 이 예금 가입 후 3개월 이내 ‘아파트관리비’ 또는 ‘하나카드사와 당행 제휴 카드사의 신용(체크)카드를 합하여 월10만원 이상’ 하나은행 입출금 계좌에서 결제 시 연(0.2)% (2019.4.5 현재 당행제휴 카드사: 현대카드)</li>
+                                                <li><span>③</span>  하나은행을 처음 거래 시(가입일 현재 하나은행 예금 잔액이 0원) 또는 하나은행을 10년 이상 거래 시(고객 최초등록일로부터 10년 이상 경과) 연(0.3)%</li>
+                                                <li><span>④</span> 기초생활수급자, 근로장려금수급자, 소년소녀가장, 한부모가족지원 보호대상자, 다문화가족, 탈북자 증빙서류 또는 (가입일 이후) 봉사활동 확인증·기부금 영수증·기부금 자동이체신청서 중 1개 확인 시 연(0.2)%</li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="cont_part">
+                                            <h4>중도해지금리</h4>
+                                            <table class="mt10 type_col">
+                                                <colgroup>
+                                                    <col style="width: 50%;">
+                                                    <col style="width: 50%;">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th>기간</th>
+                                                        <th>적용금리(연율, 세전)</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>1개월 미만</td>
+                                                        <td>0.1%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>1개월 이상~3개월 미만</td>
+                                                        <td>0.3%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3개월 이상~6개월 미만</td>
+                                                        <td>0.5%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>6개월 이상</td>
+                                                        <td>가입(재예치)당시 해당 상품의 기본금리 × 차등률<span class="smTit color02">주1)</span> Ⅹ 경과율<span class="smTit color02">주2)</span> <br>
+                                                            (단, 해당금리가 0.5% 미만시 0.5% 적용) <br></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <p><span class="color02">주1)</span> 차등률 : 경과기간에 따른 차등률 참고
+                                                <ul class="list_dot mt10">
+                                                    <li>6개월 이상 ~ 9개월 미만 경과시 : 60% 적용</li>
+                                                    <li>9개월 이상 ~ 11개월 미만 경과시 : 70% 적용</li>
+                                                    <li>11개월 이상 경과시 : 90% 적용</li>
+                                                </ul>
+                                            </p>
+                                            <p><span class="color02">주2)</span> 경과율 : 경과일수/계약일수 <br>
+                                                (단, 경과일수는 계약일수를 초과할 수 없음)<br>
+                                                ※ 중도해지금리는 소수점 셋째자리까지 적용(소수점 넷째자리에서 절사)
+                                                (예시) 중도해지금리가 1.564721%로 산출시 1.564%로 적용</p>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>만기후 금리</h4>
+                                            <table class="mt10 type_col">
+                                                <colgroup>
+                                                    <col style="width: 50%;">
+                                                    <col style="width: 50%;">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th>기간</th>
+                                                        <th>금리(연율, 세전)</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>1개월 이내</td>
+                                                        <td>지급당시 해당기간별 정기적금 기본금리 1/2</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>1개월 초과</td>
+                                                        <td>지급당시 해당기간별 정기적금 기본금리의 1/4</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="client_safely">
+                                    <p class="tit">예금자 보호</p>
+                                    <p class="kdic_mark">이 예금은 예금자 보호법에 따라, 예금보험공사가 보호하되, 보호한도는 본 은행에 있는 귀하의 모든 예금대상 금융상품의 원금과 소정의 이자를 합하여 1인당 “최고 5천만원”이며, 5천만원을 초과하는 나머지 금액은 보호하지 않습니다.</p>
+                                    <p class="kdic">준법감시인 심사필 2019-상품-1208호(2019.04.15)<br>
+                                        ※ 본 공시내용의 유효기간 : 2019.04.15 ~ 2022.04.14<br>
+                                        기준일 : 2019년 04월 25일</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pop_fix_area">
+                        <button type="button" class="pop_btn01 j_layer_close">동의</button>
+                    </div>
+                    <button type="button" class="cancel">취소</button>
+                </div>
+            </div>
+        </div>
+        <script>
+            layerOpen.init('#layerpopup01');
+        </script>
+    </div>
+</body>
+</html>

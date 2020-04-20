@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no, address=no, email=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Cache-control" content="No-cache">
+    <meta http-equiv="Pragma" content="No-cache">
+    <title>NFTF3_02-1상품선택</title>
+    <link rel="stylesheet" href="../css/nftf_common.css">
+    <script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../js/rolldate.js"></script>
+    <script type="text/javascript" src="../js/swiper.js"></script>
+    <script type="text/javascript" src="../js/nftf_common.js"></script>
+</head>
+<script>
+    document.addEventListener('DOMContentLoaded', function(){
+        setTimeout(function(){
+            var loadingDot = document.querySelector('.loading_dot')
+            loadingDot.classList = 'loading_dot on'
+        },500)
+        var layerEvent = document.querySelectorAll('.layerpopup')
+        for(var i = 0; i<layerEvent.length; i++){
+            layerEvent[i].addEventListener('click', function(e){
+                console.log(e.target)
+                if(e.target.className ==='cancel'){
+                    e.currentTarget.style.display = 'none'
+                }
+                if(e.target.className ==='dimmed'){
+                    e.currentTarget.style.display = 'none'
+                }
+            })
+        }
+        $('.tabs li').each(function(){
+            $(this).click(function(){
+                $(this).siblings().removeClass('on')
+                $(this).removeClass('on')
+                $(this).addClass('on')
+                $('.tab_cont_area .tabcont').hide()
+                $('.tab_cont_area .tabcont').eq($(this).index()).show()
+                setTimeout(function () {
+		            layerScroll.update();
+		        }, 0);
+            })
+        })
+    });
+</script>
+<body>
+    <div class="wrapper">
+        <header>
+            <button class="back_btn"></button>
+            <h2 class="h_tit">본인인증</h2>
+            <button class="h_menu"></button>
+        </header>
+        <div class="contents">
+            <section>
+                <div class="loading_dot">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <p class="pages_tit"><span class="t_mi">이름과 주민번호</span>를<br>입력해주세요.</p>
+            </section>
+        </div>
+        
+        <div class="layerpopup" id="layerpopup01">
+            <div class="layer_90 tab_layer">
+                <div class="layer_contents">
+                    <div class="pop_tit tab_area">
+                        <h5>급여하나 월복리적금</h5>
+                        <p class="content_info">연금이체, 급여이체, 카드결제,<br>공과금 자동이체 시 수수료 우대서비스를<br>제공하는 평생 주거래 통장</p>
+                        <ul class="tabs">
+                            <!-- <li>상품내용</li> -->
+                            <li class="on">상품내용</li>
+                            <li>금리안내</li>
+                        </ul>
+                    </div>
+                    <div class="pop_content j_scroll">
+                        <div class="swiper-wrapper">
+                            <div class="pop_inner swiper-slide">
+                                <p class="product_info">급여실적 하나로~ <br>
+                                    이자에 이자가 붙는 연금이체손님 전용 월복리 적금</p>
+                                <div class="tab_cont_area">
+                                    <!-- <div class="tabcont img_link type01">
+                                        <img src="../images/icon-img@2x.png" alt="(내 맘) 적금">
+                                        <a href="#none"></a>
+                                    </div> -->
+                                    <div class="tabcont">
+                                        <div class="cont_part">
+                                            <h4>가입대상</h4>
+                                            <p>실명의 개인 또는 개인사업자 (1인 1계좌) <br>
+                                                (연금하나 월복리 적금 또는 주거래하나 월복리 적금과 중복 가입 불가)</p>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>가입기간</h4>
+                                            <p>1년, 2년, 3년</p>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>가입금액</h4>
+                                            <p class="color02">1만원 이상 150만원 이하 (원단위)</p>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>적립한도</h4>
+                                            <p>1만원 이상 150만원 이하 (분기한도, 원단위)</p>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>이자지급방법</h4>
+                                            <p>만기일시지급식(월복리식) <br>
+                                                단, 중도해지금리 및 만기후금리는 단리로 계산</p>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>적립방법</h4>
+                                            <p>자유적립식</p>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>우대금리</h4>
+                                            <ul class="list_dot mt10">
+                                                <li>최대 연1.30% (2019.3.4 기준, 세전) <br>
+                                                    아래 항목을 충족한 경우, 최대 연1.30%의 우대금리를 제공합니다. (단, 중도해지시 미제공)
+                                                    <ul class="num_list_circle">
+                                                        <li><span>①</span> 급여하나 우대(연1.20%) <br>
+                                                            이 예금 만기 전전월말 기준, 계약기간의 1/2 이상 본인명의 하나은행 입출금통장을 통해 급여 입금실적주) 보유한 경우 (월1회 이체만 인정)
+                                                        </li>
+                                                        <li><span>②</span> 온라인 재예치 우대(연0.10%) <br>
+                                                            이 예금을 온라인채널(인터넷뱅킹/스마트폰뱅킹)을 통해 가입 또는 만기재예치하는 경우
+                                                        </li>
+                                                    </ul>
+                                                    주)급여입금 인정기준 : 타인으로부터 건당 50만원 이상, 급여를 의미하는 적요 (급여, 월급, 연봉, 봉급, 상여, 성과, 보너스, SALARY, PAY, BONUS 등)를 포함하여 입금되거나 또는 사전 지정한 급여일 전후 1영업일내에 입금되는 자금
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>청년직장인 특별금리</h4>
+                                            <p>2020.01.21일 이후 계약기간을 1년으로 가입하고 아래 항목을 모두 충족하는 경우, 최초 1년간 연1.3%의 특별금리를 1회 추가로 제공(중도해지 시 미제공)</p>
+                                            <ul class="num_list_circle">
+                                                <li><span>①</span> 가입시점에 만35세 이하이며 신규 입사자로(주) 확인된 경우</li>
+                                                <li><span>②</span> 급여하나 우대금리를 총족한 경우</li>
+                                                <li><span>③</span> 만기 전전월말 기준, 6개월 이상 본인명의 하나은행 입출금통장을 통해 하나카드 결제실적(신용/체크)을 월30만원 이상 보유한 경우</li>
+                                            </ul>
+                                            <p class="mt0">(주)이 예금 가입 해당년도에 신규 입사한 경우이며, 가입 이후 입사 제외(재직증명서 또는 건강보험증 등 입사확인이 가능한 서류를 영업점에 제출하고 신규)</p>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>만기자동 재예치 선택시 (총 3회)</h4>
+                                            <ul class="list_dot mt10">
+                                                <li>이 예금은 자동재예치를 선택한 경우, 만기일에 최초 계약기간 단위로 총 3회 자동재예치되며, 재예치 후 최소가입금액 1만원을 제외한 나머지 세후 원리금은 사전에 지정한 본인의 입출금통장에 입금됩니다.</li>
+                                                <li>재예치 계약기간을 다르게 희망하거나 재예치를 희망하지 않는 경우에는 영업점 창구를 통해 변경/해제 신청이 가능하며, 신청 후 도래하는 재예치거래시 적용됩니다.</li>
+                                                <li>만기일이 휴일인 경우에는 익영업일에 재예치, 해당일이 없는 경우에는 그 달의 말일에 재예치합니다. 단, 압류 등 지급제한이 있는 경우에는 재예치 되지 않습니다.</li>
+                                            </ul>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>중도해지</h4>
+                                            <p>예금 가입후(또는 재예치후) 2회까지 가능하며, 일부해지 금액에 대해서는 중도해지 금리를 적용합니다. (일부해지 후 예금잔액은 1만원이상)</p>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>특별중도해지</h4>
+                                            <p>영업점 창구를 통해 아래 사유별 증빙서류를 제시하고 이 예금을 중도해지하는 경우, 이 예금 가입일(또는 재예치일)의 계약기간별 기본금리를 적용합니다. 이때 우대금리는 적용하지 않습니다. <br>
+                                                ※ 해지 사유 : 본인 퇴직, 창업, 결혼, 주택구입</p>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>세제혜택</h4>
+                                            <p>개인의 경우 비과세종합저축 가능 (전 금융기관 통합한도 범위내), 만기후이자는 소득세 부과</p>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>유의사항</h4>
+                                            <ul class="list_dot mt10">
+                                                <li>만기일전에 중도해지 시 약정한 금리보다 낮은 중도해지금리가 적용됩니다.</li>
+                                                <li>이 예금은 만기일 전일까지 기간에 대하여 월복리로 이자를 계산하여 지급하며, 중도해지금리(일부해지 포함) 및 만기후금리는 단리로 계산하여 지급합니다.</li>
+                                                <li>자동재예치 등록계좌는 만기일에 계좌별 최대 3회까지 자동재예치되므로, 재예치횟수 3회가 초과되는 경우에는 더 이상 재예치되지 않습니다.</li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="cont_part">
+                                            <h4>상품내용 변경에 관한 사항</h4>
+                                            <table class="mt10 type_row">
+                                                <colgroup>
+                                                    <col style="width: 40%;">
+                                                    <col style="width: 60%;">
+                                                </colgroup>
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="row">
+                                                            상품내용 변경에 <br>
+                                                            관한 사항 <br>
+                                                            (2020.01.21 변경)
+                                                        </th>
+                                                        <td class="left">
+                                                            <p class="t_mi">&lt;청년직장인 특별금리 신설&gt;</p>
+                                                            <dl>
+                                                                <dt>변경 전</dt>
+                                                                <dd>해당사항없음</dd>
+                                                                <dt>변경 후</dt>
+                                                                <dd>2020.1.21일 이후 계약기간 1년으로 가입하고, 아래 항목을 모두 충족하는 경우, 최초 1년간 연1.3%의 특별금리를 1회 추가로 제공(중도해지 시 미제공)
+                                                                    <ul class="num_list_circle">
+                                                                        <li><span>①</span> 가입시점에 만 35세 이하이며 신규 입사자로(주) 확인된 경우</li>
+                                                                        <li><span>②</span> 급여하나 우대금리를 충족한 경우</li>
+                                                                        <li><span>④</span> 만기 전전월말 기준, 6개월 이상 본인명의 하나은행 입출금 통장을 통해 하나카드 결제실적(신용/체크)을 월30만원 이상 보유한 경우</li>
+                                                                    </ul>
+                                                                    (주)이 예금 가입 해당년도에 신규 입사한 경우이며, 가입 이후 입사 제외 <br>
+                                                                    (재직증명서 또는 건강보험증 등 입사확인이 가능한 서류를 영업점에 제출하고 신규)
+                                                                </dd>
+                                                            </dl>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">
+                                                            상품내용 변경에 <br>
+                                                            관한 사항 <br>
+                                                            (2019.07.01 변경)
+                                                        </th>
+                                                        <td class="left">
+                                                            <p class="t_mi">&lt;청년직장인 특별금리 제공 종료&gt;</p>
+                                                            <dl>
+                                                                <dt>변경 전</dt>
+                                                                <dd>2019.3.4~6.30 기간중 계약기간 1년으로 가입하고, 아래 항목을 모두 충족하는 경우, 최초 1년간 연2.0%의 특별금리 제공 (중도해지시 미제공)
+                                                                    <ul class="num_list_circle">
+                                                                        <li><span>①</span> 가입시점에 만 35세 이하이며 신규 입사자로(주) 확인된 경우</li>
+                                                                        <li><span>②</span> 급여하나 우대금리를 충족한 경우</li>
+                                                                        <li><span>④</span> 만기 전전월말 기준, 6개월이상 본인명의 하나은행 입출금통장을 통해 하나카드(또는 현대카드) 결제실적(신용/체크)을 보유한 경우(결제실적은 월 1회만 인정) <br> ㈜재직증명서 등 입사확인이 가능한 서류를 영업점에 제시하고 신규</li>
+                                                                    </ul>
+                                                                </dd>
+                                                                <dt>변경 후</dt>
+                                                                <dd>청년직장인 특별금리 제공기간 종료되어 삭제</dd>
+                                                            </dl>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">
+                                                            상품내용 변경에 <br>
+                                                            관한 사항 <br>
+                                                            (2018.03.04 변경)
+                                                        </th>
+                                                        <td class="left">
+                                                            <p class="t_mi">&lt;청년직장인 특별금리 신설&gt;</p>
+                                                            <dl>
+                                                                <dt>변경 전</dt>
+                                                                <dd>해당사항없음</dd>
+                                                                <dt>변경 후</dt>
+                                                                <dd>2019.3.4~6.30 기간중 계약기간 1년으로 가입하고, 아래 항목을 모두 충족하는 경우, 최초 1년간 연2.0%의 특별금리 제공(중도해지시 미제공)
+                                                                    <ul class="num_list_circle">
+                                                                        <li><span>①</span> 가입시점에 만 35세 이하이며 2019년 입사자로 확인된 경우㈜</li>
+                                                                        <li><span>②</span> 급여하나 우대금리를 충족한 경우</li>
+                                                                        <li><span>④</span> 만기 전전월말 기준, 6개월이상 본인명의 하나은행 입출금통장을 통해 하나카드(또는 현대카드) 결제실적(신용/체크)을 보유한 경우 (결제실적은 월 1회만 인정) <br>
+                                                                        ㈜재직증명서 등 입사확인이 가능한 서류를 영업점에 제시하고 신규</li>
+                                                                    </ul>
+                                                                </dd>
+                                                            </dl>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">
+                                                            상품내용 변경에 <br>
+                                                            관한 사항 <br>
+                                                            (2018.11.01 변경)
+                                                        </th>
+                                                        <td class="left">
+                                                            <p class="t_mi">&lt;중도해지금리 변경&gt;</p>
+                                                            <dl>
+                                                                <dt>변경 전</dt>
+                                                                <dd>
+                                                                    <ul class="list_dot mt10">
+                                                                        <li>1개월 미만: 0.1%</li>
+                                                                        <li>1개월 이상 ~ 3개월 미만: 0.3%</li>
+                                                                        <li>3개월 이상 ~ 6개월 미만 : 0.5%</li>
+                                                                        <li>6개월이상 : 가입(재예치)당시 기본금리 × 차등률(주1) × 경과율(주2) (단, 해당금리가 0.50% 미만시 0.50% 적용)
+                                                                            <br>(주1) 차등률 : 기간(6개월 이상)에 따른 아래 차등률 참고
+                                                                        </li>
+                                                                        <li>6개월 이상 ~ 9개월 미만 경과시 : 60% 적용</li>
+                                                                        <li>9개월 이상 ~ 11개월 미만 경과시 : 70% 적용</li>
+                                                                        <li>11개월 이상 경과시 : 90% 적용 <br>
+                                                                            (주2) 경과율 : 경과일수/계약일수</li>
+                                                                    </ul>
+                                                                </dd>
+                                                                <dt>변경 후</dt>
+                                                                <dd>
+                                                                    <ul class="list_dot mt10">
+                                                                        <li>1개월미만 : 연0.1%</li>
+                                                                        <li>1개월 이상 ~ 3개월미만 : 연0.3%</li>
+                                                                        <li>3개월 이상 ~ 6개월미만 : 연0.5%</li>
+                                                                        <li>6개월이상 : 가입(재예치)당시 해당 상품의 기본금리 × 차등률(주1) × 경과율(주2) (단, 해당금리가 연0.5% 미만시 연0.5% 적용)<br>(주1) 차등률 : 기간(6개월 이상)에 따른 아래 차등률 참고</li>
+                                                                        <li>6개월 이상 ~ 9개월 미만 경과시 : 60% 적용</li>
+                                                                        <li>9개월 이상 ~ 11개월 미만 경과시 : 70% 적용</li>
+                                                                        <li>11개월 이상 경과시 : 90% 적용 <br>
+                                                                            (주2) 경과율 : 경과일수/계약일수 (단, 경과일수는 계약일수를 초과할 수 없음) <br>
+                                                                            ※ 중도해지금리는 소수점 셋째자리까지 적용(소숫점 넷째자리에서 절사) <br>
+                                                                            (예시) 중도해지금리가 1.564721% 산출시 1.564% 적용
+                                                                        </li>
+                                                                    </ul>
+                                                                </dd>
+                                                            </dl>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+                                        
+                                        
+                                    </div>
+                                    <div class="tabcont">
+                                        <div class="cont_part">
+                                            <h4>기본금리</h4>
+                                            <table class="mt10 type_col">
+                                                <colgroup>
+                                                    <col style="width: 50%;">
+                                                    <col style="width: 50%;">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th>계약기간</th>
+                                                        <th>금리 (연율, 세전)</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>1년</td>
+                                                        <td>1.50%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>2년</td>
+                                                        <td>1.60%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3년</td>
+                                                        <td>1.80%</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <p class="norm">(2019-07-29 기준, 세전)</p>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>우대금리</h4>
+                                            <p>최대 연1.30% (2019.3.4 기준, 세전)<br>
+                                                아래 항목을 충족한 경우, 최대 연1.30%의 우대금리를 제공합니다. (단, 중도해지시 미제공)
+                                            </p>
+                                            <ul class="num_list_circle">
+                                                <li><span>①</span> 급여하나 우대(연1.20%) <br>
+                                                    이 예금 만기 전전월말 기준, 계약기간의 1/2 이상 본인명의 하나은행 입출금통장을 통해 급여 입금실적주) 보유한 경우 (월1회 이체만 인정)</li>
+                                                <li><span>②</span> 온라인 재예치 우대(연0.10%) <br>
+                                                    이 예금을 온라인채널(인터넷뱅킹/스마트폰뱅킹)을 통해 가입 또는 만기재예치하는 경우
+                                                </li>
+                                            </ul>
+                                            <p class="mt0">(주)급여입금 인정기준 : 타인으로부터 건당 50만원 이상, 급여를 의미하는 적요 (급여, 월급, 연봉, 봉급, 상여, 성과, 보너스, SALARY, PAY, BONUS 등)를 포함하여 입금되거나 또는 사전 지정한 급여일 전후 1영업일내에 입금되는 자금</p>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>청년직장인 특별금리</h4>
+                                            <p>2020.1.21일이후 계약기간을 1년으로 가입하고 아래 항목을 모두 충족하는 경우, 최초 1년간 연1.3%의 특별금리를 1회 제공 (중도해지 시 미제공)</p>
+                                            <ul class="num_list_circle">
+                                                <li><span>①</span> 가입시점에 만35세 이하이며 신규 입사자로(주) 확인된 경우</li>
+                                                <li><span>②</span> 급여하나 우대금리를 총족한 경우</li>
+                                                <li><span>③</span> 만기 전전월말 기준, 6개월 이상 본인명의 하나은행 입출금통장을 통해 하나카드 결제실적(신용/체크)을 월30만원 이상 보유한 경우</li>
+                                            </ul>
+                                            <p class="mt0">(주)이 예금 가입 해당년도에 신규 입사한 경우이며, 가입 이후 입사 제외(재직증명서 또는 건강보험증 등 입사확인이 가능한 서류를 영업점에 제출하고 신규)</p>
+                                        </div>
+
+                                        <div class="cont_part">
+                                            <h4>중도해지금리</h4>
+                                            <table class="mt10 type_col">
+                                                <colgroup>
+                                                    <col style="width: 50%;">
+                                                    <col style="width: 50%;">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th>기간</th>
+                                                        <th>적용금리(연율, 세전)</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>1개월 미만</td>
+                                                        <td>0.1%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>1개월 이상~3개월 미만</td>
+                                                        <td>0.3%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3개월 이상~6개월 미만</td>
+                                                        <td>0.5%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>6개월 이상</td>
+                                                        <td>가입(재예치)당시 해당 상품의 기본금리 × 차등률<span class="smTit color02">주1)</span> Ⅹ 경과율<span class="smTit color02">주2)</span> <br>
+                                                            (단, 해당금리가 0.5% 미만시 0.5% 적용)</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <p><span class="color02">주1)</span> 차등률 : 기간(6개월 이상)에 따른 아래 차등률 참고
+                                                <ul class="list_dot mt10">
+                                                    <li>6개월 이상 ~ 9개월 미만 경과시 : 60% 적용</li>
+                                                    <li>9개월 이상 ~ 11개월 미만 경과시 : 70% 적용</li>
+                                                    <li>11개월 이상 경과시 : 90% 적용</li>
+                                                </ul>
+                                            </p>
+                                            <p><span class="color02">주2)</span> 경과율 : 경과일수/계약일수<br>
+                                                (단, 경과일수는 계약일수를 초과할 수 없음)</p>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>만기후 금리</h4>
+                                            <table class="mt10 type_col">
+                                                <colgroup>
+                                                    <col style="width: 50%;">
+                                                    <col style="width: 50%;">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th>기간</th>
+                                                        <th>금리(연율, 세전)</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>1개월 이내</td>
+                                                        <td>지급당시 해당기간별 정기적금 기본금리 1/2</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>1개월 초과</td>
+                                                        <td>지급당시 해당기간별 정기적금 기본금리의 1/4</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="client_safely">
+                                    <p class="tit">예금자 보호</p>
+                                    <p class="kdic_mark">이 예금은 예금자 보호법에 따라, 예금보험공사가 보호하되, 보호한도는 본 은행에 있는 귀하의 모든 예금대상 금융상품의 원금과 소정의 이자를 합하여 1인당 “최고 5천만원”이며, 5천만원을 초과하는 나머지 금액은 보호하지 않습니다.</p>
+                                    <p class="kdic">준법감시인 심사필 2020-상품-1005호(2020.01.09)<br>
+                                        본 공시내용의 유효기간 : 2020.01.09 ~ 2023.01.08<br>
+                                        기준일 : 2020년 01월 21일</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pop_fix_area">
+                        <button type="button" class="pop_btn01 j_layer_close">동의</button>
+                    </div>
+                    <button type="button" class="cancel">취소</button>
+                </div>
+            </div>
+        </div>
+        <script>
+            layerOpen.init('#layerpopup01');
+        </script>
+    </div>
+</body>
+</html>
