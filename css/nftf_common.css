@@ -121,15 +121,16 @@ header button{position: absolute; top: 0; margin-top: 1.1rem;}
 .layer_center .layer_contents.atype{margin: 0 3.5rem;}
 .layer_notice_cont {position: relative; margin: 0 2rem; padding: 4rem 2rem; border-radius: 1.2rem; border: 1px solid #666;}
 .layer_notice_cont .cancel{position: absolute; right: 1.5rem; top: 1.5rem; width: 2.4rem; height: 2.4rem; font-size: 0; background: url(../images/close@2x.png) no-repeat center; background-size: 100%;}
-.layer_notice_cont .list_type01 li {color: #bbbbbb;}
-.layer_notice_cont .list_type01 li::before {background-color: #eee;}
+.layer_notice_cont .list_type01 li {color: #bbbbbb; line-height: 2.5rem;}
+.layer_notice_cont .list_type01 li::before {background-color: #eee; top: 1.1rem;}
 
-.layer_center .pop_content{padding: 3.5rem 2rem; max-height: calc(46rem - 5rem);}
+.layer_center .pop_content{padding: 4rem 2rem; max-height: calc(46rem - 5rem);}
 .layer_center .pop_tit + .pop_content{padding: 3.8rem 2rem; max-height: calc(46rem - 13.5rem);}
 .layer_center .pop_tit.type02 + .pop_content{padding: 0 2rem 3.8rem; max-height: calc(46rem - 13.5rem);}
 .layer_center .pop_content .swiper-wrapper {height: auto;}
 .layer_center .pop_content .swiper-slide {height: auto;}
 .layer_center .txt_tit{margin-bottom: 2rem;}
+.layer_center .cancel{position: absolute; right: 2.0rem; top: 1.5rem; z-index: 1; width: 2.4rem; height: 2.4rem; font-size: 0; background: url(../images/close@2x.png) no-repeat center; background-size: 100%;}
 .layerpopup .tab_area .tabs{border-bottom: 0.1rem solid #ddd; padding: 0 2rem; display: flex; justify-content: center; flex: 1;}
 .tab_area .tabs + .product_info{margin-top: 4rem;}
 .layerpopup .tab_area .tabs li{width: 100%; font-size: 1.6rem; text-align: center; font-weight: 300; color: #999; padding: 1.1rem 0;}
@@ -328,7 +329,7 @@ header button{position: absolute; top: 0; margin-top: 1.1rem;}
 
 .list_type01 li {position: relative; margin-top: 0.5rem; padding-left: 0.8rem; font-size: 1.5rem; line-height: 1.5rem; color: #777; letter-spacing: -0.05rem;}
 .list_type01 li:first-child {margin-top: 0;}
-.list_type01 li:before {content: ''; position: absolute; left: 0; top: 1rem; width: 0.2rem; height: 0.2rem; background: #888;}
+.list_type01 li:before {content: ''; position: absolute; left: 0; top: 0.6rem; width: 0.2rem; height: 0.2rem; background: #888;}
 .list_type01 li strong {font-weight: 500; color: #57afa4;}
 
 .list_type02 {margin-top: 4rem;}
