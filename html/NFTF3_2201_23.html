@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no, address=no, email=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Cache-control" content="No-cache">
+    <meta http-equiv="Pragma" content="No-cache">
+    <title>NFTF3_02-1상품선택</title>
+    <link rel="stylesheet" href="../css/nftf_common.css">
+    <script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../js/rolldate.js"></script>
+    <script type="text/javascript" src="../js/swiper.js"></script>
+    <script type="text/javascript" src="../js/nftf_common.js"></script>
+</head>
+<script>
+    document.addEventListener('DOMContentLoaded', function(){
+        setTimeout(function(){
+            var loadingDot = document.querySelector('.loading_dot')
+            loadingDot.classList = 'loading_dot on'
+        },500)
+        var layerEvent = document.querySelectorAll('.layerpopup')
+        for(var i = 0; i<layerEvent.length; i++){
+            layerEvent[i].addEventListener('click', function(e){
+                console.log(e.target)
+                if(e.target.className ==='cancel'){
+                    e.currentTarget.style.display = 'none'
+                }
+                if(e.target.className ==='dimmed'){
+                    e.currentTarget.style.display = 'none'
+                }
+            })
+        }
+        $('.tabs li').each(function(){
+            $(this).click(function(){
+                $(this).siblings().removeClass('on')
+                $(this).removeClass('on')
+                $(this).addClass('on')
+                $('.tab_cont_area .tabcont').hide()
+                $('.tab_cont_area .tabcont').eq($(this).index()).show()
+            //     setTimeout(function () {
+		    //         layerScroll.update();
+		    //     }, 0);
+            })
+        })
+    });
+</script>
+<body>
+    <div class="wrapper">
+        <header>
+            <button class="back_btn"></button>
+            <h2 class="h_tit">본인인증</h2>
+            <button class="h_menu"></button>
+        </header>
+        <div class="contents">
+            <section>
+                <div class="loading_dot">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <p class="pages_tit"><span class="t_mi">이름과 주민번호</span>를<br>입력해주세요.</p>
+            </section>
+        </div>
+        
+        <div class="layerpopup" id="layerpopup01">
+            <div class="layer_90 tab_layer">
+                <div class="layer_contents">
+                    <div class="pop_tit tab_area">
+                        <h5>Self-Gifting(셀프기프팅)적금</h5>
+                        <p class="content_info">연금이체, 급여이체, 카드결제,<br>공과금 자동이체 시 수수료 우대서비스를<br>제공하는 평생 주거래 통장</p>
+                        <ul class="tabs">
+                            <!-- <li>상품내용</li> -->
+                            <li class="on">상품내용</li>
+                            <li>금리안내</li>
+                        </ul>
+                    </div>
+                    <div class="pop_content j_scroll">
+                        <div class="swiper-wrapper">
+                            <div class="pop_inner swiper-slide">
+                                <p class="product_info">나만을 위한 힐링 적금</p>
+                                <div class="tab_cont_area">
+                                    <!-- <div class="tabcont img_link type01">
+                                        <img src="../images/icon-img@2x.png" alt="(내 맘) 적금">
+                                        <a href="#none"></a>
+                                    </div> -->
+                                    <div class="tabcont">
+                                        <div class="cont_part">
+                                            <h4>상품특징</h4>
+                                            <p>내 자신 스스로에게 주는 격려와 응원의 선물을 준비하는 힐링 적금</p>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>가입대상</h4>
+                                            <p>실명의 개인 및 개인사업자 (1인1계좌)</p>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>가입기간</h4>
+                                            <p>1년</p>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>가입금액</h4>
+                                            <p>1만원 이상 20만원이내</p>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>적립방법</h4>
+                                            <p>매월 20만원 한도 내에서 원단위로 자유롭게 적립</p>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>우대금리</h4>
+                                            <p>최대 연 1.8% 우대 가능</p>
+                                            <ul class="list_dot mt10">
+                                                <li>이 적금의 가입고객이 계약기간 내 아래 각 우대항목을 충족하고 인터넷/스마트폰뱅킹의 “선물상자” 화면에서 각 우대항목별 “금리받기”를 클릭하는 경우 해당 우대금리를 추가 제공합니다. 단 최대 연1.8%를 초과할 수 없습니다.</li>
+                                                <li>우대금리는 만기 해지하는 경우에 적용되며, 중도(분할)해지 시에는 적용되지 않습니다.
+                                                    <ul class="num_list_circle">
+                                                        <li><span>①</span> 선물퍼즐완성 - 최대 연 1.0%
+                                                            <ul class="list_dot">
+                                                                <li>인터넷/스마트폰뱅킹의 “선물상자”에 접속하여 손님이 지정한 선물 이미지 퍼즐을 총 4회에 걸쳐 완성(매월 1회, 4개월동안 총4회 참여 가능)</li>
+                                                                <li>매월 한번씩 퍼즐 참여가 가능하며, 참여회차별 획득한 퍼즐금리를 총 합산 시 최대 연1.0% 가능</li>
+                                                                <li>1회차-연0.1%, 2회차-연0.3%, 3회차-연0.6%, 4회차-연1.0%</li>
+                                                            </ul>
+                                                        </li>
+                                                        <li><span>②</span>신규손님 우대 - 연 0.5%
+                                                            <ul class="list_dot">
+                                                                <li>이 적금 가입 1개월 전 시점에 당행의 예금계좌를 미 보유한 손님인 경우(가입 1개월전 해당일에 계좌보유 여부)</li>
+                                                            </ul>
+                                                        </li>
+                                                        <li><span>③</span>추가거래 우대 - 연 0.5%
+                                                            <ul class="list_dot">
+                                                                <li>인터넷/스마트폰뱅킹/콜센터를 통하여 거치식 또는 적립식예금을 추가 가입한 경우</li>
+                                                            </ul>
+                                                        </li>
+                                                        <li><span>④</span>친구추천 우대 - 연 0.3%
+                                                            <ul class="list_dot">
+                                                                <li>적금 가입시 부여되는 본인 추천번호로 친구 등 지인이 이 적금을 가입하면 본인계좌와 가입한 지인 계좌에 각각 연 0.3% 제공 (친구추천우대는 계좌별 1회 , 연0.3%까지만 적용 가능)</li>
+                                                            </ul>
+                                                        </li>
+                                                        <li><span>⑤</span> 자동이체 우대 - 연 0.3%
+                                                            <ul class="list_dot">
+                                                                <li>당행 요구불통장에서 자동이체를 통해 이 적금통장에 3개월이상 납입한 경우 (자동이체액 :매월 10만원 이상)</li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>유의사항</h4>
+                                            <ul class="list_dot mt10">
+                                                <li>우대금리를 적용받기 위해서는 반드시 인터넷/스마트폰뱅킹 “선물상자”에 접속하셔야 합니다.</li>
+                                                <li>우대금리 항목을 각각 충족한 후, 인터넷/스마트폰뱅킹의 “선물상자”에 접속하여 해당항목의 “금리받기”를 클릭하는 경우에만 우대금리가 적용됩니다. <br>
+                                                    ※ 우대금리 제공항목을 각각 충족하고도 "선물상자"의 금리받기를 미클릭시 우대금리가 제공되지 않습니다.
+                                                </li>
+                                                <li>이 적금 가입은 영업점 창구, 인터넷/스마트폰뱅킹, 콜센터에서 가입이 가능하나, 우대금리 제공을 위한 “선물상자의 금리받기”는 인터넷/스마트폰뱅킹을 통해서만 가능합니다.</li>
+                                            </ul>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>세제혜택</h4>
+                                            <p>비과세종합저축으로 가입 가능(전 금융기관 통합한도 범위 내) <br>
+                                                ※ 단, 만기후 이자는 소득세 부과됨.</p>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>분할해지</h4>
+                                            <p>최종 해지분 포함 3회까지 분할 해지가 가능하며 이때에는 중도해지금리적용</p>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>상품내용 변경에 관한 사항</h4>
+                                            <table class="mt10 type_row">
+                                                <colgroup>
+                                                    <col style="width: 40%;">
+                                                    <col style="width: 60%;">
+                                                </colgroup>
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="row">
+                                                            상품내용 변경에 <br>
+                                                            관한 사항 <br>
+                                                            (2018.11.01 변경)
+                                                        </th>
+                                                        <td class="left">
+                                                            <p class="t_mi">&lt;중도해지금리 변경&gt;</p>
+                                                            <dl>
+                                                                <dt>변경 전</dt>
+                                                                <dd>
+                                                                    <ul class="list_dot mt10">
+                                                                        <li>1개월 미만: 0.1%</li>
+                                                                        <li>1개월 이상~3개월 미만: 0.3%</li>
+                                                                        <li>3개월 이상~6개월 미만 : 0.5%</li>
+                                                                        <li>6개월 이상 : 가입 당시 기본금리 ½(단, 해당금리가 0.5% 미만 시 0.5% 적용)</li>
+                                                                    </ul>
+                                                                </dd>
+                                                                <dt>변경 후</dt>
+                                                                <dd>
+                                                                    <ul class="list_dot mt10">
+                                                                        <li>1개월미만 : 연0.1%</li>
+                                                                        <li>1개월 이상 ~ 3개월미만 : 연0.3%</li>
+                                                                        <li>3개월 이상 ~ 6개월미만 : 연0.5%</li>
+                                                                        <li>6개월이상 : 가입(재예치)당시 해당 상품의 기본금리 × 차등률(주1) × 경과율(주2) (단, 해당금리가 연0.5% 미만시 연0.5% 적용)<br>(주1) 차등률 : 기간(6개월 이상)에 따른 아래 차등률 참고</li>
+                                                                        <li>6개월 이상 ~ 9개월 미만 경과시 : 60% 적용</li>
+                                                                        <li>9개월 이상 ~ 11개월 미만 경과시 : 70% 적용</li>
+                                                                        <li>11개월 이상 경과시 : 90% 적용 <br>
+                                                                            (주2) 경과율 : 경과일수/계약일수 (단, 경과일수는 계약일수를 초과할 수 없음) <br>
+                                                                            ※ 중도해지금리는 소수점 셋째자리까지 적용(소숫점 넷째자리에서 절사) <br>
+                                                                            (예시) 중도해지금리가 1.564721% 산출시 1.564% 적용
+                                                                        </li>
+                                                                    </ul>
+                                                                </dd>
+                                                            </dl>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">
+                                                            상품내용 변경에 <br>
+                                                            관한 사항 <br>
+                                                            (2016.11.07 변경)
+                                                        </th>
+                                                        <td class="left">
+                                                            <p class="t_mi">&lt;만기후금리 변경&gt;</p>
+                                                            <dl>
+                                                                <dt>변경 전</dt>
+                                                                <dd>
+                                                                    <ul class="num_list_circle">
+                                                                        <li><span>①</span> 1개월이내 : 지급 당시 해당기간별 정기적금 기본금리</li>
+                                                                        <li><span>②</span> 1개월초과 : 지급 당시 해당기간별 정기적금 기본금리 1/2</li>
+                                                                    </ul>
+                                                                </dd>
+                                                                <dt>변경 후</dt>
+                                                                <dd>
+                                                                    <ul class="num_list_circle">
+                                                                        <li><span>①</span> 1개월이내 : 지급 당시 해당기간별 정기적금 기본금리 1/2</li>
+                                                                        <li><span>②</span> 1개월초과 : 지급 당시 해당기간별 정기적금 기본금리 1/4</li>
+                                                                    </ul>
+                                                                </dd>
+                                                            </dl>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">
+                                                            상품내용 변경에 <br>
+                                                            관한 사항 <br>
+                                                            (2016.06.07 변경)
+                                                        </th>
+                                                        <td class="left">
+                                                            <p class="t_mi">&lt;기본적용약관 변경&gt;</p>
+                                                            <p class="mt0">기본적용약관 변경</p>
+                                                            <p class="t_mi">&lt;가입대상 변경&gt;</p>
+                                                            <dl>
+                                                                <dt>변경 전</dt>
+                                                                <dd>실명의 개인</dd>
+                                                                <dt>변경 후</dt>
+                                                                <dd>실명의 개인 및 개인사업자</dd>
+                                                            </dl>
+                                                            <p class="t_mi">&lt;분할해지방식 변경&gt;</p>
+                                                            <dl>
+                                                                <dt>변경 전</dt>
+                                                                <dd>선입선출방식</dd>
+                                                                <dt>변경 후</dt>
+                                                                <dd>입금건별 균등계산방식</dd>
+                                                            </dl>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="tabcont">
+                                        <div class="cont_part">
+                                            <h4>기본금리</h4>
+                                            <table class="mt10 type_col">
+                                                <colgroup>
+                                                    <col style="width: 50%;">
+                                                    <col style="width: 50%;">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th>기간</th>
+                                                        <th>금리(연율, 세전)</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>1년</td>
+                                                        <td>1.05%</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <p class="norm">(2020-03-02 기준, 세전)</p>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>우대금리</h4>
+                                            <p>최대 연 1.8% 우대 가능</p>
+                                            <ul class="list_dot mt10">
+                                                <li>이 적금의 가입고객이 계약기간 내 아래 각 우대항목을 충족하고 인터넷/스마트폰뱅킹의 “선물상자” 화면에서 각 우대항목별 “금리받기”를 클릭하는 경우 해당 우대금리를 추가 제공합니다. 단 최대 연1.8%를 초과할 수 없습니다.</li>
+                                                <li>우대금리는 만기 해지하는 경우에 적용되며, 중도(분할)해지 시에는 적용되지 않습니다.
+                                                    <ul class="num_list_circle">
+                                                        <li><span>①</span> 선물퍼즐완성 - 최대 연 1.0%
+                                                            <ul class="list_dot">
+                                                                <li>인터넷/스마트폰뱅킹의 “선물상자”에 접속하여 손님이 지정한 선물 이미지 퍼즐을 총 4회에 걸쳐 완성(매월 1회, 4개월동안 총4회 참여 가능)</li>
+                                                                <li>매월 한번씩 퍼즐 참여가 가능하며, 참여회차별 획득한 퍼즐금리를 총 합산 시 최대 연1.0% 가능</li>
+                                                                <li>1회차-연0.1%, 2회차-연0.3%, 3회차-연0.6%, 4회차-연1.0%</li>
+                                                            </ul>
+                                                        </li>
+                                                        <li><span>②</span>신규손님 우대 - 연 0.5%
+                                                            <ul class="list_dot">
+                                                                <li>이 적금 가입 1개월 전 시점에 당행의 예금계좌를 미 보유한 손님인 경우(가입 1개월전 해당일에 계좌보유 여부)</li>
+                                                            </ul>
+                                                        </li>
+                                                        <li><span>③</span>추가거래 우대 - 연 0.5%
+                                                            <ul class="list_dot">
+                                                                <li>인터넷/스마트폰뱅킹/콜센터를 통하여 거치식 또는 적립식예금을 추가 가입한 경우</li>
+                                                            </ul>
+                                                        </li>
+                                                        <li><span>④</span>친구추천 우대 - 연 0.3%
+                                                            <ul class="list_dot">
+                                                                <li>적금 가입시 부여되는 본인 추천번호로 친구 등 지인이 이 적금을 가입하면 본인계좌와 가입한 지인 계좌에 각각 연 0.3% 제공 (친구추천우대는 계좌별 1회 , 연0.3%까지만 적용 가능)</li>
+                                                            </ul>
+                                                        </li>
+                                                        <li><span>⑤</span> 자동이체 우대 - 연 0.3%
+                                                            <ul class="list_dot">
+                                                                <li>당행 요구불통장에서 자동이체를 통해 이 적금통장에 3개월이상 납입한 경우 (자동이체액 :매월 10만원 이상)</li>
+                                                            </ul>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+
+                                        <div class="cont_part">
+                                            <h4>중도해지금리</h4>
+                                            <table class="mt10 type_col">
+                                                <colgroup>
+                                                    <col style="width: 50%;">
+                                                    <col style="width: 50%;">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th>기간</th>
+                                                        <th>적용금리(연율, 세전)</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>1개월 미만</td>
+                                                        <td>0.1%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>1개월 이상~3개월 미만</td>
+                                                        <td>0.3%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>3개월 이상~6개월 미만</td>
+                                                        <td>0.5%</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>6개월 이상</td>
+                                                        <td>가입(재예치)당시 해당 상품의 기본금리 × 차등률<span class="smTit color02">주1)</span> Ⅹ 경과율<span class="smTit color02">주2)</span> <br>
+                                                            (단, 해당금리가 0.5% 미만시 0.5% 적용) <br></td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <p><span class="color02">주1)</span> 차등률 : 경과기간에 따른 차등률 참고
+                                                <ul class="list_dot mt10">
+                                                    <li>6개월 이상 ~ 9개월 미만 경과시 : 60% 적용</li>
+                                                    <li>9개월 이상 ~ 11개월 미만 경과시 : 70% 적용</li>
+                                                    <li>11개월 이상 경과시 : 90% 적용</li>
+                                                </ul>
+                                            </p>
+                                            <p><span class="color02">주2)</span> 경과율 : 경과일수/계약일수 <br>
+                                                (단, 경과일수는 계약일수를 초과할 수 없음)<br>
+                                                ※ 중도해지금리는 소수점 셋째자리까지 적용(소수점 넷째자리에서 절사)
+                                                (예시) 중도해지금리가 1.564721%로 산출시 1.564%로 적용</p>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>만기후 금리</h4>
+                                            <table class="mt10 type_col">
+                                                <colgroup>
+                                                    <col style="width: 50%;">
+                                                    <col style="width: 50%;">
+                                                </colgroup>
+                                                <thead>
+                                                    <tr>
+                                                        <th>기간</th>
+                                                        <th>금리(연율, 세전)</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>1개월 이내</td>
+                                                        <td>지급당시 해당기간별 정기적금 기본금리 1/2</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>1개월 초과</td>
+                                                        <td>지급당시 해당기간별 정기적금 기본금리의 1/4</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="client_safely">
+                                    <p class="tit">예금자 보호</p>
+                                    <p class="kdic_mark">이 예금은 예금자 보호법에 따라, 예금보험공사가 보호하되, 보호한도는 본 은행에 있는 귀하의 모든 예금대상 금융상품의 원금과 소정의 이자를 합하여 1인당 “최고 5천만원”이며, 5천만원을 초과하는 나머지 금액은 보호하지 않습니다.</p>
+                                    <p class="kdic">준법감시인 심사필 2020-상품-1071호(2020.02.28)<br>
+                                        본 공시내용의 유효기간 : 2020.02.28 ~ 2023.02.27<br>
+                                        기준일 : 2020년 03월 02일</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pop_fix_area">
+                        <button type="button" class="pop_btn01 j_layer_close">동의</button>
+                    </div>
+                    <button type="button" class="cancel">취소</button>
+                </div>
+            </div>
+        </div>
+        <script>
+            layerOpen.init('#layerpopup01');
+        </script>
+    </div>
+</body>
+</html>
