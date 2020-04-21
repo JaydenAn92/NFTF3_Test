@@ -51,7 +51,7 @@ var focusMove = {
 			},200);
 		}else {
 			_this.blur();
-			$('body').stop().animate({'min-height' : $('.contents').outerHeight()},500);
+			$('body').stop().animate({'min-height' :''},500); // 20.04.21 수정
 		}
 	}
 }
@@ -203,7 +203,6 @@ var layerClose = {
 				$('.contents,.layerpopup,.pop_tit').off('touchmove');
 			}
 		}
-		
 		bottomBtn.init();
 	}
 }

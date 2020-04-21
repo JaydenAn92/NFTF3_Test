@@ -385,7 +385,7 @@ header button{position: absolute; top: 0; margin-top: 1.1rem;}
 .list_type03 .conts ul li .input_txt {padding-left: 0;}
 .list_type03 .list_del {position: absolute; right: 0; top: 0; width: 2rem; height: 2rem; background: url('../images/delete@2x_02.png'); background-size: 2rem; font-size: 0;}
 .list_type03 li.modify .conts .input_calendar,
-.list_type03 li.modify .conts .input_select {background: url('../images/down@2x.png') no-repeat 100% 0.2rem; background-size: 2rem;}
+.list_type03 li.modify .conts .input_select {background: url('../images/down@2x.png') no-repeat 100% 0.2rem; background-size: 2rem; padding-right: 2rem;}
 .list_type03 .btn_wrap {margin-top: 3rem;}
 
 .list_type04 {padding: 4rem 2rem;}
@@ -1063,7 +1063,7 @@ table + .table_tit{margin-top: 2rem;}
 .check_money input[type="password"].input_data:focus{opacity: 0;}
 .check_money .input_wrap .check_number{position: absolute; left: 50%; width: 14.6rem; transform: translateX(-50%);}
 .input_form.input_form_type02.check_money .input_wrap .input_title{width: 100%;}
-.input_form.input_form_type02.check_money.on .input_wrap .input_title{width: 100%;}
+.input_form.input_form_type02.check_money.on .input_wrap .input_title{width: 100%; padding: 1rem 0;}
 .check_number span {display: inline-block; border-radius: 50%; width: 1.4rem; height: 1.4rem; background: #57afa4;}
 .check_number span:first-child ~ span {margin-left: 5.2rem;}
 .applying_products{margin-top: 3.5rem;}
