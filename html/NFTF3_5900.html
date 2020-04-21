@@ -51,14 +51,18 @@
                                     <li>
                                         <div class="titles">신규비밀번호</div>
                                         <div class="conts">
-                                            <p class="input_txt input_money_txt">0000</p>
-                                            <div class="input_txt input_money">
-                                                <input id="idInput11" class="input_data j_input_value" type="password" value="0000">
+                                            <div class="input_txt input_password">
+                                                <input class="input_data j_input_value j_modify disabled" readonly='readonly' type="password" value="0000">
                                                 <button type="button" class="input_data_del j_data_del">삭제</button>
-                                                <!-- <span class="txt_won">원</span> -->
                                             </div>
-                                            <div class="input_error">
-                                                <p>가입금액은 1만원 이상으로 입력하셔야 합니다.</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="titles">비밀번호 확인</div>
+                                        <div class="conts">
+                                            <div class="input_txt input_password">
+                                                <input class="input_data j_input_value j_modify disabled" readonly='readonly' type="password" value="0000">
+                                                <button type="button" class="input_data_del j_data_del">삭제</button>
                                             </div>
                                         </div>
                                     </li>
@@ -69,15 +73,39 @@
                                         </div>
                                     </li>
                                     <li>
-                                        <div class="titles">평생계좌번호</div>
+                                        <div class="titles">체크카드신청</div>
                                         <div class="conts">
                                             <div id="idInput02" class="input_txt input_select j_layer_open j_modify disabled" layer-target="#layerpopup02">신청안함</div>
                                         </div>
                                     </li>
                                     <li>
-                                        <div class="titles">체크카드</div>
+                                        <div class="titles">전자금융<br>출금계좌 등록</div>
                                         <div class="conts">
                                             <div id="idInput03" class="input_txt input_select j_layer_open j_modify disabled" layer-target="#layerpopup03">신청함</div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="titles">평생계좌번호</div>
+                                        <div class="conts">
+                                            <div id="idInput23" class="input_txt input_select j_layer_open j_modify disabled" layer-target="#layerpopup23">010-1234-5678</div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="titles">증권계좌<br>비밀번호</div>
+                                        <div class="conts">
+                                            <div class="input_txt input_password">
+                                                <input class="input_data j_input_value j_modify disabled" readonly='readonly' type="password" value="0000">
+                                                <button type="button" class="input_data_del j_data_del">삭제</button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="titles">비밀번호 확인</div>
+                                        <div class="conts">
+                                            <div class="input_txt input_password">
+                                                <input class="input_data j_input_value j_modify disabled" readonly='readonly' type="password" value="0000">
+                                                <button type="button" class="input_data_del j_data_del">삭제</button>
+                                            </div>
                                         </div>
                                     </li>
                                 </ul>
@@ -149,7 +177,7 @@
                                             </script>
                                         </div>
                                     </li>
-                                    <li>
+                                    <!-- <li>
                                         <div class="titles">이자지급방식</div>
                                         <div class="conts">
                                             <div id="idInput06" class="input_txt input_select j_layer_open  j_modify disabled" layer-target="#layerpopup04">만기일시 지급식</div>
@@ -160,11 +188,51 @@
                                         <div class="conts">
                                             <div id="idInput07" class="input_txt input_select j_layer_open j_modify disabled" layer-target="#layerpopup05">만기지급식</div>
                                         </div>
-                                    </li>
+                                    </li> -->
                                     <li class="off">
-                                        <div class="titles">출금계좌</div>
+                                        <div class="titles">가입기간</div>
                                         <div class="conts">
-                                            <p class="input_txt">111-111111-1111</p>
+                                            <p class="input_txt">12개월</p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="titles">신규비밀번호</div>
+                                        <div class="conts">
+                                            <div class="input_txt input_password">
+                                                <input class="input_data j_input_value j_modify disabled" readonly='readonly' type="password" value="0000">
+                                                <button type="button" class="input_data_del j_data_del">삭제</button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="titles">비밀번호 확인</div>
+                                        <div class="conts">
+                                            <div class="input_txt input_password">
+                                                <input class="input_data j_input_value j_modify disabled" readonly='readonly' type="password" value="0000">
+                                                <button type="button" class="input_data_del j_data_del">삭제</button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="titles">출금계좌선택</div>
+                                        <div class="conts">
+                                            <div id="idInput28" class="input_txt input_select j_layer_open j_modify disabled" layer-target="#layerpopup28">111-22222-1111</div>
+                                            <!-- <p class="input_txt">111-111111-1111</p> -->
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="titles">출금계좌<br>비밀먼호</div>
+                                        <div class="conts">
+                                            <div class="input_txt input_password">
+                                                <input class="input_data j_input_value j_modify disabled" readonly='readonly' type="password" value="0000">
+                                                <button type="button" class="input_data_del j_data_del">삭제</button>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="titles">이자 지급 방법</div>
+                                        <div class="conts">
+                                            <div id="idInput26" class="input_txt input_select j_layer_open j_modify disabled" layer-target="#layerpopup26">일시지급</div>
                                         </div>
                                     </li>
                                     <li>
@@ -553,12 +621,12 @@
             </div>
             <!-- //급여일 -->
 
-            <!-- 평생계좌번호 -->
+            <!-- 체크카드신청 -->
             <div id="layerpopup02" class="layerpopup">
                 <div class="layer_select">
                     <div class="layer_contents">
                         <div class="pop_tit">
-                            <h5>평생계좌번호</h5>
+                            <h5>체크카드신청</h5>
                         </div>
                         <div class="pop_content j_scroll">
                             <div class="swiper-wrapper">
@@ -574,21 +642,20 @@
                     </div>
                 </div>
             </div>
-            <!-- //평생계좌번호 -->
+            <!-- //체크카드신청 -->
 
-            <!-- 체크카드 -->
+            <!-- 전자금융 출금계좌 등록카드 -->
             <div id="layerpopup03" class="layerpopup">
                 <div class="layer_select">
                     <div class="layer_contents">
                         <div class="pop_tit">
-                            <h5>체크카드</h5>
+                            <h5>전자금융 출금계좌 등록카드</h5>
                         </div>
                         <div class="pop_content j_scroll">
                             <div class="swiper-wrapper">
                                 <div class="pop_inner swiper-slide">
                                     <ul class="select_list j_select">
-                                        <li><a href="#idInput03">신청함</a></li>
-                                        <li><a href="#idInput03">신청안함</a></li>
+                                        <li><a href="#idInput03">스마트폰/인터넷 뱅킹</a></li>
                                     </ul>
                                 </div>
                             </div>
@@ -597,7 +664,30 @@
                     </div>
                 </div>
             </div>
-            <!-- //체크카드 -->
+            <!-- //전자금융 출금계좌 등록카드 -->
+
+            <!-- 평생계좌번호 -->
+            <div id="layerpopup23" class="layerpopup">
+                <div class="layer_select">
+                    <div class="layer_contents">
+                        <div class="pop_tit">
+                            <h5>평생계좌번호</h5>
+                        </div>
+                        <div class="pop_content j_scroll">
+                            <div class="swiper-wrapper">
+                                <div class="pop_inner swiper-slide">
+                                    <ul class="select_list j_select">
+                                        <li><a href="#idInput23">010-1234-5678</a></li>
+                                        <li><a href="#idInput23">010-1234-9999</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="cancel j_layer_close">취소</button>
+                    </div>
+                </div>
+            </div>
+            <!-- //평생계좌번호 -->
 
             <!-- 이자지급방식 -->
             <div id="layerpopup04" class="layerpopup">
@@ -664,6 +754,49 @@
                 </div>
             </div>
             <!-- //만기해지 구분 -->
+            <!-- 이자 지급 방법 -->
+            <div id="layerpopup28" class="layerpopup">
+                <div class="layer_select">
+                    <div class="layer_contents">
+                        <div class="pop_tit">
+                            <h5>출금계좌선택</h5>
+                        </div>
+                        <div class="pop_content j_scroll">
+                            <div class="swiper-wrapper">
+                                <div class="pop_inner swiper-slide">
+                                    <ul class="select_list j_select">
+                                        <li><a href="#idInput28">111-111111-1111</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="cancel j_layer_close">취소</button>
+                    </div>
+                </div>
+            </div>
+            <!-- //이자 지급 방법 -->
+
+            <!-- 이자 지급 방법 -->
+            <div id="layerpopup26" class="layerpopup">
+                <div class="layer_select">
+                    <div class="layer_contents">
+                        <div class="pop_tit">
+                            <h5>이자 지급 방법</h5>
+                        </div>
+                        <div class="pop_content j_scroll">
+                            <div class="swiper-wrapper">
+                                <div class="pop_inner swiper-slide">
+                                    <ul class="select_list j_select">
+                                        <li><a href="#idInput26">일시지급</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="button" class="cancel j_layer_close">취소</button>
+                    </div>
+                </div>
+            </div>
+            <!-- //이자 지급 방법 -->
 
             <!-- 만기 SMS통보 -->
             <div id="layerpopup07" class="layerpopup">

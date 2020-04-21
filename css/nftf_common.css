@@ -130,7 +130,7 @@ header button{position: absolute; top: 0; margin-top: 1.1rem;}
 .layer_center .pop_content .swiper-wrapper {height: auto;}
 .layer_center .pop_content .swiper-slide {height: auto;}
 .layer_center .txt_tit{margin-bottom: 2rem;}
-.layer_center .cancel{position: absolute; right: 2.0rem; top: 1.5rem; z-index: 1; width: 2.4rem; height: 2.4rem; font-size: 0; background: url(../images/close@2x.png) no-repeat center; background-size: 100%;}
+.layer_center .top.cancel{position: absolute; right: 2.0rem; top: 1.5rem; z-index: 1; width: 2.4rem; height: 2.4rem; font-size: 0; background: url(../images/close@2x.png) no-repeat center; background-size: 100%;}
 .layerpopup .tab_area .tabs{border-bottom: 0.1rem solid #ddd; padding: 0 2rem; display: flex; justify-content: center; flex: 1;}
 .tab_area .tabs + .product_info{margin-top: 4rem;}
 .layerpopup .tab_area .tabs li{width: 100%; font-size: 1.6rem; text-align: center; font-weight: 300; color: #999; padding: 1.1rem 0;}
@@ -336,8 +336,8 @@ header button{position: absolute; top: 0; margin-top: 1.1rem;}
 .list_type02 .list_title {font-size: 1.6rem; color: #999; font-weight: 300;}
 .list_type02 ul {counter-reset: addList 0;}
 .list_type02 li {position: relative; margin-top: 2rem; padding-left: 3.5rem;}
-.list_type02 li:before {content: ''; position: absolute; left: 0; top: 0; width: 2rem; height: 2rem; border-radius: 2rem; background: #424748;}
-.list_type02 li:after {counter-increment: addList; content: counter(addList); position: absolute; left: 0; top: 0; width: 2rem; font-size: 1.2rem; color: #fff; line-height: 1.9rem; text-align: center;}
+.list_type02 li:before {content: ''; position: absolute; left: 0; top: 0.3rem; width: 2rem; height: 2rem; border-radius: 2rem; background: #424748;}
+.list_type02 li:after {counter-increment: addList; content: counter(addList); position: absolute; left: 0; top: 0.3rem; width: 2rem; font-size: 1.2rem; color: #fff; line-height: 1.9rem; text-align: center;}
 .list_type02 li p {font-size: 1.6rem; font-weight: 300; line-height: 2.4rem;}
 .list_type02 li p.account_num{font-weight: 500; letter-spacing: 0.15rem;}
 .list_type02 li .input_wrap {position: relative; margin-top: 1.7rem; padding-bottom: 1rem; font-size: 1.8rem; color: #000;}
@@ -349,7 +349,7 @@ header button{position: absolute; top: 0; margin-top: 1.1rem;}
 .list_type02 li .input_wrap .input_data.input_placeholder {color: #ddd; font-weight: 300;}
 .list_type02 li .input_wrap .input_data_del {display: none; position: absolute; right: 1rem; top: 0.5rem; width: 2rem; height: 2rem; background: url('../images/delete@2x.png') no-repeat 0 0; background-size: 2rem; font-size: 0;}
 .list_type02 li .input_data_modify {position: absolute; right: 1rem; top: 0.4rem; width: 2rem; height: 2rem; background: url('../images/pencil@2x.png'); background-size: 2rem; font-size: 0;}
-.list_type02 li .list_del {position: absolute; right: 1rem; top: 0; width: 2rem; height: 2rem; background: url('../images/delete@2x_02.png'); background-size: 2rem; font-size: 0;}
+.list_type02 li .list_del {position: absolute; right: 1rem; top: 0.3rem; width: 2rem; height: 2rem; background: url('../images/delete@2x_02.png'); background-size: 2rem; font-size: 0;}
 
 .pages_tit + .list_type03 {margin-top: 12rem;}
 .list_type03 > li {position: relative; border-bottom: 1px solid #000; }
@@ -502,6 +502,7 @@ header button{position: absolute; top: 0; margin-top: 1.1rem;}
 .btn_type05 {display: inline-block; height: 3rem; padding: 0 1.5rem; border-radius: 1.5rem; border: 1px solid #333; font-size: 1.3rem; line-height: 2.8rem; color: #000;}
 .btn_type06 {display: inline-block; padding-left: 2rem; background: url(../images/off-small@2x.png) no-repeat 0 50%; background-size: 1.4rem; font-size: 1.4rem; line-height: 1.6rem; color: #999; font-weight: 300;}
 .btn_type06.on {background-image: url(../images/on-small@2x.png); color: #57afa4;}
+.btn_type07 {margin-top: 3rem; padding: 1rem 0; display: inline-block; border: 0.1rem solid #57afa4; line-height: 2.4rem; border-radius: 2.2rem; width: 100%; font-size: 1.6rem; color: #57afa4;}
 
 .btn_tip {width: 2rem; height: 2rem; margin: -0.2rem 0 0 1rem; background: url('../images/tip@2x.png') no-repeat 0 0; background-size: 2rem; font-size: 0; vertical-align: top;}
 
@@ -1078,6 +1079,12 @@ table + .table_tit{margin-top: 2rem;}
 .applying_list .result.ing{background: url(../images/ing@2x.png) no-repeat left center; background-size: 2.4rem;}
 .applying_list .move_to{position: absolute; right: 0.0rem; top: 6.6rem; width: 3rem; height: 3rem; background: url(../images/right@2x.png) no-repeat center; background-size: 2rem; font-size: 0;}
 .applying_list .applied_Number{display: block; font-size: 1.6rem; font-weight: 500; padding-top: 2rem;}
+.applying_list.type02 > li{padding: 3rem 0; position: relative; border:0;}
+.applying_list.type02 .list_dot{padding-top: 1.5rem;}
+.applying_list.type02 .list_dot li {color: #000;}
+.applying_list.type02 li > .date{position: initial;}
+.applying_list.type02 .list_del{position: absolute; right: 0.5rem; top: 2.8rem; width: 2rem; height: 2rem; background: url('../images/delete@2x_02.png'); background-size: 2rem; font-size: 0;}
+
 .guide_comment.type05{border-radius: 0; padding: 0; background: none;}
 .guide_comment .done_info{border-bottom: 0.1rem solid #ddd; padding: 3rem 0; text-align: left;}
 .guide_comment.type05 .done_info:first{padding:0 0 3rem;}

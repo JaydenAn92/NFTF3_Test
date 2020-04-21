@@ -217,9 +217,9 @@
                         <!-- 이자 지급 방법 -->
                         <div class="input_form input_form_sel j_focus">
                             <div class="input_wrap">
-                                <div class="input_title j_focus_open j_layer_open" layer-target="#layerpopup03">이자 지급 방법</div>
+                                <div class="input_title j_focus_open j_layer_open" layer-target="#layerpopup03" layer-slide-index="0">이자 지급 방법</div>
                                 <div class="input_select">
-                                    <div id="idInput08" class="input_data j_check_all j_layer_open" layer-target="#layerpopup03"></div>
+                                    <div id="idInput08" class="input_data j_check_all j_layer_open" layer-target="#layerpopup03" layer-slide-index="0"></div>
                                 </div>
                             </div>
                         </div>
@@ -228,9 +228,9 @@
                         <!-- 만기해지 방법 -->
                         <div class="input_form input_form_sel j_focus">
                             <div class="input_wrap">
-                                <div class="input_title j_focus_open j_layer_open" layer-target="#layerpopup04">만기해지 방법</div>
+                                <div class="input_title j_focus_open j_layer_open" layer-target="#layerpopup03" layer-slide-index="1">만기해지 방법</div>
                                 <div class="input_select">
-                                    <div id="idInput09" class="input_data j_check_all j_layer_open" layer-target="#layerpopup04"></div>
+                                    <div id="idInput09" class="input_data j_check_all j_layer_open" layer-target="#layerpopup03" layer-slide-index="1"></div>
                                 </div>
                             </div>
                         </div>
@@ -249,9 +249,9 @@
                         <!-- 만기 SMS 안내 -->
                         <div class="input_form input_form_sel j_focus">
                             <div class="input_wrap">
-                                <div class="input_title j_focus_open j_layer_open" layer-target="#layerpopup06">만기 SMS 안내</div>
+                                <div class="input_title j_focus_open j_layer_open" layer-target="#layerpopup03" layer-slide-index="2">만기 SMS 안내</div>
                                 <div class="input_select">
-                                    <div id="idInput10" class="input_data j_check_all j_layer_open" layer-target="#layerpopup06"></div>
+                                    <div id="idInput10" class="input_data j_check_all j_layer_open" layer-target="#layerpopup03" layer-slide-index="2"></div>
                                 </div>
                             </div>
                         </div>
@@ -324,46 +324,65 @@
             </div>
             <!-- //출금 계좌 -->
 
-            <!-- 이자 지급 방법 -->
+            
             <div id="layerpopup03" class="layerpopup">
                 <div class="layer_select">
                     <div class="layer_contents">
-                        <div class="pop_tit">
-                            <h5>이자 지급 방법</h5>
-                        </div>
-                        <div class="pop_content j_scroll">
-                            <div class="swiper-wrapper">
-                                <div class="pop_inner swiper-slide">
-                                    <ul class="select_list j_select">
-                                        <li><a href="#idInput08">일시 지급</a></li>
-                                        <li><a href="#idInput08">월 이자 지급</a></li>
-                                    </ul>
+                        <div class="layer_contents_slide j_select_slide_cont">
+                            <!-- 이자 지급 방법 -->
+                            <div class="slider_select j_select_slide">
+                                <div class="pop_tit">
+                                    <h5>이자 지급 방법</h5>
+                                </div>
+                                <div class="pop_content j_scroll">
+                                    <div class="swiper-wrapper">
+                                        <div class="pop_inner swiper-slide">
+                                            <ul class="select_list j_select">
+                                                <li><a href="#idInput08">일시 지급</a></li>
+                                                <li><a href="#idInput08">월 이자 지급</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
+                            <!-- //이자 지급 방법 -->
+                            <!-- 만기해지 방법 -->
+                            <div class="slider_select j_select_slide">
+                                <div class="pop_tit">
+                                    <h5>만기해지 방법<button type="button" class="btn_tip j_layer_open" layer-target="#layerpopup04_1">알아두세요</button></h5>
+                                </div>
+                                <div class="pop_content j_scroll">
+                                    <div class="swiper-wrapper">
+                                        <div class="pop_inner swiper-slide">
+                                            <ul class="select_list j_select">
+                                                <li><a href="#idInput09">자동해지</a></li>
+                                                <li><a href="#idInput09" class=" j_layer_open" layer-target="#layerpopup05">직접해지</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- // 만기해지 방법 -->
+                            <!-- 만기 SMS 안내 -->
+                            <div class="slider_select j_select_slide">
+                                <div class="pop_tit">
+                                    <h5>만기 SMS 안내</h5>
+                                </div>
+                                <div class="pop_content j_scroll">
+                                    <div class="swiper-wrapper">
+                                        <div class="pop_inner swiper-slide">
+                                            <ul class="select_list j_select">
+                                                <li><a href="#idInput10">수신함</a></li>
+                                                <li><a href="#idInput10">수신 안 함</a></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- //만기 SMS 안내 -->
                         </div>
-                        <button type="button" class="cancel j_layer_close">취소</button>
-                    </div>
-                </div>
-            </div>
-            <!-- //이자 지급 방법 -->
 
-            <!-- 만기해지 방법 -->
-            <div id="layerpopup04" class="layerpopup">
-                <div class="layer_select">
-                    <div class="layer_contents">
-                        <div class="pop_tit">
-                            <h5>만기해지 방법<button type="button" class="btn_tip j_layer_open" layer-target="#layerpopup04_1">알아두세요</button></h5>
-                        </div>
-                        <div class="pop_content j_scroll">
-                            <div class="swiper-wrapper">
-                                <div class="pop_inner swiper-slide">
-                                    <ul class="select_list j_select">
-                                        <li><a href="#idInput09">자동해지</a></li>
-                                        <li><a href="#idInput09" class=" j_layer_open" layer-target="#layerpopup05">직접해지</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
+                        
                         <button type="button" class="cancel j_layer_close">취소</button>
                     </div>
                 </div>
@@ -396,32 +415,6 @@
                 </div>
             </div>
             <!-- //만기해지 방법 -->
-
-            <!-- 만기 SMS 안내 -->
-            <div id="layerpopup06" class="layerpopup">
-                <div class="layer_select">
-                    <div class="layer_contents">
-                        <div class="pop_tit">
-                            <h5>만기 SMS 안내</h5>
-                        </div>
-                        <div class="pop_content j_scroll">
-                            <div class="swiper-wrapper">
-                                <div class="pop_inner swiper-slide">
-                                    <ul class="select_list j_select">
-                                        <li><a href="#idInput10">수신함</a></li>
-                                        <li><a href="#idInput10">수신 안 함</a></li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        <button type="button" class="cancel j_layer_close">취소</button>
-                    </div>
-                </div>
-            </div>
-            <!-- //만기 SMS 안내 -->
-            <script>
-                //layerOpen.init('#layerpopup01');
-            </script>
         </div>
     </body>
 </html>
