@@ -34,7 +34,7 @@
                         <!-- 휴대폰인증 이용약관 동의 -->
                         <div class="input_form02 j_focus">
                             <div class="input_check">
-                                <input type="checkbox" id="inputCheck01" class="j_input_check " disabled='disabled' input-target="#idInput01">
+                                <input type="checkbox" id="inputCheck01" class="j_input_check " disabled='disabled' input-target="#idInput01" layer-target="#layerpopup01">
                                 <!--  -->
                                 <label for="inputCheck01" class="j_layer_open" layer-target="#layerpopup03">
                                     휴대폰인증 이용약관 동의
@@ -711,7 +711,7 @@
                             </div>
                         </div>
                         <div class="pop_fix_area">
-                            <button type="button" class="pop_btn01 j_layer_close">확인</button>
+                            <button type="button" class="pop_btn01 j_layer_close j_focus_move" move-target="#inputCheck01" data-agree="true">확인</button>
                         </div>
                         <button type="button" class="cancel j_layer_close">취소</button>
                     </div>
