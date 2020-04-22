@@ -899,7 +899,8 @@ $(document).ready(function(){
 	});
 
 	//버튼 텍스트 변경
-	$('.j_btn_toggle').on('click',function() {
+	$('.j_btn_toggle').on('click',function(e) {
+		e.preventDefault();
 		$(this).text($(this).attr('toggle-text'));
 	});
 
@@ -1028,7 +1029,7 @@ window.onload = function(){
 			layerIndex = $(this).attr('layer-slide-index');
 
 		$('.j_focus,.j_focus02').removeClass('focus');
-		$(this).parents('.j_focus,.j_focus02').addClass('focus');
+		// $(this).parents('.j_focus,.j_focus02').addClass('focus'); // 확인필요
 
 		if ($(layerId).find('.hai_slide').length > 0) {
 			setTimeout(function() {

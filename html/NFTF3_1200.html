@@ -57,8 +57,8 @@
                         <div class="input_form input_form_sub j_focus" style="display: none;">
                             <div class="input_wrap">
                                 <div class="input_txt">
-                                    <input class="input_data input_tel j_input_value j_check_all" type="tel">
-                                    <button type="button" class="btn_type02 j_focus_move j_btn_toggle j_layer_open" toggle-text="재요청" layer-target="#layerpopup04">인증번호 요청</button>
+                                    <input id="idInput04" class="input_data input_tel j_input_value j_check_all " type="tel">
+                                    <button type="button" class="btn_type02 j_btn_toggle j_layer_open" toggle-text="재요청" layer-target="#layerpopup04">인증번호 요청</button>
                                 </div>
                             </div>
                         </div>
@@ -766,7 +766,7 @@
                             <p>인증번호를 발송하였습니다.</p>
                         </div>
                         <div class="btn_area">
-                            <button type="button" class="confirm j_layer_close">확인</button>
+                            <button type="button" class="confirm j_layer_close j_focus_move" move-target="#idInput04">확인</button>
                         </div>
                     </div>
                 </div>
