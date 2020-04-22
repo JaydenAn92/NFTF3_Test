@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, maximum-scale=1.0">
+    <meta name="format-detection" content="telephone=no, address=no, email=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta http-equiv="Cache-control" content="No-cache">
+    <meta http-equiv="Pragma" content="No-cache">
+    <title>NFTF3_02-1상품선택</title>
+    <link rel="stylesheet" href="../css/nftf_common.css">
+    <script type="text/javascript" src="../js/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="../js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="../js/rolldate.js"></script>
+    <script type="text/javascript" src="../js/swiper.js"></script>
+    <script type="text/javascript" src="../js/nftf_common.js"></script>
+</head>
+<script>
+    document.addEventListener('DOMContentLoaded', function(){
+        setTimeout(function(){
+            var loadingDot = document.querySelector('.loading_dot')
+            loadingDot.classList = 'loading_dot on'
+        },500)
+        var layerEvent = document.querySelectorAll('.layerpopup')
+        for(var i = 0; i<layerEvent.length; i++){
+            layerEvent[i].addEventListener('click', function(e){
+                console.log(e.target)
+                if(e.target.className ==='cancel'){
+                    e.currentTarget.style.display = 'none'
+                }
+                if(e.target.className ==='dimmed'){
+                    e.currentTarget.style.display = 'none'
+                }
+            })
+        }
+        $('.tabs li').each(function(){
+            $(this).click(function(){
+                $(this).siblings().removeClass('on')
+                $(this).removeClass('on')
+                $(this).addClass('on')
+                $('.tab_cont_area .tabcont').hide()
+                $('.tab_cont_area .tabcont').eq($(this).index()).show()
+            })
+        })
+    });
+</script>
+<body>
+    <div class="wrapper">
+        <header>
+            <button class="back_btn"></button>
+            <h2 class="h_tit">본인인증</h2>
+            <button class="h_menu"></button>
+        </header>
+        <div class="contents">
+            <section>
+                <div class="loading_dot">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <p class="pages_tit"><span class="t_mi">이름과 주민번호</span>를<br>입력해주세요.</p>
+            </section>
+        </div>
+        
+        <div class="layerpopup" id="layerpopup01">
+            <div class="layer_90 tab_layer">
+                <div class="layer_contents">
+                    <div class="pop_tit tab_area">
+                        <h5>글로벌페이전용통장(원화+외화)</h5>
+                        <p class="content_info">연금이체, 급여이체, 카드결제,<br>공과금 자동이체 시 수수료 우대서비스를<br>제공하는 평생 주거래 통장</p>
+                        <ul class="tabs">
+                            <li class="on">상품내용</li>
+                            <li>금리안내</li>
+                        </ul>
+                    </div>
+                    <div class="pop_content j_scroll">
+                        <div class="swiper-wrapper">
+                            <div class="pop_inner swiper-slide">
+                                <p class="product_info">글로벌페이카드 결제를 위한 전용통장</p>
+                                <div class="tab_cont_area">
+                                    <div class="tabcont">
+                                        <div class="cont_part">
+                                            <h4>상품특징</h4>
+                                            <ul class="list_dot mt10">
+                                                <li>체크카드한도는 있지만, 전용통장 입금한도 없음.</li>
+                                                <li>글로벌페이 원화통장으로 입금가능하며 입금 즉시 전신환 매도율로 적용되어 글로벌페이 외화통장으로 입금</li>
+                                                <li>국내 ATM에서 출금 불가</li>
+                                                <li>글로벌페이외화통장으로 입금불가</li>
+                                            </ul>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>가입대상</h4>
+                                            <ul class="list_dot mt10">
+                                                <li>만 14세 이상 국민인 거주자</li>
+                                                <li>비대면 계좌 개설시 만 17세 이상 국민인 거주자 <br>
+                                                    (단 동일 상품 기가입자는 추가 개설 불가)</li>
+                                            </ul>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>예금종류</h4>
+                                            <p>입출금이자유로운통장</p>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>건별 입금가능액</h4>
+                                            <p class="color02">10,000원 이상</p>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>입금가능통화</h4>
+                                            <p>글로벌페이 원화통장을 통한 원화 입금만 가능</p>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>예치통화</h4>
+                                            <p>원화</p>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>부가서비스</h4>
+                                            <p>영업시간외에도 글로벌페이 원화통장 입금시 글로벌페이 외화통장으로 외화자동입금 처리</p>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>용도</h4>
+                                            <p><a href="#none" class="color01">글로벌페이카드</a>의 전용 결제계좌로 이용</p>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>해지</h4>
+                                            <ul class="list_dot mt10">
+                                                <li>영업점에서 해지 가능</li>
+                                                <li>글로벌페이원화통장과 연결된 글로벌페이외화통장을 모두 해지 해야함 <br>
+                                                    (글로벌페이원화통장 혹은 외화통장만 해지 불가)</li>
+                                            </ul>
+                                        </div>
+                                        <div class="cont_part">
+                                            <h4>상품내용 변경에 관한 사항</h4>
+                                            <table class="mt10 type_row">
+                                                <colgroup>
+                                                    <col style="width: 40%;">
+                                                    <col style="width: 60%;">
+                                                </colgroup>
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="row">
+                                                            상품내용 변경에 <br>
+                                                            관한 사항 <br>
+                                                            (2019.5.30 변경)
+                                                        </th>
+                                                        <td class="left">
+                                                            <p class="t_mi">&lt; 가입대상 변경 &gt;</p>
+                                                            <dl>
+                                                                <dt>변경 전</dt>
+                                                                <dd>만 14세 이상 국민인 거주자</dd>
+                                                                <dt>변경 후</dt>
+                                                                <dd>
+                                                                    <ul class="list_dot mt10">
+                                                                        <li>만 14세 이상 국민인거주자</li>
+                                                                        <li>비대면 계좌 개설시 <br>
+                                                                            만 17세 이상 국민인 거주자 <br>
+                                                                            (단 , 동일 상품 기가입자는 추가 개설 불가)
+                                                                        </li>
+                                                                    </ul>
+                                                                </dd>
+                                                            </dl>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    <div class="tabcont">
+                                        <div class="cont_part">
+                                            <h4>외화보통예금</h4>
+                                            <table class="mt10 type_row">
+                                                <colgroup>
+                                                    <col style="width: 40%;">
+                                                    <col style="width: 60%;">
+                                                </colgroup>
+                                                <tbody>
+                                                    <tr>
+                                                        <th scope="row">통화</th>
+                                                        <td>USD(달러)</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">거주자구분</th>
+                                                        <td>거주자</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <th scope="row">금리</th>
+                                                        <td>0.0400</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                            <p class="norm">(2019.05.30, 연이율, 세전)</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="client_safely">
+                                    <p class="tit">예금자 보호</p>
+                                    <p class="kdic_mark">이 예금은 예금자 보호법에 따라, 예금보험공사가 보호하되, 보호한도는 본 은행에 있는 귀하의 모든 예금대상 금융상품의 원금과 소정의 이자를 합하여 1인당 “최고 5천만원”이며, 5천만원을 초과하는 나머지 금액은 보호하지 않습니다.</p>
+                                    <p class="kdic">준법감시인 심사필 2019-상품-1211호(2019.04.18)<br>
+                                        본 공시내용의 유효기간 : 2019.04.18 ~ 2022.04.17<br>
+                                        기준일 : 2019년 05월 30일</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pop_fix_area">
+                        <button type="button" class="pop_btn01 j_layer_close">동의</button>
+                    </div>
+                    <button type="button" class="cancel">취소</button>
+                </div>
+            </div>
+        </div>
+        <script>
+            layerOpen.init('#layerpopup01');
+        </script>
+    </div>
+</body>
+</html>
