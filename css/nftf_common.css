@@ -1096,6 +1096,11 @@ table + .table_tit{margin-top: 2rem;}
 .guide_comment .done_info .account_info button{position: absolute; right: 0; top: 50%; transform: translateY(-50%); font-weight: 300;}
 .guide_comment .done_info .account_sub{margin-top: 1rem; font-size: 1.4rem; color: #999; letter-spacing: -0.05rem;}
 .guide_comment .done_info .account_sub span{letter-spacing: 0.15rem;}
+
+.loading_page_area {width: 100vw; height: 100vh; display: flex; justify-content: center; align-items: center;}
+.loading_page_area img{width: 6rem;}
+
+
 td dt{font-weight: 600;}
 td dt{margin-top: 0.7rem;}
 td dd {margin-top: 0.5rem;}
