@@ -70,6 +70,8 @@ body {width:100%; line-height:1;}
 .color01{color: #57afa4!important;}
 .color02{color: #e5005a!important;}
 .smTit{font-size: 1rem; vertical-align: top;}
+.word_space15{letter-spacing: 1.5rem;}
+.word_space15 span:last-child{letter-spacing: 0;}
 
 
 .pt0{padding-top: 0!important;}
@@ -125,13 +127,13 @@ header button{position: absolute; top: 0; margin-top: 1.1rem;}
 .layer_notice_cont .list_type01 li::before {background-color: #eee; top: 1.1rem;}
 
 .layer_center .pop_content{padding: 4rem 2rem; max-height: calc(46rem - 5rem);}
-.layer_center .pop_tit + .pop_content{padding: 3.8rem 2rem; max-height: calc(46rem - 13.5rem);}
-.layer_center .pop_tit.type02 + .pop_content{padding: 0 2rem 3.8rem; max-height: calc(46rem - 13.5rem);}
+.layer_center .pop_tit + .pop_content{padding: 3.6rem 2rem; max-height: calc(46rem - 13.5rem);}
+.layer_center .pop_tit.type02 + .pop_content{padding: 1.2rem 2rem 3.8rem; max-height: calc(46rem - 13.5rem);}
 .layer_center .pop_content .swiper-wrapper {height: auto;}
 .layer_center .pop_content .swiper-slide {height: auto;}
 .layer_center .txt_tit{margin-bottom: 2rem;}
 .layer_center .top.cancel{position: absolute; right: 2.0rem; top: 1.5rem; z-index: 1; width: 2.4rem; height: 2.4rem; font-size: 0; background: url(../images/close@2x.png) no-repeat center; background-size: 100%;}
-.layerpopup .tab_area .tabs{border-bottom: 0.1rem solid #ddd; padding: 0 2rem; display: flex; justify-content: center; flex: 1;}
+.layerpopup .tab_area .tabs{border-bottom: 0.1rem solid #ddd; margin: 0 -2rem; padding: 0 2rem; display: flex; justify-content: center; flex: 1;}
 .tab_area .tabs + .product_info{margin-top: 4rem;}
 .layerpopup .tab_area .tabs li{width: 100%; font-size: 1.6rem; text-align: center; font-weight: 300; color: #999; padding: 1.1rem 0;}
 .layerpopup .tab_area .tabs li.on{font-weight: 500; color: #57afa4; border-bottom: 0.2rem solid #57afa4;}
@@ -155,9 +157,9 @@ header button{position: absolute; top: 0; margin-top: 1.1rem;}
 .layer_select .pop_content {height: 31.2rem;}
 
 .pop_tit{ border-bottom: 0.1rem solid #ddd;}
-.pop_tit h5{padding: 1.8rem 2.4rem; font-size: 1.8rem; font-weight: 500; text-align: center;}
+.pop_tit h5{padding: 4rem 2rem 2rem; font-size: 1.8rem; font-weight: 500; text-align: center;}
 .pop_tit.type02{ border-bottom:none;}
-.pop_tit.type02 h5{padding: 3.8rem 0 2rem;}
+.pop_tit.type02 h5{padding: 3.8rem 0 2rem; line-height: 1.33;}
 .layer_select .cancel{position: absolute; right: 2.4rem; top: 1.5rem; width: 2.4rem; height: 2.4rem; font-size: 0; background: url(../images/close@2x.png) no-repeat center; background-size: 100%;}
 .layer_select .slider_select {min-width: 100%; width: 100%;}
 
@@ -171,7 +173,7 @@ header button{position: absolute; top: 0; margin-top: 1.1rem;}
 .layer_90 .pop_content{text-align: left; box-sizing: border-box;}
 .layer_90.tab_layer .pop_content{text-align: left; box-sizing: border-box;}
 .layer_90 .pop_content .pop_inner {padding: 0 2rem 6.5rem; overflow: hidden;}
-.layer_90 .cancel{position: absolute; right: 2.4rem; top: 1.5rem; z-index: 1; width: 2.4rem; height: 2.4rem; font-size: 0; background: url(../images/close@2x.png) no-repeat center; background-size: 100%;}
+.layer_90 .cancel{position: absolute; right: 2rem; top: 1.5rem; z-index: 1; width: 2.4rem; height: 2.4rem; font-size: 0; background: url(../images/close@2x.png) no-repeat center; background-size: 100%;}
 
 .txt_tit{font-size: 1.8rem; margin-bottom: 1rem; letter-spacing: -0.05rem;}
 .txt_tit.row02{line-height: 2.6rem;}
@@ -313,6 +315,8 @@ header button{position: absolute; top: 0; margin-top: 1.1rem;}
 .txt_notice.on .txt_notice_open:after {transform: rotate(180deg);}
 .txt_notice .txt_notice_cont {display: none; margin-top: 1rem; padding: 2rem; border-radius: 12px; background-color: #fafafa;}
 .layer_90 .txt_notice .txt_notice_cont {display: block;}
+.txt_notice_cont .list_type01 li{line-height: 2rem;}
+.txt_notice_cont .list_type01 li:before{top: 0.8rem;}
 
 .txt_notice02 {margin-top: 1rem; padding-left: 2.7rem; background: url('../images/notice@2x.png') no-repeat 0.5rem 0.3rem; background-size: 1.6rem; font-size: 1.5rem; font-weight: 300; color: #666; letter-spacing: -0.05rem; line-height: 2rem;}
 
@@ -772,7 +776,8 @@ header button{position: absolute; top: 0; margin-top: 1.1rem;}
 .type_inpopup .list_dot li{font-size: 1.3rem; color: #777; padding-left: 1.6rem;}
 .type_inpopup .list_dot li::before{left: 1.0rem; top: 1rem;}
 .cont_part table{width: 100%;}
-.tabcont .cont_part table{width: 100%; font-size: 1.4rem; border-top: 0.1rem solid #000; text-align: center;}
+.tabcont .cont_part table{width: 100%; font-size: 1.4rem; text-align: center; position: relative;}
+.tabcont .cont_part table::before{content: ''; width: 100%; height: 0.1rem; position: absolute; left: 0; top: -0.1rem; background: #000;}
 .tabcont .cont_part th{padding: 1rem; color: #000; text-align: center; background: #fafafa; font-weight: 500;}
 .tabcont .cont_part td{padding: 1rem; color: #666; font-weight: 300;}
 table tr td.center{text-align: center;}
@@ -780,7 +785,7 @@ table tr td.left{text-align: left;}
 table tr td.right{text-align: right;}
 .type_col th + th, .type_col td + td{border-left: 0.1rem solid #ddd;}
 .type_col tr + tr th{border-top: 0.1rem solid #ddd;}
-.type_col th{border-top: 0.1rem solid #000;}
+/* .type_col th{border-top: 0.1rem solid #000;} */
 .type_col td{border-bottom: 0.1rem solid #ddd;}
 .type_row th, .type_row td{border-bottom: 0.1rem solid #ddd;}
 .cont_part .table_tit{font-size: 1.6rem; color: #000;}
@@ -910,7 +915,7 @@ table + .table_tit{margin-top: 2rem;}
 .checking_list li+li{margin-top: 2rem;}
 .checking_list li::before{position: absolute; left: 0; top: -0.3rem; line-height: 2rem; width: 2rem; text-align: center; border-radius: 50%; font-weight: 500; font-size: 1.2rem; color: #fff; background: #424748; content: counter(checkinglist); counter-increment: checkinglist;}
 .checking_list li span{font-size: 1.4rem;color: #666; display: block;}
-.checking_list li strong{font-size: 1.8rem; margin-top: 1rem; display: block; font-weight: 500; line-height: 2.4rem;}
+.checking_list li strong{font-size: 1.8rem; margin-top: 0.5rem; display: block; font-weight: 500; line-height: 2.4rem;}
 
 .agreement_doc .doc_cont{color: #666; letter-spacing: -0.1rem;}
 .agreement_doc .doc_tit{font-size: 1.8rem; font-weight: 300; line-height: 2.4rem; margin: 2rem 0;}
