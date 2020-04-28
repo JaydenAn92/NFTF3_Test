@@ -906,7 +906,7 @@ $(document).ready(function(){
 
 	//input 수정 토글
 	$(document).on('click','.j_data_modify',function() {
-		$(this).hide().siblings('.j_input_modify').prop('readonly','').focus();
+		$(this).hide().siblings('.j_input_modify').prop('disabled','').focus();
 	});
 
 	//input 수정 입력시 
