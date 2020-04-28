@@ -377,7 +377,9 @@ opacity: 1; -webkit-text-fill-color: initial;
 .list_type03 .conts .input_txt .input_data_del {top: 0.2rem; right: 0;}
 .list_type03 .conts .input_money .input_data_del {right: 2rem;}
 .list_type03 .conts .input_data:disabled,
-.list_type03 .conts .input_data {width: 100%; padding-right: 3rem; background: transparent; border: none; font-size: 1.6rem; line-height: 2.2rem; color: #000; font-weight: 500;}
+.list_type03 .conts .input_data {width: 100%; padding-right: 3rem; background: transparent; border: none; font-size: 1.6rem; line-height: 2.2rem; color: #000; font-weight: 500;
+/* ios disabled issue */
+opacity: 1; -webkit-text-fill-color: initial;}
 .list_type03 .conts .input_money {display: none;}
 .list_type03 > li.modify .conts .input_money {display: block;}
 .list_type03 > li.modify .conts .input_money_txt {display: none;}
