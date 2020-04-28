@@ -912,7 +912,7 @@ $(document).ready(function(){
 	//input 수정 입력시 
 	$('.j_input_modify').on('click focusin focusout keyup keypress',function(e) {
 		var _this = $(this);
-		if (_this.prop('readonly')) {
+		if (_this.prop('disabled')) {
 			return false;
 		}
 		if (e.type == 'keyup') {
@@ -930,14 +930,14 @@ $(document).ready(function(){
 			setTimeout(function() {
 				$('.j_data_del').hide();
 				if (!_this.parents('.j_focus,.j_focus02').hasClass('focus')) {
-					_this.prop('readonly','readonly').siblings('.j_data_modify').show();
+					_this.prop('disabled','disabled').siblings('.j_data_modify').show();
 				}
 			},200);
 		}else if (e.type == 'keypress') {
 			if(e.keyCode == 13){
 				$('.j_data_del').hide();
 				$('.j_focus,.j_focus02').removeClass('focus');
-				_this.prop('readonly','readonly').siblings('.j_data_modify').show();
+				_this.prop('disabled','disabled').siblings('.j_data_modify').show();
 			}
 		}
 		// 2020-03-27 추가 (신분증 확인 Input)
