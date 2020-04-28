@@ -977,10 +977,10 @@ $(document).ready(function(){
 	$('.j_toggle_modify').on('click',function() {
 		if ($(this).text() == '수정') {
 			$(this).text('저장');
-			$(this).parents('li').addClass('modify').find('.j_modify').removeClass('disabled').prop('readonly','');
+			$(this).parents('li').addClass('modify').find('.j_modify').removeClass('disabled').prop('disabled','');
 		}else {
 			$(this).text('수정');
-			$(this).parents('li').removeClass('modify').find('.j_modify').addClass('disabled').prop('readonly','readonly');
+			$(this).parents('li').removeClass('modify').find('.j_modify').addClass('disabled').prop('disabled','disabled');
 		}
 	});
 
