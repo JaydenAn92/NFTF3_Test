@@ -1009,9 +1009,6 @@ $(document).ready(function(){
 });
 
 window.onload = function(){
-
-	var a=document.getElementById("idInput01text");
-	a.focus();
 	var haiSwiper = new Swiper('.hai_slide', {
 		pagination: {
 			el: '.swiper-pagination',
@@ -1109,6 +1106,7 @@ window.onload = function(){
 				$('.wrapper').off('scroll click touchstart touchmove');
 				if ($('.j_focus_group').eq(0).find('.j_focus').eq(0).find(' .j_focus_open').length > 0) {
 					$('.j_focus_group').eq(0).find('.j_focus').eq(0).find(' .j_focus_open').trigger('click');
+					$('.j_focus_group').eq(0).find('.j_focus').eq(0).find(' .j_input_value').trigger('focus');
 				}else {
 					$('.j_focus_group').eq(0).find('.j_focus').eq(0).find('j_input_value').eq(0).trigger('focus');
 				}
